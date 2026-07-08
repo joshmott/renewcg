@@ -50,30 +50,14 @@ export default function HomePage() {
         >
           Remedial construction, done properly the first time.
         </h1>
-        <div
-          className="hero-rise mt-9 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between"
+        <p
+          className="hero-rise mt-9 max-w-[520px] text-[16px] leading-[1.7]"
           style={{ "--rise-delay": "240ms" } as React.CSSProperties}
         >
-          <p className="max-w-[520px] text-[16px] leading-[1.7]">
-            We diagnose and repair the root cause of building defects for
-            strata, commercial and residential properties — licensed, insured,
-            and accountable from inspection to sign-off.
-          </p>
-          <div className="flex shrink-0 items-center gap-7">
-            <a
-              href="#contact"
-              className="rounded-[10px] bg-blue px-7 py-3.5 text-[14px] font-semibold text-white transition-colors hover:bg-blue-dark"
-            >
-              Request a quote
-            </a>
-            <a
-              href={site.contact.phoneHref}
-              className="border-b border-ink pb-0.5 text-[14px] font-semibold text-ink transition-colors hover:border-blue hover:text-blue"
-            >
-              {site.contact.phone}
-            </a>
-          </div>
-        </div>
+          We diagnose and repair the root cause of building defects for strata,
+          commercial and residential properties — licensed, insured, and
+          accountable from inspection to sign-off.
+        </p>
       </section>
 
       {/* ── Wide hero image ──────────────────────────────────────────── */}
