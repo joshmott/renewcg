@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Projects",
   description:
     "A selection of remedial, residential and commercial building projects delivered by Renew Construction Group across NSW.",
+  alternates: { canonical: "/projects" },
 };
 
 export default function ProjectsPage() {
@@ -20,12 +21,13 @@ export default function ProjectsPage() {
 
       <section className="py-16 sm:py-20">
         <Container>
+          <h2 className="sr-only">All projects</h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project) => (
               <ProjectCard key={project.slug} project={project} />
             ))}
           </div>
-          <p className="mt-10 text-center text-xs text-ink/40">
+          <p className="mt-10 text-center text-xs text-ink/60">
             Representative projects shown with illustrative graphics — project
             photography added as case studies are published.
           </p>

@@ -14,7 +14,7 @@ export const site = {
   abbreviation: "rcg",
   tagline: "Remedial building specialists. Licensed across NSW.",
   description:
-    "Renew Construction Group is a NSW-licensed residential and commercial builder specialising in Class 2 remedial building works, renovations, extensions, new builds and commercial fit outs.",
+    "Renew Construction Group is a NSW-licensed builder specialising in Class 2 remedial building works and delivering residential renovations, extensions, new builds and commercial fit outs across NSW.",
 
   // [PLACEHOLDER] Replace with the production domain once connected on Vercel.
   url: "https://renewconstructiongroup.com.au",
@@ -31,8 +31,10 @@ export const site = {
 
   credentials: {
     licence: "NSW Contractor Licence No. 000000C", // [PLACEHOLDER]
+    dbpRegistration: "Registered Building Practitioner No. 000000", // [PLACEHOLDER] — DBP Act registration for Class 2 work
     abn: "ABN 00 000 000 000", // [PLACEHOLDER]
-    insurance: "Fully insured — public liability & home building compensation",
+    insurance:
+      "Public liability insured · HBCF (home building compensation) cover on residential work where required",
     serviceArea: "Sydney metro & greater NSW",
   },
 

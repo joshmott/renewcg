@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
+import { Year } from "@/components/Year";
+import { EmailLink } from "@/components/ui";
 import { site } from "@/lib/site";
 import { services } from "@/lib/services";
 
@@ -9,7 +11,7 @@ export function Footer() {
       <div className="blueprint-grid-dark">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-12">
-            <div className="lg:col-span-5">
+            <div className="lg:col-span-4">
               <Link href="/" aria-label={`${site.name} — home`}>
                 <Logo tone="cream" className="text-lg" />
               </Link>
@@ -18,6 +20,7 @@ export function Footer() {
               </p>
               <div className="mt-6 space-y-1 text-sm font-semibold text-cream-100/90">
                 <p>{site.credentials.licence}</p>
+                <p>{site.credentials.dbpRegistration}</p>
                 <p>{site.credentials.abn}</p>
               </div>
             </div>
@@ -60,7 +63,7 @@ export function Footer() {
               </ul>
             </div>
 
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-3">
               <h2 className="text-xs font-bold tracking-[0.2em] text-cream-100/60 uppercase">
                 Contact
               </h2>
@@ -74,12 +77,7 @@ export function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a
-                    href={`mailto:${site.contact.email}`}
-                    className="break-all transition-colors hover:text-cream-100 hover:underline"
-                  >
-                    {site.contact.email}
-                  </a>
+                  <EmailLink className="transition-colors hover:text-cream-100 hover:underline" />
                 </li>
                 <li>{site.contact.address}</li>
                 <li>{site.contact.hours}</li>
@@ -89,10 +87,10 @@ export function Footer() {
 
           <div className="mt-14 flex flex-col gap-3 border-t border-cream-100/15 pt-8 text-xs text-cream-100/60 sm:flex-row sm:items-center sm:justify-between">
             <p>
-              © {new Date().getFullYear()} {site.name}. All rights reserved.
+              © <Year /> {site.name}. All rights reserved.
             </p>
             <p>
-              Licensed for residential &amp; commercial building work in NSW ·{" "}
+              NSW-licensed builder · residential &amp; commercial projects ·{" "}
               {site.credentials.serviceArea}
             </p>
           </div>

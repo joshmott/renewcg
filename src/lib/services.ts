@@ -2,6 +2,8 @@ export type Service = {
   slug: string;
   title: string;
   shortTitle: string;
+  /** Sentence-case phrase used in CTA banners: "Talk to us about {ctaLabel}". */
+  ctaLabel: string;
   flagship?: boolean;
   intro: string;
   description: string[];
@@ -12,6 +14,7 @@ export type Service = {
 export const services: Service[] = [
   {
     slug: "class-2-remedial-works",
+    ctaLabel: "Class 2 remedial works",
     title: "Class 2 Remedial Building Works",
     shortTitle: "Class 2 Remedial Works",
     flagship: true,
@@ -37,6 +40,7 @@ export const services: Service[] = [
   },
   {
     slug: "residential-renovations",
+    ctaLabel: "your renovation",
     title: "Residential Renovations",
     shortTitle: "Renovations",
     intro:
@@ -58,6 +62,7 @@ export const services: Service[] = [
   },
   {
     slug: "home-extensions",
+    ctaLabel: "your extension",
     title: "Home Extensions & Additions",
     shortTitle: "Extensions",
     intro:
@@ -79,6 +84,7 @@ export const services: Service[] = [
   },
   {
     slug: "new-builds",
+    ctaLabel: "your new build",
     title: "New Builds",
     shortTitle: "New Builds",
     intro:
@@ -100,6 +106,7 @@ export const services: Service[] = [
   },
   {
     slug: "commercial-fit-outs",
+    ctaLabel: "your fit out",
     title: "Commercial Fit Outs",
     shortTitle: "Commercial Fit Outs",
     intro:

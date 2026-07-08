@@ -1,6 +1,3 @@
-import Link from "next/link";
-import { site } from "@/lib/site";
-
 /**
  * Code-recreation of the Renew Construction Group logo:
  * the "rcg" reflection mark beside the lowercase "renew" wordmark,
@@ -60,23 +57,5 @@ export function Logo({
         </span>
       )}
     </span>
-  );
-}
-
-export function LogoLink({
-  tone = "blue",
-  className = "",
-}: {
-  tone?: Tone;
-  className?: string;
-}) {
-  return (
-    <Link
-      href="/"
-      aria-label={`${site.name} — home`}
-      className={`inline-flex ${className}`}
-    >
-      <Logo tone={tone} />
-    </Link>
   );
 }

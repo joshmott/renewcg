@@ -122,6 +122,22 @@ export function Arrow() {
   );
 }
 
+/* ── Email link ─────────────────────────────────────────────────────────── */
+
+/**
+ * Renders the contact email with a soft break opportunity after the "@" so
+ * long addresses wrap cleanly in narrow columns instead of mid-word.
+ */
+export function EmailLink({ className = "" }: { className?: string }) {
+  const [local, domain] = site.contact.email.split("@");
+  return (
+    <a href={`mailto:${site.contact.email}`} className={className}>
+      {local}@<wbr />
+      {domain}
+    </a>
+  );
+}
+
 /* ── Checklist item ─────────────────────────────────────────────────────── */
 
 export function Check({ tone = "blue" }: { tone?: "blue" | "cream" }) {

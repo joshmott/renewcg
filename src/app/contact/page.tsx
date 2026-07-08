@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/ContactForm";
-import { Container, PageHero } from "@/components/ui";
+import { Container, EmailLink, PageHero } from "@/components/ui";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
     "Request a quote or talk to Renew Construction Group about remedial works, renovations, extensions, new builds and commercial fit outs across NSW.",
+  alternates: { canonical: "/contact" },
 };
 
-const contactDetails = [
+const contactDetails: { label: string; value: string; href?: string }[] = [
   {
     label: "Phone",
     value: site.contact.phone,
@@ -20,11 +21,8 @@ const contactDetails = [
     value: site.contact.mobile,
     href: site.contact.mobileHref,
   },
-  {
-    label: "Email",
-    value: site.contact.email,
-    href: `mailto:${site.contact.email}`,
-  },
+  // "email" is a sentinel — rendered via EmailLink for clean wrapping
+  { label: "Email", value: "email" },
   { label: "Based in", value: site.contact.address },
   { label: "Hours", value: site.contact.hours },
   { label: "Service area", value: site.credentials.serviceArea },
@@ -47,7 +45,7 @@ export default function ContactPage() {
                 Request a quote
               </h2>
               <p className="mt-2 mb-8 text-sm text-ink/60">
-                Fields marked with a label are required unless noted.
+                All fields are required unless marked optional.
               </p>
               <ContactForm />
             </div>
@@ -59,15 +57,14 @@ export default function ContactPage() {
               <dl className="mt-6 space-y-4">
                 {contactDetails.map((item) => (
                   <div key={item.label}>
-                    <dt className="text-xs font-bold tracking-[0.18em] text-cream-100/60 uppercase">
+                    <dt className="text-xs font-bold tracking-[0.18em] text-cream-100/75 uppercase">
                       {item.label}
                     </dt>
                     <dd className="mt-0.5 font-semibold">
-                      {item.href ? (
-                        <a
-                          href={item.href}
-                          className="break-all hover:underline"
-                        >
+                      {item.value === "email" ? (
+                        <EmailLink className="hover:underline" />
+                      ) : item.href ? (
+                        <a href={item.href} className="hover:underline">
                           {item.value}
                         </a>
                       ) : (
@@ -85,12 +82,13 @@ export default function ContactPage() {
               </h2>
               <ul className="mt-4 space-y-2 text-sm leading-relaxed text-ink/75">
                 <li>{site.credentials.licence}</li>
+                <li>{site.credentials.dbpRegistration}</li>
                 <li>{site.credentials.abn}</li>
                 <li>{site.credentials.insurance}</li>
               </ul>
-              <p className="mt-4 text-xs text-ink/50">
-                Verify our licence anytime via the NSW Fair Trading public
-                register.
+              <p className="mt-4 text-xs text-ink/60">
+                Verify our licence and registration anytime via the NSW Fair
+                Trading public registers.
               </p>
             </div>
 

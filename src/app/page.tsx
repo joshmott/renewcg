@@ -1,4 +1,4 @@
-import Link from "next/link";
+import type { Metadata } from "next";
 import { LogoMark } from "@/components/Logo";
 import { ServiceCard, ProjectCard } from "@/components/cards";
 import {
@@ -7,24 +7,27 @@ import {
   Check,
   Container,
   CtaBanner,
-  Eyebrow,
   SectionHeading,
 } from "@/components/ui";
 import { services } from "@/lib/services";
 import { projects } from "@/lib/projects";
 import { site } from "@/lib/site";
 
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
+
 const heroStats = [
   { value: "Class 2", label: "Remedial works specialists" },
-  { value: "NSW", label: "Licensed, residential & commercial" },
+  { value: "NSW", label: "Licensed builder — residential & commercial projects" },
   { value: "DBP Act", label: "Compliant delivery & declared designs" },
   { value: "End-to-end", label: "Inspection to warranty" },
 ];
 
 const whyUs = [
   {
-    title: "Licensed & insured, residential and commercial",
-    body: "We hold a NSW contractor licence covering both residential and commercial building work, backed by full public liability insurance — one accountable builder across every class of project.",
+    title: "Licensed, insured and accountable",
+    body: "We hold a NSW building contractor licence and deliver both residential and commercial projects, backed by full public liability insurance — one accountable builder across every class of project.",
   },
   {
     title: "Remedial expertise behind everything we build",
@@ -97,7 +100,7 @@ export default function HomePage() {
                 aria-hidden="true"
                 className="h-2 w-2 rounded-full bg-brand-600"
               />
-              NSW licensed builder — residential &amp; commercial
+              NSW licensed builder — residential &amp; commercial projects
             </p>
             <h1 className="mt-6 text-4xl font-bold tracking-tight text-balance text-brand-800 sm:text-5xl lg:text-6xl">
               Buildings fail.
@@ -160,7 +163,7 @@ export default function HomePage() {
             <SectionHeading
               eyebrow="What we do"
               title="One builder, every stage of a building's life"
-              lede="From rectifying defects in occupied apartment buildings to delivering brand-new homes and commercial spaces — licensed for it all in NSW."
+              lede="From rectifying defects in occupied apartment buildings to delivering brand-new homes and commercial spaces — one NSW-licensed builder for all of it."
             />
             <ButtonLink href="/services" variant="outline" className="mb-1">
               All services <Arrow />
@@ -294,7 +297,7 @@ export default function HomePage() {
         <Container>
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading
-              eyebrow="Recent work"
+              eyebrow="Our work"
               title="Projects that show the standard"
             />
             <ButtonLink href="/projects" variant="outline" className="mb-1">
@@ -306,6 +309,10 @@ export default function HomePage() {
               <ProjectCard key={project.slug} project={project} />
             ))}
           </div>
+          <p className="mt-8 text-center text-xs text-ink/60">
+            Representative projects shown with illustrative graphics — project
+            photography added as case studies are published.
+          </p>
         </Container>
       </section>
 
@@ -335,9 +342,9 @@ export default function HomePage() {
               </figure>
             ))}
           </div>
-          <p className="mt-8 text-center text-xs text-ink/40">
-            Sample testimonials shown — replaced with verified client reviews
-            at launch.
+          <p className="mt-8 text-center text-xs text-ink/60">
+            Sample testimonials shown — these will be replaced with verified
+            client reviews before launch.
           </p>
         </Container>
       </section>

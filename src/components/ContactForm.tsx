@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmailLink } from "@/components/ui";
 import { site } from "@/lib/site";
 import { services } from "@/lib/services";
 
@@ -44,7 +45,7 @@ export function ContactForm() {
   }
 
   const inputClasses =
-    "w-full rounded-xl border border-brand-200 bg-white px-4 py-3 text-sm text-ink placeholder:text-ink/40 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30";
+    "w-full rounded-xl border border-brand-400 bg-white px-4 py-3 text-sm text-ink placeholder:text-ink/60 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/60";
 
   return (
     <form onSubmit={handleSubmit} className="grid gap-5">
@@ -96,7 +97,7 @@ export function ContactForm() {
         </div>
         <div>
           <label htmlFor="location" className="mb-1.5 block text-sm font-bold text-brand-800">
-            Suburb / location
+            Suburb / location (optional)
           </label>
           <input
             id="location"
@@ -151,18 +152,16 @@ export function ContactForm() {
         >
           Send enquiry
         </button>
-        {sent && (
-          <p role="status" className="text-sm font-semibold text-brand-700">
-            Your email app should have opened with the enquiry ready to send —
-            or email us directly at{" "}
-            <a href={`mailto:${site.contact.email}`} className="underline">
-              {site.contact.email}
-            </a>
-            .
-          </p>
-        )}
+        <p role="status" className="text-sm font-semibold text-brand-700">
+          {sent ? (
+            <>
+              Your email app should have opened with the enquiry ready to send
+              — or email us directly at <EmailLink className="underline" />.
+            </>
+          ) : null}
+        </p>
       </div>
-      <p className="text-xs text-ink/50">
+      <p className="text-xs text-ink/60">
         Submitting opens your email app with the enquiry pre-filled — nothing
         is stored on this website.
       </p>

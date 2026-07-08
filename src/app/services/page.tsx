@@ -14,7 +14,8 @@ import { services } from "@/lib/services";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Class 2 remedial building works, residential renovations, home extensions, new builds and commercial fit outs — licensed across NSW.",
+    "Class 2 remedial building works, residential renovations, home extensions, new builds and commercial fit outs — delivered by a NSW-licensed builder.",
+  alternates: { canonical: "/services" },
 };
 
 export default function ServicesPage() {

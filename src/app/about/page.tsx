@@ -14,7 +14,8 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Renew Construction Group is a NSW-licensed residential and commercial builder specialising in Class 2 remedial works, founded on the belief that buildings deserve a second life done right.",
+    "Renew Construction Group is a NSW-licensed builder specialising in Class 2 remedial works and delivering residential and commercial projects, founded on the belief that buildings deserve a second life done right.",
+  alternates: { canonical: "/about" },
 };
 
 const values = [
@@ -37,10 +38,11 @@ const values = [
 ];
 
 const credentials = [
-  site.credentials.licence + " — residential & commercial building work",
+  site.credentials.licence + " — verifiable via the NSW Fair Trading public register",
+  site.credentials.dbpRegistration +
+    " — Class 2 work under the Design and Building Practitioners Act 2020 (NSW)",
   site.credentials.insurance,
-  "Class 2 remedial work delivered under the Design and Building Practitioners Act 2020 (NSW)",
-  "Working across " + site.credentials.serviceArea,
+  "Residential & commercial projects across " + site.credentials.serviceArea,
 ];
 
 export default function AboutPage() {

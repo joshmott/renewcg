@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: service.title,
     description: service.intro,
+    alternates: { canonical: `/services/${service.slug}` },
   };
 }
 
@@ -113,8 +114,14 @@ export default async function ServicePage({ params }: Props) {
                     Call {site.contact.phone}
                   </a>
                 </div>
-                <p className="mt-5 text-xs text-cream-100/70">
+                <p className="mt-5 text-xs text-cream-100/75">
                   {site.credentials.licence}
+                  {service.flagship && (
+                    <>
+                      <br />
+                      {site.credentials.dbpRegistration}
+                    </>
+                  )}
                   <br />
                   {site.credentials.insurance}
                 </p>
@@ -146,7 +153,7 @@ export default async function ServicePage({ params }: Props) {
       </section>
 
       <CtaBanner
-        title={`Talk to us about ${service.shortTitle.toLowerCase()}`}
+        title={`Talk to us about ${service.ctaLabel}`}
         lede="Send through drawings, defect reports or just a description of what you need — we'll respond with straight answers and a clear next step."
       />
     </>

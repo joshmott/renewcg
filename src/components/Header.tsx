@@ -2,18 +2,32 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Logo } from "@/components/Logo";
 import { site } from "@/lib/site";
 
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
   // Close the mobile menu on navigation
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
+
+  // Close the mobile menu on Escape, returning focus to the toggle
+  useEffect(() => {
+    if (!open) return;
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setOpen(false);
+        toggleRef.current?.focus();
+      }
+    }
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [open]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-brand-100 bg-cream-50/95 backdrop-blur">
@@ -61,6 +75,7 @@ export function Header() {
         </div>
 
         <button
+          ref={toggleRef}
           type="button"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
@@ -110,6 +125,7 @@ export function Header() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
+                    onClick={() => setOpen(false)}
                     aria-current={active ? "page" : undefined}
                     className={`block rounded-lg px-3 py-3 text-base font-semibold ${
                       active
@@ -126,6 +142,7 @@ export function Header() {
           <div className="mt-4 flex flex-col gap-3">
             <Link
               href="/contact"
+              onClick={() => setOpen(false)}
               className="rounded-full bg-brand-600 px-5 py-3 text-center text-sm font-bold text-cream-100 hover:bg-brand-700"
             >
               Request a quote
