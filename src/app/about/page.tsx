@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { LogoMark } from "@/components/Logo";
+import { Logo } from "@/components/Logo";
 import {
   Arrow,
   ButtonLink,
@@ -85,7 +85,7 @@ export default function AboutPage() {
           </div>
           <div className="lg:col-span-5">
             <div className="blueprint-grid flex aspect-square items-center justify-center rounded-3xl border border-brand-100 bg-cream-100">
-              <LogoMark className="rotate-[-4deg] text-5xl shadow-2xl shadow-brand-600/30 sm:text-6xl" />
+              <Logo className="w-3/4 max-w-xs rotate-[-3deg]" />
             </div>
           </div>
         </Container>

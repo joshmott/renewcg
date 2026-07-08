@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { LogoMark } from "@/components/Logo";
+import { Logo } from "@/components/Logo";
 import { ServiceCard, ProjectCard } from "@/components/cards";
 import {
   Arrow,
@@ -135,7 +135,7 @@ export default function HomePage() {
                 aria-hidden="true"
                 className="absolute inset-6 rounded-2xl border-2 border-dashed border-brand-300"
               />
-              <LogoMark className="rotate-[-4deg] text-6xl shadow-2xl shadow-brand-600/30" />
+              <Logo className="w-3/4 max-w-xs rotate-[-3deg]" />
             </div>
           </div>
         </Container>

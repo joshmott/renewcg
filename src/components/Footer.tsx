@@ -13,7 +13,7 @@ export function Footer() {
           <div className="grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-4">
               <Link href="/" aria-label={`${site.name} — home`}>
-                <Logo tone="cream" className="text-lg" />
+                <Logo tone="cream" className="h-9" />
               </Link>
               <p className="mt-6 max-w-md text-sm leading-relaxed text-cream-100/75">
                 {site.description}
