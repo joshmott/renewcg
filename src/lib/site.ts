@@ -1,48 +1,64 @@
 /**
- * ─────────────────────────────────────────────────────────────────────────────
- *  SITE CONFIG — Renew Construction Group
- *
- *  All business details live here so they can be updated in one place.
- *  Every value marked [PLACEHOLDER] should be replaced with the real detail
- *  before going live.
- * ─────────────────────────────────────────────────────────────────────────────
+ * SITE CONFIG — Renew Construction Group
+ * Business details from the approved design handoff (design_handoff_renew_landing).
  */
 
 export const site = {
   name: "Renew Construction Group",
-  shortName: "Renew",
-  abbreviation: "rcg",
-  tagline: "Remedial building specialists. Licensed across NSW.",
+  tagline: "Remedial Construction, Sydney",
   description:
-    "Renew Construction Group is a NSW-licensed builder specialising in Class 2 remedial building works and delivering residential renovations, extensions, new builds and commercial fit outs across NSW.",
+    "Renew Construction Group diagnoses and repairs the root cause of building defects for strata, commercial and residential properties across greater Sydney — licensed, insured, and accountable from inspection to sign-off.",
 
   // [PLACEHOLDER] Replace with the production domain once connected on Vercel.
   url: "https://renewconstructiongroup.com.au",
 
   contact: {
-    phone: "(02) 0000 0000", // [PLACEHOLDER]
-    phoneHref: "tel:+61200000000", // [PLACEHOLDER]
-    mobile: "0400 000 000", // [PLACEHOLDER]
-    mobileHref: "tel:+61400000000", // [PLACEHOLDER]
-    email: "hello@renewconstructiongroup.com.au", // [PLACEHOLDER]
-    address: "Sydney, NSW", // [PLACEHOLDER]
-    hours: "Mon – Fri, 7:00am – 5:00pm",
+    phone: "0422 453 966",
+    phoneHref: "tel:+61422453966",
+    email: "Joshua@renewcg.com.au",
+    serviceArea: "Greater Sydney",
   },
 
   credentials: {
-    licence: "NSW Contractor Licence No. 000000C", // [PLACEHOLDER]
-    dbpRegistration: "Registered Building Practitioner No. 000000", // [PLACEHOLDER] — DBP Act registration for Class 2 work
-    abn: "ABN 00 000 000 000", // [PLACEHOLDER]
-    insurance:
-      "Public liability insured · HBCF (home building compensation) cover on residential work where required",
-    serviceArea: "Sydney metro & greater NSW",
+    licence: "NSW Licence 490706C",
+    licenceLong: "NSW Builders Licence 490706C",
+    registration: "Registered Building Practitioner",
+    insurance: "Public Liability & Workers Comp",
+    abn: "ABN 44 693 358 888",
   },
-
-  nav: [
-    { label: "Home", href: "/" },
-    { label: "Services", href: "/services" },
-    { label: "Projects", href: "/projects" },
-    { label: "About", href: "/about" },
-    { label: "Contact", href: "/contact" },
-  ],
 } as const;
+
+export type Service = { title: string; description: string };
+
+export const services: Service[] = [
+  {
+    title: "Concrete cancer repair",
+    description:
+      "Spalling and reinforcement corrosion diagnosed and rectified before it threatens structural integrity.",
+  },
+  {
+    title: "Waterproofing",
+    description:
+      "Membrane systems and leak rectification for roofs, balconies, planter boxes and wet areas.",
+  },
+  {
+    title: "Facade remediation",
+    description:
+      "Render, cladding, brickwork and external finishes restored to compliant, watertight condition.",
+  },
+  {
+    title: "Structural repairs",
+    description:
+      "Engineer-backed repairs to slabs, beams, columns and load-bearing elements.",
+  },
+  {
+    title: "Carpentry works",
+    description:
+      "Structural and detailed carpentry — framing, decks, doors, trims and finishes.",
+  },
+  {
+    title: "Window & glass installation",
+    description:
+      "Supply and installation of compliant window and glazing systems.",
+  },
+];

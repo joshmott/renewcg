@@ -1,355 +1,220 @@
 import type { Metadata } from "next";
-import { Logo } from "@/components/Logo";
-import { ServiceCard, ProjectCard } from "@/components/cards";
-import {
-  Arrow,
-  ButtonLink,
-  Check,
-  Container,
-  CtaBanner,
-  SectionHeading,
-} from "@/components/ui";
-import { services } from "@/lib/services";
-import { projects } from "@/lib/projects";
-import { site } from "@/lib/site";
+import { Parallax } from "@/components/Parallax";
+import { QuoteForm } from "@/components/QuoteForm";
+import { Reveal } from "@/components/Reveal";
+import { services, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-const heroStats = [
-  { value: "Class 2", label: "Remedial works specialists" },
-  { value: "NSW", label: "Licensed builder — residential & commercial projects" },
-  { value: "DBP Act", label: "Compliant delivery & declared designs" },
-  { value: "End-to-end", label: "Inspection to warranty" },
+const eyebrowClasses =
+  "text-xs font-semibold tracking-[0.18em] uppercase text-muted";
+
+const credentialItems = [
+  site.credentials.licence,
+  site.credentials.registration,
+  "Fully Insured",
+  site.credentials.abn,
+  site.contact.serviceArea,
 ];
 
-const whyUs = [
-  {
-    title: "Licensed, insured and accountable",
-    body: "We hold a NSW building contractor licence and deliver both residential and commercial projects, backed by full public liability insurance — one accountable builder across every class of project.",
-  },
-  {
-    title: "Remedial expertise behind everything we build",
-    body: "We spend our days fixing other builders' defects. That forensic understanding of how buildings fail — water, movement, corrosion — is designed out of everything we construct new.",
-  },
-  {
-    title: "Transparent scopes, honest programs",
-    body: "Detailed scopes of work, itemised pricing and build programs we actually keep. You'll never be guessing where your project is up to or what a variation really costs.",
-  },
-  {
-    title: "Compliance you can hand to a lawyer",
-    body: "On Class 2 work we deliver under the Design and Building Practitioners Act — regulated designs, declared variations and a documentation trail that protects the owners corporation.",
-  },
+const aboutRows = [
+  { label: "Builders licence", value: "NSW 490706C" },
+  { label: "Registration", value: "Building Practitioner NSW" },
+  { label: "Insurance", value: site.credentials.insurance },
+  { label: "ABN", value: "44 693 358 888" },
 ];
 
-const processSteps = [
-  {
-    step: "01",
-    title: "Consult & inspect",
-    body: "We visit the site, listen to what you need, and — on remedial work — investigate the defect properly before anyone talks numbers.",
-  },
-  {
-    step: "02",
-    title: "Scope & proposal",
-    body: "You receive a detailed scope of works and transparent, itemised pricing. No allowances hiding surprises, no ambiguity about inclusions.",
-  },
-  {
-    step: "03",
-    title: "Delivery",
-    body: "Our team and trusted trades deliver to program, with weekly plain-language updates and a site kept safe, clean and considerate of neighbours and residents.",
-  },
-  {
-    step: "04",
-    title: "Handover & warranty",
-    body: "Completion documentation, compliance certificates and statutory warranties — and we stay reachable long after the scaffold comes down.",
-  },
-];
-
-/* [PLACEHOLDER] Sample testimonials — replace with real client quotes. */
-const testimonials = [
-  {
-    quote:
-      "After years of failed patch repairs, Renew found the actual source of the water ingress and fixed it once. Their reporting made my job with the owners corporation easy.",
-    name: "Strata Manager",
-    detail: "48-unit residential building, Sydney",
-  },
-  {
-    quote:
-      "The program they gave us at the start was the program they delivered. Our fit out opened on the day they promised, fully certified.",
-    name: "Business Owner",
-    detail: "Commercial fit out, Parramatta",
-  },
-  {
-    quote:
-      "They treated our home like their own — clean site, honest updates every week, and a finish our architect called the best she'd seen from a builder.",
-    name: "Homeowner",
-    detail: "Extension & renovation, Inner West",
-  },
-];
+function Hairline({ delay = 0 }: { delay?: number }) {
+  return (
+    <Reveal variant="line" delay={delay}>
+      <div className="h-px w-full bg-hairline" />
+    </Reveal>
+  );
+}
 
 export default function HomePage() {
   return (
-    <>
-      {/* ── Hero ─────────────────────────────────────────────────────────── */}
-      <section className="blueprint-grid relative overflow-hidden border-b border-brand-100 bg-cream-100">
-        <Container className="grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-12 lg:py-28">
-          <div className="lg:col-span-7">
-            <p className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white px-4 py-1.5 text-xs font-bold tracking-[0.14em] text-brand-700 uppercase">
-              <span
-                aria-hidden="true"
-                className="h-2 w-2 rounded-full bg-brand-600"
-              />
-              NSW licensed builder — residential &amp; commercial projects
-            </p>
-            <h1 className="mt-6 text-4xl font-bold tracking-tight text-balance text-brand-800 sm:text-5xl lg:text-6xl">
-              Buildings fail.
-              <br />
-              <span className="text-brand-600">We renew them.</span>
-            </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink/70">
-              Renew Construction Group specialises in Class 2 remedial building
-              works — and brings that same forensic standard to renovations,
-              extensions, new builds and commercial fit outs across NSW.
-            </p>
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <ButtonLink href="/contact">
-                Request a quote <Arrow />
-              </ButtonLink>
-              <ButtonLink href="/services" variant="outline">
-                Explore our services
-              </ButtonLink>
-            </div>
-            <p className="mt-8 text-sm font-semibold text-ink/60">
-              {site.credentials.licence} · {site.credentials.serviceArea}
-            </p>
+    <div className="mx-auto max-w-[1440px] px-6 sm:px-12 lg:px-24">
+      {/* ── Hero ─────────────────────────────────────────────────────── */}
+      <section className="pt-16 pb-14 lg:pt-[110px] lg:pb-[72px]">
+        <p className="hero-rise text-xs font-semibold tracking-[0.18em] text-muted uppercase">
+          Remedial · Commercial · Residential — Sydney
+        </p>
+        <h1
+          className="hero-rise mt-6 max-w-[840px] text-[34px] leading-[1.15] font-medium tracking-[-0.015em] text-ink sm:text-[42px] lg:text-[52px] lg:leading-[1.12]"
+          style={{ "--rise-delay": "120ms" } as React.CSSProperties}
+        >
+          Remedial construction, done properly the first time.
+        </h1>
+        <div
+          className="hero-rise mt-9 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between"
+          style={{ "--rise-delay": "240ms" } as React.CSSProperties}
+        >
+          <p className="max-w-[520px] text-[16px] leading-[1.7]">
+            We diagnose and repair the root cause of building defects for
+            strata, commercial and residential properties — licensed, insured,
+            and accountable from inspection to sign-off.
+          </p>
+          <div className="flex shrink-0 items-center gap-7">
+            <a
+              href="#contact"
+              className="rounded-[10px] bg-blue px-7 py-3.5 text-[14px] font-semibold text-white transition-colors hover:bg-blue-dark"
+            >
+              Request a quote
+            </a>
+            <a
+              href={site.contact.phoneHref}
+              className="border-b border-ink pb-0.5 text-[14px] font-semibold text-ink transition-colors hover:border-blue hover:text-blue"
+            >
+              {site.contact.phone}
+            </a>
           </div>
-
-          <div className="hidden lg:col-span-5 lg:block">
-            <div className="relative mx-auto flex aspect-square max-w-md items-center justify-center">
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 rounded-3xl border-2 border-brand-200"
-              />
-              <div
-                aria-hidden="true"
-                className="absolute inset-6 rounded-2xl border-2 border-dashed border-brand-300"
-              />
-              <Logo className="w-3/4 max-w-xs rotate-[-3deg]" />
-            </div>
-          </div>
-        </Container>
-
-        <div className="border-t border-brand-100 bg-white/70 backdrop-blur">
-          <Container>
-            <ul className="grid grid-cols-2 divide-brand-100 py-6 max-lg:gap-6 lg:grid-cols-4 lg:divide-x">
-              {heroStats.map((stat) => (
-                <li key={stat.value} className="lg:px-8 lg:first:pl-0">
-                  <p className="text-2xl font-bold text-brand-700">
-                    {stat.value}
-                  </p>
-                  <p className="mt-1 text-sm text-ink/60">{stat.label}</p>
-                </li>
-              ))}
-            </ul>
-          </Container>
         </div>
       </section>
 
-      {/* ── Services ─────────────────────────────────────────────────────── */}
-      <section className="py-20 sm:py-24">
-        <Container>
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <SectionHeading
-              eyebrow="What we do"
-              title="One builder, every stage of a building's life"
-              lede="From rectifying defects in occupied apartment buildings to delivering brand-new homes and commercial spaces — one NSW-licensed builder for all of it."
-            />
-            <ButtonLink href="/services" variant="outline" className="mb-1">
-              All services <Arrow />
-            </ButtonLink>
+      {/* ── Wide image (placeholder until photography arrives) ───────── */}
+      <Reveal variant="image">
+        <Parallax className="h-[300px] rounded-[18px] sm:h-[430px]" strength={40}>
+          <div
+            className="flex h-full w-full items-center justify-center bg-tint"
+            style={{
+              backgroundImage:
+                "repeating-linear-gradient(-45deg, #eceef6 0 22px, #f4f5fa 22px 44px)",
+            }}
+          >
+            <span className="px-6 text-center font-mono text-[12px] tracking-[0.08em] text-muted">
+              [ photo — wide architectural shot, restored facade ]
+            </span>
           </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
-              <ServiceCard key={service.slug} service={service} />
-            ))}
-            <div className="flex flex-col justify-center rounded-2xl bg-brand-600 p-7 text-cream-100">
-              <h3 className="text-xl font-bold">Not sure where to start?</h3>
-              <p className="mt-3 text-sm leading-relaxed text-cream-100/85">
-                Send us a defect report, an architect&apos;s drawing or just a
-                description of the problem — we&apos;ll tell you honestly
-                whether we&apos;re the right builder for it.
-              </p>
-              <ButtonLink href="/contact" variant="cream" className="mt-6 self-start">
-                Get in touch <Arrow />
-              </ButtonLink>
-            </div>
-          </div>
-        </Container>
-      </section>
+        </Parallax>
+      </Reveal>
 
-      {/* ── Flagship: Class 2 remedial ───────────────────────────────────── */}
-      <section className="bg-brand-900 text-cream-100">
-        <div className="blueprint-grid-dark">
-          <Container className="grid gap-12 py-20 sm:py-24 lg:grid-cols-2 lg:gap-16">
-            <div>
-              <SectionHeading
-                tone="cream"
-                eyebrow="Our specialty"
-                title="Class 2 remedial building works, done once and done right"
-                lede="Apartment building defects demand more than a builder with a caulking gun. They demand investigation, regulated design, careful staging around residents — and a contractor whose paperwork protects the owners corporation."
-              />
-              <div className="mt-8 space-y-4 text-cream-100/80">
-                <p className="leading-relaxed">
-                  We work with strata managers, owners corporations and building
-                  consultants to take Class 2 buildings from defect report to
-                  durable rectification, delivered in line with the{" "}
-                  <em className="not-italic font-semibold text-cream-100">
-                    Design and Building Practitioners Act 2020 (NSW)
-                  </em>
-                  .
-                </p>
-              </div>
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <ButtonLink href="/services/class-2-remedial-works" variant="cream">
-                  Remedial services <Arrow />
-                </ButtonLink>
-                <ButtonLink href="/contact" variant="creamOutline">
-                  Discuss a defect report
-                </ButtonLink>
-              </div>
-            </div>
-            <div className="lg:pt-10">
-              <ul className="grid gap-3 sm:grid-cols-2">
-                {services[0].capabilities.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-3 rounded-xl border border-cream-100/15 bg-brand-800/60 p-4 text-sm font-semibold"
-                  >
-                    <Check tone="cream" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Container>
+      {/* ── Credential line ──────────────────────────────────────────── */}
+      <div className="mt-16 lg:mt-20">
+        <Hairline />
+        <div className="flex flex-wrap justify-between gap-x-8 gap-y-3 py-5">
+          {credentialItems.map((item, i) => (
+            <Reveal key={item} delay={i * 90}>
+              <span className="text-xs font-semibold tracking-[0.14em] text-ink uppercase">
+                {item}
+              </span>
+            </Reveal>
+          ))}
         </div>
-      </section>
+        <Hairline delay={120} />
+      </div>
 
-      {/* ── Why us ───────────────────────────────────────────────────────── */}
-      <section className="py-20 sm:py-24">
-        <Container>
-          <SectionHeading
-            eyebrow="Why Renew"
-            title="Built on the discipline of fixing what others got wrong"
-          />
-          <div className="mt-12 grid gap-x-12 gap-y-10 sm:grid-cols-2">
-            {whyUs.map((item, i) => (
-              <div key={item.title} className="flex gap-5">
-                <span
-                  aria-hidden="true"
-                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-600 text-sm font-bold text-cream-100"
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div>
-                  <h3 className="text-lg font-bold text-brand-800">
-                    {item.title}
+      {/* ── Services ─────────────────────────────────────────────────── */}
+      <section id="services" className="grid gap-12 py-20 lg:grid-cols-[0.55fr_1.45fr] lg:gap-[72px] lg:py-24">
+        <div className="lg:sticky lg:top-32 lg:self-start">
+          <Reveal>
+            <p className={eyebrowClasses}>Services</p>
+            <h2 className="mt-4 max-w-[300px] text-[26px] leading-[1.25] font-medium tracking-[-0.01em] text-ink lg:text-[32px]">
+              Six ways we bring buildings back.
+            </h2>
+            <p className="mt-5 max-w-[300px] text-[15px] leading-[1.7]">
+              Every engagement starts with diagnosis — we repair causes, not
+              symptoms.
+            </p>
+          </Reveal>
+        </div>
+        <div>
+          {services.map((service, i) => (
+            <div key={service.title}>
+              <Hairline delay={i * 60} />
+              <Reveal delay={i * 60}>
+                <div className="grid gap-2 py-[26px] sm:grid-cols-[1fr_1.2fr] sm:gap-8">
+                  <h3 className="text-[19px] font-semibold text-ink">
+                    {service.title}
                   </h3>
-                  <p className="mt-2 leading-relaxed text-ink/70">{item.body}</p>
+                  <p className="text-[15px] leading-[1.7]">
+                    {service.description}
+                  </p>
                 </div>
-              </div>
-            ))}
-          </div>
-        </Container>
+              </Reveal>
+            </div>
+          ))}
+          <Hairline delay={360} />
+        </div>
       </section>
 
-      {/* ── Process ──────────────────────────────────────────────────────── */}
-      <section className="blueprint-grid border-y border-brand-100 bg-cream-100 py-20 sm:py-24">
-        <Container>
-          <SectionHeading
-            eyebrow="How we work"
-            title="A straight line from first call to final sign-off"
-          />
-          <ol className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {processSteps.map((step) => (
-              <li
-                key={step.step}
-                className="rounded-2xl border border-brand-100 bg-white p-7"
-              >
-                <span className="text-sm font-bold tracking-[0.2em] text-brand-500">
-                  {step.step}
-                </span>
-                <h3 className="mt-3 text-lg font-bold text-brand-800">
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink/70">
-                  {step.body}
-                </p>
-              </li>
-            ))}
-          </ol>
-        </Container>
+      {/* ── About ────────────────────────────────────────────────────── */}
+      <section
+        id="about"
+        className="-mx-6 bg-tint px-6 py-20 sm:-mx-12 sm:px-12 lg:-mx-24 lg:px-24 lg:py-[88px]"
+      >
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-[72px]">
+          <Reveal>
+            <p className={eyebrowClasses}>About</p>
+            <h2 className="mt-4 max-w-[420px] text-[26px] leading-[1.25] font-medium tracking-[-0.01em] text-ink lg:text-[32px]">
+              A licensed builder you deal with directly.
+            </h2>
+          </Reveal>
+          <div>
+            <Reveal delay={100}>
+              <p className="text-[16px] leading-[1.75]">
+                Renew Construction Group is a NSW-licensed builder and
+                registered building practitioner serving greater Sydney. Strata
+                managers, commercial owners and homeowners work with one
+                accountable team — from first inspection through to final
+                sign-off.
+              </p>
+            </Reveal>
+            <div className="mt-9">
+              {aboutRows.map((row, i) => (
+                <div key={row.label}>
+                  <Reveal variant="line" delay={i * 80}>
+                    <div className="h-px w-full bg-hairline-2" />
+                  </Reveal>
+                  <Reveal delay={i * 80}>
+                    <div className="flex items-baseline justify-between gap-6 py-3.5">
+                      <span className="text-[13.5px] text-muted">{row.label}</span>
+                      <span className="text-right text-[13.5px] font-semibold text-ink">
+                        {row.value}
+                      </span>
+                    </div>
+                  </Reveal>
+                </div>
+              ))}
+              <Reveal variant="line" delay={320}>
+                <div className="h-px w-full bg-hairline-2" />
+              </Reveal>
+            </div>
+          </div>
+        </div>
       </section>
 
-      {/* ── Featured projects ────────────────────────────────────────────── */}
-      <section className="py-20 sm:py-24">
-        <Container>
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <SectionHeading
-              eyebrow="Our work"
-              title="Projects that show the standard"
-            />
-            <ButtonLink href="/projects" variant="outline" className="mb-1">
-              All projects <Arrow />
-            </ButtonLink>
-          </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {projects.slice(0, 3).map((project) => (
-              <ProjectCard key={project.slug} project={project} />
-            ))}
-          </div>
-          <p className="mt-8 text-center text-xs text-ink/60">
-            Representative projects shown with illustrative graphics — project
-            photography added as case studies are published.
+      {/* ── Quote form ───────────────────────────────────────────────── */}
+      <section id="contact" className="grid gap-12 py-20 lg:grid-cols-[0.55fr_1.45fr] lg:gap-[72px] lg:py-24">
+        <Reveal>
+          <p className={eyebrowClasses}>Request a quote</p>
+          <h2 className="mt-4 max-w-[320px] text-[26px] leading-[1.25] font-medium tracking-[-0.01em] text-ink lg:text-[32px]">
+            Tell us what you&rsquo;re seeing.
+          </h2>
+          <p className="mt-5 text-[15px] leading-[1.7]">
+            We reply within one business day.
           </p>
-        </Container>
-      </section>
-
-      {/* ── Testimonials ─────────────────────────────────────────────────── */}
-      <section className="border-t border-brand-100 bg-white py-20 sm:py-24">
-        <Container>
-          <SectionHeading eyebrow="What clients say" title="Word from the people we build for" />
-          <div className="mt-12 grid gap-6 lg:grid-cols-3">
-            {testimonials.map((t) => (
-              <figure
-                key={t.detail}
-                className="flex flex-col rounded-2xl border border-brand-100 bg-cream-50 p-7"
-              >
-                <span
-                  aria-hidden="true"
-                  className="text-5xl leading-none font-bold text-brand-300"
-                >
-                  &ldquo;
-                </span>
-                <blockquote className="mt-2 flex-1 leading-relaxed text-ink/80">
-                  {t.quote}
-                </blockquote>
-                <figcaption className="mt-6 border-t border-brand-100 pt-4">
-                  <p className="font-bold text-brand-800">{t.name}</p>
-                  <p className="text-sm text-ink/60">{t.detail}</p>
-                </figcaption>
-              </figure>
-            ))}
+          <div className="mt-8 flex flex-col gap-2">
+            <a
+              href={site.contact.phoneHref}
+              className="w-fit text-[15px] font-semibold text-ink transition-colors hover:text-blue"
+            >
+              {site.contact.phone}
+            </a>
+            <a
+              href={`mailto:${site.contact.email}`}
+              className="w-fit text-[15px] font-semibold text-blue transition-colors hover:text-blue-dark"
+            >
+              {site.contact.email}
+            </a>
           </div>
-          <p className="mt-8 text-center text-xs text-ink/60">
-            Sample testimonials shown — these will be replaced with verified
-            client reviews before launch.
-          </p>
-        </Container>
+        </Reveal>
+        <Reveal delay={120}>
+          <QuoteForm />
+        </Reveal>
       </section>
-
-      <CtaBanner />
-    </>
+    </div>
   );
 }

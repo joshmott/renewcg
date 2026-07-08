@@ -21,21 +21,21 @@ export default async function OpengraphImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#f7f1e3",
+          backgroundColor: "#fdfdfe",
         }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={logoSrc} alt="" width={760} height={238} />
+        <img src={logoSrc} alt="" width={720} height={225} />
         <div
           style={{
             display: "flex",
-            marginTop: 56,
-            fontSize: 31,
-            fontWeight: 600,
-            color: "#09125c",
+            marginTop: 60,
+            fontSize: 30,
+            fontWeight: 500,
+            color: "#4a5068",
           }}
         >
-          {site.tagline}
+          Remedial construction, done properly the first time.
         </div>
       </div>
     ),

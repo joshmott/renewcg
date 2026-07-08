@@ -1,48 +1,44 @@
 # Renew Construction Group — Website
 
-Marketing website for **Renew Construction Group**, a NSW-licensed residential
-& commercial builder specialising in Class 2 remedial building works.
+Single-page marketing site for **Renew Construction Group**, a NSW-licensed
+remedial construction company serving greater Sydney. Built from the approved
+design handoff (`design_handoff_renew_landing`) with Next.js (App Router) +
+Tailwind CSS, deployed on Vercel.
 
-Built with [Next.js](https://nextjs.org) (App Router) and
-[Tailwind CSS](https://tailwindcss.com), designed around the RCG brand
-palette (royal blue & cream) with the logo recreated in code
-(`src/components/Logo.tsx`).
+## Scroll experience
 
-## Pages
+- **Lenis** smooth scrolling with eased anchor navigation
+- Scroll-triggered reveals: headings rise, hairlines draw in, imagery unmasks
+- Gentle parallax on the hero image
+- Everything respects `prefers-reduced-motion`
 
-| Route | Purpose |
+## Quote form
+
+The form requires a name plus a phone number or email, includes a honeypot
+for spam, and posts to `/api/quote`, which delivers to **Joshua@renewcg.com.au**
+via [Resend](https://resend.com).
+
+**To activate email delivery** (Vercel → Project → Settings → Environment
+Variables):
+
+| Variable | Purpose |
 | --- | --- |
-| `/` | Home — hero, services overview, Class 2 remedial feature, process, projects, testimonials |
-| `/services` | All services overview |
-| `/services/[slug]` | Detail page per service (5 services) |
-| `/projects` | Project showcase (placeholder content) |
-| `/about` | Company story, values, credentials |
-| `/contact` | Quote request form + contact details |
+| `RESEND_API_KEY` | Required — from resend.com (free tier is fine) |
+| `QUOTE_FROM_EMAIL` | Optional verified sender, e.g. `Renew website <quotes@renewcg.com.au>` |
 
-## Before you launch — replace the placeholders
+Until the key is set, the form gracefully falls back to opening the visitor's
+email app with the enquiry pre-filled — nothing breaks.
 
-All business details live in **`src/lib/site.ts`** and are marked
-`[PLACEHOLDER]`:
+## Placeholders still to supply
 
-- Phone, mobile & email
-- NSW contractor licence number & ABN
-- Production domain (`site.url`) — used for SEO metadata and the sitemap
+- **Hero photo** — the wide 430px panel is a styled placeholder; drop a real
+  project photo into `public/` and swap it into the `Parallax` block in
+  `src/app/page.tsx` (use `next/image`).
+- **Production domain** — update `site.url` in `src/lib/site.ts` after
+  connecting the domain on Vercel.
 
-Also placeholder:
-
-- **Projects** — `src/lib/projects.ts` contains representative sample
-  projects. Replace with real ones; drop photos into `public/projects/` and
-  set each project's `image` field to swap the illustrated placeholders for
-  photography.
-- **Testimonials** — sample quotes in `src/app/page.tsx` (marked in code).
-
-## Contact form
-
-The form is zero-backend: submitting opens the visitor's email app with a
-pre-filled enquiry (so it works on Vercel with no setup). To upgrade to
-server-side delivery, wire `src/components/ContactForm.tsx` to a form
-service (Formspree, Basin) or a Next.js route handler with an email API
-(e.g. Resend).
+Business details (phone, email, licence 490706C, ABN) live in
+`src/lib/site.ts`.
 
 ## Local development
 
@@ -54,10 +50,6 @@ npm run build    # production build check
 
 ## Deploying to Vercel
 
-1. Push this repository to GitHub (already done if you're reading this there).
-2. Go to [vercel.com/new](https://vercel.com/new), import the repo — Vercel
-   auto-detects Next.js; no configuration needed.
-3. Click **Deploy**. Every push to the production branch redeploys
-   automatically.
-4. Add your custom domain under **Project → Settings → Domains**, then update
-   `site.url` in `src/lib/site.ts` to match.
+Push to the production branch — Vercel auto-detects Next.js (also pinned in
+`vercel.json`) and redeploys. Add the custom domain under
+**Project → Settings → Domains**.
