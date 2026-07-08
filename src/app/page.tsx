@@ -38,44 +38,51 @@ function Hairline({ delay = 0 }: { delay?: number }) {
 
 export default function HomePage() {
   return (
-    <div className="mx-auto max-w-[1440px] px-6 sm:px-12 lg:px-24">
-      {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="pt-16 pb-14 lg:pt-[110px] lg:pb-[72px]">
-        <p className="hero-rise text-xs font-semibold tracking-[0.18em] text-muted uppercase">
-          Remedial · Commercial · Residential — Sydney
-        </p>
-        <h1
-          className="hero-rise mt-6 max-w-[840px] text-[34px] leading-[1.15] font-medium tracking-[-0.015em] text-ink sm:text-[42px] lg:text-[52px] lg:leading-[1.12]"
-          style={{ "--rise-delay": "120ms" } as React.CSSProperties}
-        >
-          Remedial construction, done properly the first time.
-        </h1>
-        <p
-          className="hero-rise mt-9 max-w-[520px] text-[16px] leading-[1.7]"
-          style={{ "--rise-delay": "240ms" } as React.CSSProperties}
-        >
-          We diagnose and repair the root cause of building defects for strata,
-          commercial and residential properties — licensed, insured, and
-          accountable from inspection to sign-off.
-        </p>
-      </section>
-
-      {/* ── Wide hero image ──────────────────────────────────────────── */}
-      <Reveal variant="image">
-        <Parallax className="h-[300px] rounded-[18px] sm:h-[430px]" strength={40}>
+    <>
+      {/* ── Hero — full-bleed image with overlaid text ───────────────── */}
+      <section className="relative isolate">
+        <Parallax className="h-[540px] sm:h-[620px] lg:h-[720px]" strength={30}>
           <Image
             src={heroImage}
             alt="Metal-clad building facade against a clear blue sky"
             placeholder="blur"
             priority
-            sizes="(max-width: 1440px) 100vw, 1248px"
+            sizes="100vw"
             className="h-full w-full object-cover"
           />
         </Parallax>
-      </Reveal>
+        {/* legibility scrim */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/55 to-ink/25"
+        />
+        {/* overlaid hero text, aligned to the site container */}
+        <div className="absolute inset-0 flex items-center">
+          <div className="mx-auto flex w-full max-w-[1440px] flex-col px-6 sm:px-12 lg:px-24">
+            <p className="hero-rise text-xs font-semibold tracking-[0.18em] text-white/80 uppercase">
+              Remedial · Commercial · Residential — Sydney
+            </p>
+            <h1
+              className="hero-rise mt-6 max-w-[840px] text-[34px] leading-[1.15] font-medium tracking-[-0.015em] text-white sm:text-[42px] lg:text-[52px] lg:leading-[1.12]"
+              style={{ "--rise-delay": "120ms" } as React.CSSProperties}
+            >
+              Remedial construction, done properly the first time.
+            </h1>
+            <p
+              className="hero-rise mt-6 max-w-[520px] text-[16px] leading-[1.7] text-white/85"
+              style={{ "--rise-delay": "240ms" } as React.CSSProperties}
+            >
+              We diagnose and repair the root cause of building defects for
+              strata, commercial and residential properties — licensed, insured,
+              and accountable from inspection to sign-off.
+            </p>
+          </div>
+        </div>
+      </section>
 
-      {/* ── Credential line ──────────────────────────────────────────── */}
-      <div className="mt-16 lg:mt-20">
+      <div className="mx-auto max-w-[1440px] px-6 sm:px-12 lg:px-24">
+        {/* ── Credential line ──────────────────────────────────────────── */}
+        <div className="pt-16 lg:pt-20">
         <Hairline />
         <div className="flex flex-wrap justify-between gap-x-8 gap-y-3 py-5">
           {credentialItems.map((item, i) => (
@@ -198,6 +205,7 @@ export default function HomePage() {
           <QuoteForm />
         </Reveal>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
