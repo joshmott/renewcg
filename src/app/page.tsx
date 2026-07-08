@@ -39,9 +39,9 @@ function Hairline({ delay = 0 }: { delay?: number }) {
 export default function HomePage() {
   return (
     <>
-      {/* ── Hero — full-bleed image with overlaid text ───────────────── */}
-      <section className="relative isolate">
-        <Parallax className="h-[540px] sm:h-[620px] lg:h-[720px]" strength={30}>
+      {/* ── Hero — full-screen image with overlaid nav + text ────────── */}
+      <section className="relative isolate flex min-h-[100svh] items-center">
+        <Parallax className="absolute inset-0" strength={30}>
           <Image
             src={heroImage}
             alt="Metal-clad building facade against a clear blue sky"
@@ -51,32 +51,35 @@ export default function HomePage() {
             className="h-full w-full object-cover"
           />
         </Parallax>
-        {/* legibility scrim */}
+        {/* top scrim keeps the overlaid nav legible against the sky */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-ink/55 to-transparent"
+        />
+        {/* left scrim carries the hero copy */}
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/55 to-ink/25"
         />
         {/* overlaid hero text, aligned to the site container */}
-        <div className="absolute inset-0 flex items-center">
-          <div className="mx-auto flex w-full max-w-[1440px] flex-col px-6 sm:px-12 lg:px-24">
-            <p className="hero-rise text-xs font-semibold tracking-[0.18em] text-white/80 uppercase">
-              Remedial · Commercial · Residential — Sydney
-            </p>
-            <h1
-              className="hero-rise mt-6 max-w-[840px] text-[34px] leading-[1.15] font-medium tracking-[-0.015em] text-white sm:text-[42px] lg:text-[52px] lg:leading-[1.12]"
-              style={{ "--rise-delay": "120ms" } as React.CSSProperties}
-            >
-              Remedial construction, done properly the first time.
-            </h1>
-            <p
-              className="hero-rise mt-6 max-w-[520px] text-[16px] leading-[1.7] text-white/85"
-              style={{ "--rise-delay": "240ms" } as React.CSSProperties}
-            >
-              We diagnose and repair the root cause of building defects for
-              strata, commercial and residential properties — licensed, insured,
-              and accountable from inspection to sign-off.
-            </p>
-          </div>
+        <div className="relative mx-auto flex w-full max-w-[1440px] flex-col px-6 py-28 sm:px-12 lg:px-24">
+          <p className="hero-rise text-xs font-semibold tracking-[0.18em] text-white/80 uppercase">
+            Remedial · Commercial · Residential — Sydney
+          </p>
+          <h1
+            className="hero-rise mt-6 max-w-[840px] text-[34px] leading-[1.15] font-medium tracking-[-0.015em] text-white sm:text-[42px] lg:text-[52px] lg:leading-[1.12]"
+            style={{ "--rise-delay": "120ms" } as React.CSSProperties}
+          >
+            Remedial construction, done properly the first time.
+          </h1>
+          <p
+            className="hero-rise mt-6 max-w-[520px] text-[16px] leading-[1.7] text-white/85"
+            style={{ "--rise-delay": "240ms" } as React.CSSProperties}
+          >
+            We diagnose and repair the root cause of building defects for
+            strata, commercial and residential properties — licensed, insured,
+            and accountable from inspection to sign-off.
+          </p>
         </div>
       </section>
 
