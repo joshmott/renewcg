@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import heroImage from "../../public/hero.jpg";
 import { Parallax } from "@/components/Parallax";
 import { QuoteForm } from "@/components/QuoteForm";
 import { Reveal } from "@/components/Reveal";
@@ -74,20 +76,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Wide image (placeholder until photography arrives) ───────── */}
+      {/* ── Wide hero image ──────────────────────────────────────────── */}
       <Reveal variant="image">
         <Parallax className="h-[300px] rounded-[18px] sm:h-[430px]" strength={40}>
-          <div
-            className="flex h-full w-full items-center justify-center bg-tint"
-            style={{
-              backgroundImage:
-                "repeating-linear-gradient(-45deg, #eceef6 0 22px, #f4f5fa 22px 44px)",
-            }}
-          >
-            <span className="px-6 text-center font-mono text-[12px] tracking-[0.08em] text-muted">
-              [ photo — wide architectural shot, restored facade ]
-            </span>
-          </div>
+          <Image
+            src={heroImage}
+            alt="Metal-clad building facade against a clear blue sky"
+            placeholder="blur"
+            priority
+            sizes="(max-width: 1440px) 100vw, 1248px"
+            className="h-full w-full object-cover"
+          />
         </Parallax>
       </Reveal>
 
