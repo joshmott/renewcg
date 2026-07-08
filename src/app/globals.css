@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+/*
+  Brand theme — colours sampled from the Renew Construction Group logo:
+  a vivid royal blue wordmark with a warm cream "rcg" mark.
+*/
+@theme {
+  --color-brand-50: #eef0fd;
+  --color-brand-100: #dde1fa;
+  --color-brand-200: #bcc4f4;
+  --color-brand-300: #93a0ec;
+  --color-brand-400: #5f6fe2;
+  --color-brand-500: #3d4be0;
+  --color-brand-600: #2231cc;
+  --color-brand-700: #1b27a6;
+  --color-brand-800: #161f85;
+  --color-brand-900: #10175f;
+  --color-brand-950: #0a0e3d;
+
+  --color-cream-50: #fbf8f1;
+  --color-cream-100: #f7f1e3;
+  --color-cream-200: #efe7d2;
+  --color-cream-300: #e3d7b8;
+
+  --color-ink: #10132e;
+
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-cream-50 text-ink antialiased;
+}
+
+::selection {
+  @apply bg-brand-600 text-cream-100;
+}
+
+/* Blueprint-style grid used behind hero / accent sections */
+.blueprint-grid {
+  background-image:
+    linear-gradient(to right, rgb(34 49 204 / 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(34 49 204 / 0.07) 1px, transparent 1px);
+  background-size: 2.5rem 2.5rem;
+}
+
+.blueprint-grid-dark {
+  background-image:
+    linear-gradient(to right, rgb(247 241 227 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(247 241 227 / 0.06) 1px, transparent 1px);
+  background-size: 2.5rem 2.5rem;
+}
