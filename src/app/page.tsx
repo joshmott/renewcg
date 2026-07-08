@@ -135,7 +135,7 @@ export default function HomePage() {
                 aria-hidden="true"
                 className="absolute inset-6 rounded-2xl border-2 border-dashed border-brand-300"
               />
-              <LogoMark className="rotate-[-4deg] text-8xl shadow-2xl shadow-brand-600/30" />
+              <LogoMark className="rotate-[-4deg] text-6xl shadow-2xl shadow-brand-600/30" />
             </div>
           </div>
         </Container>

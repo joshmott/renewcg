@@ -85,7 +85,7 @@ export default function AboutPage() {
           </div>
           <div className="lg:col-span-5">
             <div className="blueprint-grid flex aspect-square items-center justify-center rounded-3xl border border-brand-100 bg-cream-100">
-              <LogoMark className="rotate-[-4deg] text-7xl shadow-2xl shadow-brand-600/30 sm:text-8xl" />
+              <LogoMark className="rotate-[-4deg] text-5xl shadow-2xl shadow-brand-600/30 sm:text-6xl" />
             </div>
           </div>
         </Container>

@@ -1,10 +1,8 @@
 /**
- * Code-recreation of the Renew Construction Group logo:
- * the "rcg" reflection mark beside the lowercase "renew" wordmark,
- * with CONSTRUCTION GROUP set in spaced caps beneath.
- *
- * `tone="blue"` renders the standard blue-on-light lockup;
- * `tone="cream"` renders the reversed version for dark backgrounds.
+ * TEMPORARY WORDMARK — the client's logo file isn't available yet, so the
+ * site renders the word "renew" in brand style wherever the logo belongs.
+ * When the logo file lands in /public, replace Logo with an <img> of it
+ * (and LogoMark with the square mark) — nothing else needs to change.
  */
 
 type Tone = "blue" | "cream";
@@ -23,12 +21,9 @@ export function LogoMark({
   return (
     <span
       aria-hidden="true"
-      className={`flex select-none flex-col items-center justify-center overflow-hidden px-[0.3em] leading-none font-bold lowercase tracking-tight ${box} ${className}`}
+      className={`flex items-center justify-center px-[0.4em] py-[0.3em] leading-none font-bold lowercase tracking-tight select-none ${box} ${className}`}
     >
-      <span className="translate-y-[0.06em]">rcg</span>
-      <span className="-translate-y-[0.06em] opacity-90 [transform:scaleY(-1)]">
-        rcg
-      </span>
+      renew
     </span>
   );
 }
@@ -36,26 +31,16 @@ export function LogoMark({
 export function Logo({
   tone = "blue",
   className = "",
-  withSubline = true,
 }: {
   tone?: Tone;
   className?: string;
-  withSubline?: boolean;
 }) {
   const text = tone === "blue" ? "text-brand-600" : "text-cream-100";
   return (
-    <span className={`inline-flex flex-col ${text} ${className}`}>
-      <span className="flex items-stretch">
-        <LogoMark tone={tone} className="text-[0.62em]" />
-        <span className="ml-[0.08em] text-[1.9em] leading-[0.95] font-bold lowercase tracking-tight">
-          renew
-        </span>
+    <span className={`inline-flex ${text} ${className}`}>
+      <span className="text-[1.9em] leading-none font-bold lowercase tracking-tight">
+        renew
       </span>
-      {withSubline && (
-        <span className="mt-[0.28em] text-[0.61em] leading-none font-semibold tracking-[0.18em] uppercase">
-          Construction Group
-        </span>
-      )}
     </span>
   );
 }
