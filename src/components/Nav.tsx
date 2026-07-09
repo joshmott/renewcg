@@ -39,7 +39,7 @@ export function Nav() {
             src={logo}
             alt=""
             priority
-            className={`h-[24px] w-auto select-none transition-[filter] duration-300 lg:h-[26px] ${
+            className={`h-[28px] w-auto select-none transition-[filter] duration-300 lg:h-[32px] ${
               scrolled ? "" : "brightness-0 invert"
             }`}
           />
