@@ -13,14 +13,6 @@ export const metadata: Metadata = {
 const eyebrowClasses =
   "text-xs font-semibold tracking-[0.18em] uppercase text-muted";
 
-const credentialItems = [
-  site.credentials.licence,
-  site.credentials.registration,
-  "Fully Insured",
-  site.credentials.abn,
-  site.contact.serviceArea,
-];
-
 const aboutRows = [
   { label: "Builders licence", value: "NSW 490706C" },
   { label: "Registration", value: "Building Practitioner NSW" },
@@ -84,22 +76,7 @@ export default function HomePage() {
       </section>
 
       <div className="mx-auto max-w-[1440px] px-6 sm:px-12 lg:px-24">
-        {/* ── Credential line ──────────────────────────────────────────── */}
-        <div className="pt-16 lg:pt-20">
-        <Hairline />
-        <div className="flex flex-wrap justify-between gap-x-8 gap-y-3 py-5">
-          {credentialItems.map((item, i) => (
-            <Reveal key={item} delay={i * 90}>
-              <span className="text-xs font-semibold tracking-[0.14em] text-ink uppercase">
-                {item}
-              </span>
-            </Reveal>
-          ))}
-        </div>
-        <Hairline delay={120} />
-      </div>
-
-      {/* ── Services ─────────────────────────────────────────────────── */}
+        {/* ── Services ─────────────────────────────────────────────────── */}
       <section id="services" className="grid gap-12 py-20 lg:grid-cols-[0.55fr_1.45fr] lg:gap-[72px] lg:py-24">
         <div className="lg:sticky lg:top-32 lg:self-start">
           <Reveal>
