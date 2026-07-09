@@ -62,9 +62,9 @@ export default function HomePage() {
             className="hero-rise mt-6 max-w-[520px] text-[16px] leading-[1.7] text-white/85"
             style={{ "--rise-delay": "160ms" } as React.CSSProperties}
           >
-            Renew Construction Group is a NSW-licensed remedial builder based in
-            Sydney — bringing ageing and defective buildings back to life,
-            diagnosed at the source and repaired to last.
+            Renew Construction Group is a NSW-licensed builder based in Sydney —
+            bringing ageing and defective buildings back to life, diagnosed at
+            the source and repaired to last.
           </p>
         </div>
       </section>
