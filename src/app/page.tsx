@@ -121,6 +121,13 @@ export default function HomePage() {
             <h2 className="mt-4 max-w-[420px] text-[26px] leading-[1.25] font-medium tracking-[-0.01em] text-ink lg:text-[32px]">
               A licensed builder you deal with directly.
             </h2>
+            <p className="mt-6 max-w-[440px] text-[16px] leading-[1.75]">
+              Renew Construction Group was founded in 2025 by Joshua Mott, who
+              brings over fifteen years of experience in the construction
+              industry. It&rsquo;s built on a simple idea: deal with the builder
+              directly, diagnose the real problem, and do the work properly the
+              first time.
+            </p>
           </Reveal>
           <div>
             <Reveal delay={100}>
@@ -163,9 +170,6 @@ export default function HomePage() {
           <h2 className="mt-4 max-w-[320px] text-[26px] leading-[1.25] font-medium tracking-[-0.01em] text-ink lg:text-[32px]">
             Tell us what you&rsquo;re seeing.
           </h2>
-          <p className="mt-5 text-[15px] leading-[1.7]">
-            We reply within one business day.
-          </p>
           <div className="mt-8 flex flex-col gap-2">
             <a
               href={site.contact.phoneHref}

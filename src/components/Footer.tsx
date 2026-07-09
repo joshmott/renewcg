@@ -13,24 +13,10 @@ export function Footer() {
         </Link>
         <div className="text-[12.5px] leading-relaxed text-muted sm:text-right">
           <p>
-            {site.credentials.licenceLong} · {site.credentials.abn} ·{" "}
-            {site.credentials.insurance}
+            {site.credentials.licenceLong} · {site.credentials.abn}
           </p>
           <p>
-            © <Year /> {site.name} · {site.contact.serviceArea} ·{" "}
-            <a
-              href={site.contact.phoneHref}
-              className="transition-colors hover:text-ink"
-            >
-              {site.contact.phone}
-            </a>{" "}
-            ·{" "}
-            <a
-              href={`mailto:${site.contact.email}`}
-              className="transition-colors hover:text-ink"
-            >
-              {site.contact.email}
-            </a>
+            © <Year /> {site.name}
           </p>
         </div>
       </div>
