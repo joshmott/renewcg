@@ -47,25 +47,25 @@ export function Nav() {
         <nav aria-label="Main" className="flex items-center gap-7 lg:gap-9">
           <a
             href="#services"
-            className={`hidden text-[13.5px] font-medium transition-colors sm:block ${link}`}
+            className={`hidden text-[15px] font-semibold transition-colors sm:block ${link}`}
           >
             Services
           </a>
           <a
             href="#about"
-            className={`hidden text-[13.5px] font-medium transition-colors sm:block ${link}`}
+            className={`hidden text-[15px] font-semibold transition-colors sm:block ${link}`}
           >
             About
           </a>
           <a
             href="#contact"
-            className={`hidden text-[13.5px] font-medium transition-colors sm:block ${link}`}
+            className={`hidden text-[15px] font-semibold transition-colors sm:block ${link}`}
           >
             Contact
           </a>
           <a
             href="#contact"
-            className={`text-[13.5px] font-semibold transition-colors ${
+            className={`text-[15px] font-semibold transition-colors ${
               scrolled
                 ? "text-blue hover:text-blue-dark"
                 : "text-white hover:text-white/80"
