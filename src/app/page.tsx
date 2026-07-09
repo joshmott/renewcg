@@ -56,8 +56,16 @@ export default function HomePage() {
         {/* overlaid hero text, aligned to the site container */}
         <div className="relative mx-auto flex w-full max-w-[1440px] flex-col px-6 py-28 sm:px-12 lg:px-24">
           <h1 className="hero-rise max-w-[840px] text-[34px] leading-[1.15] font-medium tracking-[-0.015em] text-white sm:text-[42px] lg:text-[52px] lg:leading-[1.12]">
-            Remedial construction, done properly the first time.
+            Renewing Australia&rsquo;s History
           </h1>
+          <p
+            className="hero-rise mt-6 max-w-[520px] text-[16px] leading-[1.7] text-white/85"
+            style={{ "--rise-delay": "160ms" } as React.CSSProperties}
+          >
+            Renew Construction Group is a NSW-licensed remedial builder based in
+            Sydney — bringing ageing and defective buildings back to life,
+            diagnosed at the source and repaired to last.
+          </p>
         </div>
       </section>
 
