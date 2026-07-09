@@ -55,23 +55,9 @@ export default function HomePage() {
         />
         {/* overlaid hero text, aligned to the site container */}
         <div className="relative mx-auto flex w-full max-w-[1440px] flex-col px-6 py-28 sm:px-12 lg:px-24">
-          <p className="hero-rise text-xs font-semibold tracking-[0.18em] text-white/80 uppercase">
-            Remedial · Commercial · Residential — Sydney
-          </p>
-          <h1
-            className="hero-rise mt-6 max-w-[840px] text-[34px] leading-[1.15] font-medium tracking-[-0.015em] text-white sm:text-[42px] lg:text-[52px] lg:leading-[1.12]"
-            style={{ "--rise-delay": "120ms" } as React.CSSProperties}
-          >
+          <h1 className="hero-rise max-w-[840px] text-[34px] leading-[1.15] font-medium tracking-[-0.015em] text-white sm:text-[42px] lg:text-[52px] lg:leading-[1.12]">
             Remedial construction, done properly the first time.
           </h1>
-          <p
-            className="hero-rise mt-6 max-w-[520px] text-[16px] leading-[1.7] text-white/85"
-            style={{ "--rise-delay": "240ms" } as React.CSSProperties}
-          >
-            We diagnose and repair the root cause of building defects for
-            strata, commercial and residential properties — licensed, insured,
-            and accountable from inspection to sign-off.
-          </p>
         </div>
       </section>
 
