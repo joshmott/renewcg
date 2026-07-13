@@ -2,17 +2,21 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import logo from "../../public/logo.png";
-import { site } from "@/lib/site";
+import { services, site } from "@/lib/site";
 
 /**
- * Fixed nav overlaid on the full-screen hero: transparent with a white
- * logo/links at the top of the page, transitioning to a solid bar with the
- * blue logo once the visitor starts scrolling.
+ * Fixed nav overlaid on the hero: transparent with a white logo/links at the
+ * top of the page, transitioning to a solid bar with the blue logo once the
+ * visitor starts scrolling. Anchor links smooth-scroll on the home page and
+ * navigate home-then-scroll from any other page.
  */
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const onHome = pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -20,6 +24,9 @@ export function Nav() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // On interior pages the home sections don't exist, so send the browser home.
+  const anchor = (id: string) => (onHome ? `#${id}` : `/#${id}`);
 
   const link = scrolled
     ? "text-body hover:text-ink"
@@ -45,26 +52,42 @@ export function Nav() {
           />
         </Link>
         <nav aria-label="Main" className="flex items-center gap-7 lg:gap-9">
+          {/* Services dropdown */}
+          <div className="group relative hidden sm:block">
+            <a
+              href={anchor("services")}
+              className={`text-[15px] font-semibold transition-colors ${link}`}
+            >
+              Services
+            </a>
+            <div className="invisible absolute left-1/2 top-full z-10 -translate-x-1/2 pt-4 opacity-0 transition-opacity duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+              <div className="min-w-[240px] rounded-[12px] border border-hairline bg-paper p-2 shadow-[0_18px_40px_rgba(20,24,60,.1)]">
+                {services.map((s) => (
+                  <Link
+                    key={s.slug}
+                    href={`/services/${s.slug}`}
+                    className="block rounded-[8px] px-4 py-2.5 text-[14.5px] font-medium text-body transition-colors hover:bg-tint hover:text-ink"
+                  >
+                    {s.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
           <a
-            href="#services"
-            className={`hidden text-[15px] font-semibold transition-colors sm:block ${link}`}
-          >
-            Services
-          </a>
-          <a
-            href="#about"
+            href={anchor("about")}
             className={`hidden text-[15px] font-semibold transition-colors sm:block ${link}`}
           >
             About
           </a>
           <a
-            href="#contact"
+            href={anchor("contact")}
             className={`hidden text-[15px] font-semibold transition-colors sm:block ${link}`}
           >
             Contact
           </a>
           <a
-            href="#contact"
+            href={anchor("contact")}
             className={`text-[15px] font-semibold transition-colors ${
               scrolled
                 ? "text-blue hover:text-blue-dark"

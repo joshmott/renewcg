@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import heroImage from "../../public/hero.jpg";
 import { Parallax } from "@/components/Parallax";
 import { QuoteForm } from "@/components/QuoteForm";
@@ -76,7 +77,7 @@ export default function HomePage() {
           <Reveal>
             <p className={eyebrowClasses}>Services</p>
             <h2 className="mt-4 max-w-[300px] text-[26px] leading-[1.25] font-medium tracking-[-0.01em] text-ink lg:text-[32px]">
-              Six ways we bring buildings back.
+              Five ways we bring buildings back.
             </h2>
             <p className="mt-5 max-w-[300px] text-[15px] leading-[1.7]">
               Every engagement starts with diagnosis — we repair causes, not
@@ -86,19 +87,35 @@ export default function HomePage() {
         </div>
         <div>
           {services.map((service, i) => (
-            <div key={service.title}>
+            <Link
+              key={service.slug}
+              href={`/services/${service.slug}`}
+              className="group block"
+            >
               <Hairline delay={i * 60} />
               <Reveal delay={i * 60}>
-                <div className="grid gap-2 py-[26px] sm:grid-cols-[1fr_1.2fr] sm:gap-8">
-                  <h3 className="text-[19px] font-semibold text-ink">
+                <div className="grid items-start gap-2 py-[26px] sm:grid-cols-[1fr_1.2fr] sm:gap-8">
+                  <h3 className="flex items-center gap-2 text-[19px] font-semibold text-ink transition-colors group-hover:text-blue">
                     {service.title}
+                    <span
+                      aria-hidden="true"
+                      className="text-blue opacity-0 transition-all duration-200 group-hover:translate-x-1 group-hover:opacity-100"
+                    >
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <path
+                          d="M5 12h14M13 6l6 6-6 6"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </span>
                   </h3>
-                  <p className="text-[15px] leading-[1.7]">
-                    {service.description}
-                  </p>
+                  <p className="text-[15px] leading-[1.7]">{service.summary}</p>
                 </div>
               </Reveal>
-            </div>
+            </Link>
           ))}
           <Hairline delay={360} />
         </div>

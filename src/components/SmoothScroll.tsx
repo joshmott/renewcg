@@ -19,6 +19,17 @@ export function SmoothScroll() {
     };
     frame = requestAnimationFrame(loop);
 
+    // Arriving with a hash (e.g. navigating home from /services/… → /#contact):
+    // ease to the target once it's painted.
+    if (window.location.hash.length > 1) {
+      const target = document.querySelector(window.location.hash);
+      if (target) {
+        requestAnimationFrame(() =>
+          lenis.scrollTo(target as HTMLElement, { offset: -84, immediate: false }),
+        );
+      }
+    }
+
     const onClick = (event: MouseEvent) => {
       const anchor = (event.target as HTMLElement).closest?.(
         'a[href^="#"]',
