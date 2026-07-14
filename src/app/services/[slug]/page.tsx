@@ -1,8 +1,23 @@
 import type { Metadata } from "next";
+import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Reveal } from "@/components/Reveal";
 import { getService, services, site } from "@/lib/site";
+import facadeHero from "../../../../public/facade-hero.jpg";
+import remedialHero from "../../../../public/remedial-hero.jpg";
+import heritageHero from "../../../../public/heritage-hero.jpg";
+import claddingHero from "../../../../public/cladding-hero.jpg";
+import maintenanceHero from "../../../../public/maintenance-hero.jpg";
+
+/** Optional per-service hero photo. Services without one use the navy band. */
+const serviceHeroImages: Record<string, StaticImageData> = {
+  "facade-upgrades": facadeHero,
+  "remedial-repairs": remedialHero,
+  "heritage-restoration": heritageHero,
+  "cladding-compliance": claddingHero,
+  "service-maintenance": maintenanceHero,
+};
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -30,28 +45,53 @@ export default async function ServicePage({ params }: Props) {
   if (!service) notFound();
 
   const others = services.filter((s) => s.slug !== service.slug);
+  const heroImage = serviceHeroImages[service.slug];
 
   return (
     <>
       {/* ── Hero ──────────────────────────────────────────────────────── */}
       <section className="relative isolate flex min-h-[60vh] items-end overflow-hidden bg-ink">
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 opacity-[0.9]"
-          style={{
-            backgroundImage:
-              "radial-gradient(120% 130% at 85% 0%, #1b2159 0%, #14183c 55%, #0d1030 100%)",
-          }}
-        />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,.05) 1px, transparent 1px)",
-            backgroundSize: "56px 56px",
-          }}
-        />
+        {heroImage ? (
+          <>
+            <Image
+              src={heroImage}
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-center"
+            />
+            {/* bottom scrim carries the title; top scrim keeps the nav legible */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/45 to-ink/30"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-ink/55 to-transparent"
+            />
+          </>
+        ) : (
+          <>
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 opacity-[0.9]"
+              style={{
+                backgroundImage:
+                  "radial-gradient(120% 130% at 85% 0%, #1b2159 0%, #14183c 55%, #0d1030 100%)",
+              }}
+            />
+            <div
+              aria-hidden="true"
+              className="absolute inset-0"
+              style={{
+                backgroundImage:
+                  "linear-gradient(to right, rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,.05) 1px, transparent 1px)",
+                backgroundSize: "56px 56px",
+              }}
+            />
+          </>
+        )}
         <div className="relative mx-auto w-full max-w-[1440px] px-6 pt-40 pb-16 sm:px-12 lg:px-24 lg:pb-20">
           <p className="hero-rise text-xs font-semibold tracking-[0.18em] text-white/70 uppercase">
             Services
