@@ -30,9 +30,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = getService(slug);
   if (!service) return {};
   return {
-    title: `${service.title} — ${site.name}`,
-    description: service.tagline,
+    title: service.metaTitle,
+    description: service.metaDescription,
     alternates: { canonical: `/services/${slug}` },
+    openGraph: { url: `${site.url}/services/${slug}` },
   };
 }
 
@@ -46,16 +47,61 @@ export default async function ServicePage({ params }: Props) {
 
   const others = services.filter((s) => s.slug !== service.slug);
   const heroImage = serviceHeroImages[service.slug];
+  const url = `${site.url}/services/${service.slug}`;
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": `${url}#service`,
+        name: `${service.title} — Sydney`,
+        serviceType: service.title,
+        description: service.metaDescription,
+        url,
+        provider: { "@id": `${site.url}/#business` },
+        areaServed: site.areasServed.map((name) => ({
+          "@type": "AdministrativeArea",
+          name,
+        })),
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: `${service.title} — what's involved`,
+          itemListElement: service.categories.map((cat) => ({
+            "@type": "Offer",
+            itemOffered: { "@type": "Service", name: cat.title },
+          })),
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Services",
+            item: `${site.url}/#services`,
+          },
+          { "@type": "ListItem", position: 3, name: service.title, item: url },
+        ],
+      },
+    ],
+  };
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       {/* ── Hero ──────────────────────────────────────────────────────── */}
       <section className="relative isolate flex min-h-[60vh] items-end overflow-hidden bg-ink">
         {heroImage ? (
           <>
             <Image
               src={heroImage}
-              alt=""
+              alt={`${service.title} project by Renew Construction Group in Sydney`}
               fill
               priority
               sizes="100vw"

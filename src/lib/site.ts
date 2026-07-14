@@ -9,30 +9,83 @@ export const site = {
   description:
     "Renew Construction Group diagnoses and repairs the root cause of building defects for strata, commercial and residential properties across greater Sydney — licensed, insured, and accountable from inspection to sign-off.",
 
-  // [PLACEHOLDER] Replace with the production domain once connected on Vercel.
-  url: "https://renewconstructiongroup.com.au",
+  // Production domain — matches the business email (@renewcg.com.au).
+  // [CONFIRM] Update if the live site uses a different domain.
+  url: "https://renewcg.com.au",
+
+  founder: "Joshua Mott",
+  foundingYear: "2025",
+  hours: "Mon–Fri, 7:00am – 5:00pm", // [CONFIRM] trading hours
 
   contact: {
     phone: "0422 453 966",
     phoneHref: "tel:+61422453966",
+    phoneE164: "+61422453966",
     email: "Joshua@renewcg.com.au",
     serviceArea: "Greater Sydney",
   },
 
+  // Regions used for local-SEO "areaServed" signals.
+  areasServed: [
+    "Sydney",
+    "Greater Sydney",
+    "Eastern Suburbs",
+    "North Shore",
+    "Northern Beaches",
+    "Inner West",
+    "Sutherland Shire",
+    "New South Wales",
+  ],
+
   credentials: {
     licence: "NSW Licence 490706C",
     licenceLong: "NSW Builders Licence 490706C",
+    licenceNumber: "490706C",
     registration: "Registered Building Practitioner",
     insurance: "Public Liability & Workers Comp",
     abn: "ABN 44 693 358 888",
+    abnNumber: "44 693 358 888",
   },
 } as const;
+
+/** Common questions — powers the FAQ section and FAQPage structured data. */
+export const faqs = [
+  {
+    question: "What areas of Sydney do you service?",
+    answer:
+      "We're a Sydney-based builder working right across the greater Sydney metropolitan area and New South Wales — including the Eastern Suburbs, North Shore, Northern Beaches, Inner West and Sutherland Shire.",
+  },
+  {
+    question: "Are you licensed and insured?",
+    answer:
+      "Yes. Renew Construction Group holds NSW Builders Licence 490706C and is a registered building practitioner, backed by public liability and workers compensation insurance. Our ABN is 44 693 358 888.",
+  },
+  {
+    question: "What is concrete cancer and can you repair it?",
+    answer:
+      "Concrete cancer (concrete spalling) happens when the steel reinforcement inside concrete corrodes and expands, cracking the surrounding concrete. We diagnose the underlying cause and carry out lasting repairs before it threatens the structure — it's one of our core remedial services.",
+  },
+  {
+    question: "Do you work on strata and apartment buildings?",
+    answer:
+      "Yes. We work extensively with owners corporations, strata managers and commercial property managers on occupied buildings, staging the works to keep disruption to residents and tenants to a minimum.",
+  },
+  {
+    question: "How do I get a quote?",
+    answer:
+      "Tell us what you're seeing through our contact form, or call 0422 453 966. We'll come back to you within one business day with straight answers and a clear next step.",
+  },
+] as const;
 
 export type ServiceCategory = { title: string; description: string };
 
 export type Service = {
   slug: string;
   title: string;
+  /** SEO <title> (keyword + location targeted). */
+  metaTitle: string;
+  /** SEO meta description. */
+  metaDescription: string;
   /** Short one-liner used in the home-page services list. */
   summary: string;
   /** Hero tagline on the service page. */
@@ -49,6 +102,9 @@ export const services: Service[] = [
   {
     slug: "facade-upgrades",
     title: "Facade Upgrades",
+    metaTitle: "Facade Upgrades & Recladding Sydney",
+    metaDescription:
+      "Facade upgrades, over-cladding, balustrades and coatings across Sydney. Renew Construction Group transforms tired building facades — licensed, insured, NSW-wide.",
     summary:
       "New facades, over-cladding and coatings that add value and street appeal.",
     tagline:
@@ -94,6 +150,9 @@ export const services: Service[] = [
   {
     slug: "remedial-repairs",
     title: "Remedial Repairs",
+    metaTitle: "Remedial Building Repairs Sydney — Concrete Cancer & Waterproofing",
+    metaDescription:
+      "Sydney remedial building specialists. Concrete cancer, waterproofing, render, balcony and structural repairs for strata, commercial and residential buildings.",
     summary:
       "Diagnosing and repairing structural and aesthetic defects, built to last.",
     tagline: "Responding to the most complicated of repair needs.",
@@ -139,6 +198,9 @@ export const services: Service[] = [
   {
     slug: "heritage-restoration",
     title: "Heritage Restoration",
+    metaTitle: "Heritage Restoration Sydney — Stone, Brick & Render",
+    metaDescription:
+      "Sympathetic heritage restoration across Sydney — stonemasonry, brick and render repairs, steel window restoration and facade coatings, built to last.",
     summary:
       "Sympathetic restoration of stone, brick, render and steel-framed heritage buildings.",
     tagline:
@@ -185,6 +247,9 @@ export const services: Service[] = [
   {
     slug: "cladding-compliance",
     title: "Cladding & Compliance",
+    metaTitle: "Combustible Cladding Replacement & Compliance Sydney",
+    metaDescription:
+      "Non-compliant ACP cladding replacement, passive fire upgrades and compliance across Sydney. End-to-end rectification from statutory approvals to final certification.",
     summary:
       "Combustible cladding replacement, fire upgrades and compliance, end to end.",
     tagline:
@@ -230,6 +295,9 @@ export const services: Service[] = [
   {
     slug: "service-maintenance",
     title: "Service & Maintenance",
+    metaTitle: "Building Maintenance Sydney — Strata & Commercial",
+    metaDescription:
+      "Ongoing building service and maintenance for strata, commercial and residential assets in Sydney — inspections, corrosion treatment, make-safe and reporting.",
     summary:
       "Ongoing inspections, corrosion treatment and make-safe across your asset's life.",
     tagline: "Taking the stress and hassle out of your building maintenance.",
