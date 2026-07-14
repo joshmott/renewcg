@@ -10,6 +10,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1,
     },
+    {
+      url: `${site.url}/about`,
+      lastModified,
+      changeFrequency: "yearly",
+      priority: 0.6,
+    },
+    {
+      url: `${site.url}/faq`,
+      lastModified,
+      changeFrequency: "yearly",
+      priority: 0.6,
+    },
     ...services.map((s) => ({
       url: `${site.url}/services/${s.slug}`,
       lastModified,

@@ -5,20 +5,10 @@ import heroImage from "../../public/hero.jpg";
 import { Parallax } from "@/components/Parallax";
 import { QuoteForm } from "@/components/QuoteForm";
 import { Reveal } from "@/components/Reveal";
-import { faqs, services, site } from "@/lib/site";
+import { services, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
-};
-
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.question,
-    acceptedAnswer: { "@type": "Answer", text: f.answer },
-  })),
 };
 
 const eyebrowClasses =
@@ -42,10 +32,6 @@ function Hairline({ delay = 0 }: { delay?: number }) {
 export default function HomePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
       {/* ── Hero — full-screen image with overlaid nav + text ────────── */}
       <section className="relative isolate flex min-h-[100svh] items-center">
         <Parallax className="absolute inset-0" strength={30}>
@@ -185,39 +171,6 @@ export default function HomePage() {
               </Reveal>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ── FAQ ──────────────────────────────────────────────────────── */}
-      <section
-        id="faq"
-        className="mx-auto max-w-[1440px] px-6 py-20 sm:px-12 lg:px-24 lg:py-24"
-      >
-        <div className="grid gap-12 lg:grid-cols-[0.55fr_1.45fr] lg:gap-[72px]">
-          <div className="lg:sticky lg:top-32 lg:self-start">
-            <Reveal>
-              <p className={eyebrowClasses}>FAQ</p>
-              <h2 className="mt-4 max-w-[320px] text-[26px] leading-[1.25] font-medium tracking-[-0.01em] text-ink lg:text-[32px]">
-                Common questions.
-              </h2>
-            </Reveal>
-          </div>
-          <dl>
-            {faqs.map((faq, i) => (
-              <div key={faq.question}>
-                <Hairline delay={i * 50} />
-                <Reveal delay={i * 50}>
-                  <div className="grid gap-2 py-[26px] sm:grid-cols-[1fr_1.2fr] sm:gap-8">
-                    <dt className="text-[17px] font-semibold text-ink">
-                      {faq.question}
-                    </dt>
-                    <dd className="text-[15px] leading-[1.7]">{faq.answer}</dd>
-                  </div>
-                </Reveal>
-              </div>
-            ))}
-            <Hairline delay={250} />
-          </dl>
         </div>
       </section>
 

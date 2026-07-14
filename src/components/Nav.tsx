@@ -10,14 +10,16 @@ import { services, site } from "@/lib/site";
 /**
  * Fixed nav overlaid on the hero: transparent with a white logo/links at the
  * top of the page, transitioning to a solid bar with the blue logo once the
- * visitor starts scrolling. On small screens the links collapse into a
- * hamburger menu. Anchor links smooth-scroll on the home page and navigate
- * home-then-scroll from any other page.
+ * visitor starts scrolling. Below the md breakpoint the links collapse into a
+ * hamburger menu, where Services expands into a dropdown. Anchor links
+ * smooth-scroll on the home page and navigate home-then-scroll from any other
+ * page; About and FAQ are dedicated routes.
  */
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const pathname = usePathname();
   const onHome = pathname === "/";
 
@@ -28,11 +30,16 @@ export function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close both menus whenever the route changes.
+  // Close every menu whenever the route changes.
   useEffect(() => {
     setServicesOpen(false);
     setMobileOpen(false);
   }, [pathname]);
+
+  // Collapse the mobile services list whenever the whole menu closes.
+  useEffect(() => {
+    if (!mobileOpen) setMobileServicesOpen(false);
+  }, [mobileOpen]);
 
   // On interior pages the home sections don't exist, so send the browser home.
   const anchor = (id: string) => (onHome ? `#${id}` : `/#${id}`);
@@ -73,7 +80,7 @@ export function Nav() {
         {/* Desktop nav */}
         <nav
           aria-label="Main"
-          className="hidden items-center gap-7 sm:flex lg:gap-9"
+          className="hidden items-center gap-7 md:flex lg:gap-9"
         >
           {/* Services dropdown */}
           <div
@@ -114,12 +121,18 @@ export function Nav() {
               </div>
             </div>
           </div>
-          <a
-            href={anchor("about")}
+          <Link
+            href="/about"
             className={`text-[15px] font-semibold transition-colors ${link}`}
           >
             About
-          </a>
+          </Link>
+          <Link
+            href="/faq"
+            className={`text-[15px] font-semibold transition-colors ${link}`}
+          >
+            FAQ
+          </Link>
           <a
             href={anchor("contact")}
             className={`text-[15px] font-semibold transition-colors ${link}`}
@@ -145,7 +158,7 @@ export function Nav() {
           aria-expanded={mobileOpen}
           aria-controls="mobile-menu"
           onClick={() => setMobileOpen((v) => !v)}
-          className={`-mr-2 flex h-10 w-10 items-center justify-center transition-colors sm:hidden ${
+          className={`-mr-2 flex h-10 w-10 items-center justify-center transition-colors md:hidden ${
             solid ? "text-ink" : "text-white"
           }`}
         >
@@ -174,39 +187,79 @@ export function Nav() {
       {/* Mobile menu panel */}
       <div
         id="mobile-menu"
-        className={`overflow-hidden border-hairline bg-paper transition-[max-height,opacity] duration-300 sm:hidden ${
+        className={`overflow-hidden border-hairline bg-paper transition-[max-height,opacity] duration-300 md:hidden ${
           mobileOpen ? "max-h-[85vh] border-t opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <nav
           aria-label="Mobile"
-          className="mx-auto flex max-w-[1440px] flex-col px-6 pt-2 pb-6"
+          className="mx-auto flex max-w-[1440px] flex-col px-6 pt-3 pb-6"
         >
-          <p className="px-1 pt-4 pb-1 text-xs font-semibold tracking-[0.18em] text-muted uppercase">
+          {/* Services — bold, expands into the service list */}
+          <button
+            type="button"
+            aria-expanded={mobileServicesOpen}
+            aria-controls="mobile-services"
+            onClick={() => setMobileServicesOpen((v) => !v)}
+            className="flex items-center justify-between px-1 py-3 text-left text-[16px] font-semibold text-ink"
+          >
             Services
-          </p>
-          {services.map((s) => (
-            <Link
-              key={s.slug}
-              href={`/services/${s.slug}`}
-              onClick={closeMobile}
-              className="rounded-[8px] px-1 py-2.5 text-[16px] font-medium text-body transition-colors hover:text-ink"
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className={`text-muted transition-transform duration-300 ${
+                mobileServicesOpen ? "rotate-180" : ""
+              }`}
             >
-              {s.title}
-            </Link>
-          ))}
-          <div className="my-3 h-px w-full bg-hairline" />
-          <a
-            href={anchor("about")}
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div
+            id="mobile-services"
+            className={`overflow-hidden transition-[max-height] duration-300 ${
+              mobileServicesOpen ? "max-h-96" : "max-h-0"
+            }`}
+          >
+            <div className="mb-1 ml-1 flex flex-col border-l border-hairline pl-4">
+              {services.map((s) => (
+                <Link
+                  key={s.slug}
+                  href={`/services/${s.slug}`}
+                  onClick={closeMobile}
+                  className="py-2.5 text-[15px] font-medium text-body transition-colors hover:text-ink"
+                >
+                  {s.title}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="my-2 h-px w-full bg-hairline" />
+
+          <Link
+            href="/about"
             onClick={closeMobile}
-            className="px-1 py-2.5 text-[16px] font-semibold text-ink"
+            className="px-1 py-3 text-[16px] font-semibold text-ink"
           >
             About
-          </a>
+          </Link>
+          <Link
+            href="/faq"
+            onClick={closeMobile}
+            className="px-1 py-3 text-[16px] font-semibold text-ink"
+          >
+            FAQ
+          </Link>
           <a
             href={anchor("contact")}
             onClick={closeMobile}
-            className="px-1 py-2.5 text-[16px] font-semibold text-ink"
+            className="px-1 py-3 text-[16px] font-semibold text-ink"
           >
             Contact
           </a>
