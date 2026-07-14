@@ -15,6 +15,7 @@ import { services, site } from "@/lib/site";
  */
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const pathname = usePathname();
   const onHome = pathname === "/";
 
@@ -24,6 +25,11 @@ export function Nav() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Close the services dropdown whenever the route changes.
+  useEffect(() => {
+    setServicesOpen(false);
+  }, [pathname]);
 
   // On interior pages the home sections don't exist, so send the browser home.
   const anchor = (id: string) => (onHome ? `#${id}` : `/#${id}`);
@@ -53,19 +59,36 @@ export function Nav() {
         </Link>
         <nav aria-label="Main" className="flex items-center gap-7 lg:gap-9">
           {/* Services dropdown */}
-          <div className="group relative hidden sm:block">
+          <div
+            className="relative hidden sm:block"
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+            onFocusCapture={() => setServicesOpen(true)}
+            onBlurCapture={(e) => {
+              if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
+                setServicesOpen(false);
+              }
+            }}
+          >
             <a
               href={anchor("services")}
+              onClick={() => setServicesOpen(false)}
+              aria-expanded={servicesOpen}
               className={`text-[15px] font-semibold transition-colors ${link}`}
             >
               Services
             </a>
-            <div className="invisible absolute left-1/2 top-full z-10 -translate-x-1/2 pt-4 opacity-0 transition-opacity duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+            <div
+              className={`absolute left-1/2 top-full z-10 -translate-x-1/2 pt-4 transition-opacity duration-150 ${
+                servicesOpen ? "visible opacity-100" : "invisible opacity-0"
+              }`}
+            >
               <div className="min-w-[240px] rounded-[12px] border border-hairline bg-paper p-2 shadow-[0_18px_40px_rgba(20,24,60,.1)]">
                 {services.map((s) => (
                   <Link
                     key={s.slug}
                     href={`/services/${s.slug}`}
+                    onClick={() => setServicesOpen(false)}
                     className="block rounded-[8px] px-4 py-2.5 text-[14.5px] font-medium text-body transition-colors hover:bg-tint hover:text-ink"
                   >
                     {s.title}
