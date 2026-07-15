@@ -9,7 +9,12 @@ import { site } from "@/lib/site";
  *                       returns 501 and the client falls back to mailto.
  *   QUOTE_FROM_EMAIL  — optional verified sender, e.g.
  *                       "Renew website <quotes@renewcg.com.au>".
- *                       Defaults to Resend's onboarding sender.
+ *                       Defaults to Resend's onboarding sender. NOTE: the
+ *                       onboarding sender can only deliver to the Resend
+ *                       account owner's own address — verify the domain in
+ *                       Resend and set this to lift that restriction.
+ *   QUOTE_TO_EMAIL    — optional recipient override; defaults to the
+ *                       business inbox from site config.
  */
 export async function POST(request: Request) {
   const data = await request.json().catch(() => null);
@@ -51,14 +56,24 @@ export async function POST(request: Request) {
     },
     body: JSON.stringify({
       from: process.env.QUOTE_FROM_EMAIL ?? "Renew website <onboarding@resend.dev>",
-      to: [site.contact.email],
+      to: [process.env.QUOTE_TO_EMAIL ?? site.contact.email],
       reply_to: email || undefined,
       subject: `Quote request — ${name}`,
       text,
     }),
-  }).catch(() => null);
+  }).catch((err: unknown) => {
+    console.error("quote: could not reach Resend", err);
+    return null;
+  });
 
   if (!res?.ok) {
+    // Surface Resend's reason in the Vercel function logs so delivery
+    // problems (unverified domain, bad key, restricted recipient) are
+    // diagnosable instead of failing silently into the mailto fallback.
+    if (res) {
+      const detail = await res.text().catch(() => "");
+      console.error(`quote: Resend rejected the send (${res.status}): ${detail}`);
+    }
     return NextResponse.json({ error: "send-failed" }, { status: 502 });
   }
   return NextResponse.json({ ok: true });
