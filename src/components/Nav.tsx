@@ -3,23 +3,27 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import logo from "../../public/logo.png";
 import { services, site } from "@/lib/site";
 
 /**
  * Fixed nav overlaid on the hero: transparent with a white logo/links at the
  * top of the page, transitioning to a solid bar with the blue logo once the
- * visitor starts scrolling. Below the md breakpoint the links collapse into a
- * hamburger menu, where Services expands into a dropdown. Anchor links
- * smooth-scroll on the home page and navigate home-then-scroll from any other
- * page; About and FAQ are dedicated routes.
+ * visitor starts scrolling.
+ *
+ * "Services" is a click-to-toggle dropdown (with a chevron indicator): it
+ * opens on click and stays open until a link is chosen, the visitor clicks
+ * elsewhere, or Escape is pressed — it never navigates by itself. Below the
+ * md breakpoint the links collapse into a hamburger menu where Services
+ * expands the same way.
  */
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const onHome = pathname === "/";
 
@@ -40,6 +44,25 @@ export function Nav() {
   useEffect(() => {
     if (!mobileOpen) setMobileServicesOpen(false);
   }, [mobileOpen]);
+
+  // The desktop dropdown stays open until a click lands outside it (or Esc).
+  useEffect(() => {
+    if (!servicesOpen) return;
+    const onPointerDown = (e: PointerEvent) => {
+      if (!dropdownRef.current?.contains(e.target as Node)) {
+        setServicesOpen(false);
+      }
+    };
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setServicesOpen(false);
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [servicesOpen]);
 
   // On interior pages the home sections don't exist, so send the browser home.
   const anchor = (id: string) => (onHome ? `#${id}` : `/#${id}`);
@@ -82,32 +105,53 @@ export function Nav() {
           aria-label="Main"
           className="hidden items-center gap-7 md:flex lg:gap-9"
         >
-          {/* Services dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={() => setServicesOpen(true)}
-            onMouseLeave={() => setServicesOpen(false)}
-            onFocusCapture={() => setServicesOpen(true)}
-            onBlurCapture={(e) => {
-              if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
-                setServicesOpen(false);
-              }
-            }}
+          <Link
+            href="/"
+            className={`text-[15px] font-semibold transition-colors ${link}`}
           >
-            <a
-              href={anchor("services")}
-              onClick={() => setServicesOpen(false)}
+            Home
+          </Link>
+
+          {/* Services dropdown — click to open, click a link to navigate */}
+          <div className="relative" ref={dropdownRef}>
+            <button
+              type="button"
+              onClick={() => setServicesOpen((v) => !v)}
               aria-expanded={servicesOpen}
-              className={`text-[15px] font-semibold transition-colors ${link}`}
+              aria-haspopup="true"
+              className={`flex items-center gap-1.5 text-[15px] font-semibold transition-colors ${link}`}
             >
               Services
-            </a>
+              <svg
+                width="11"
+                height="11"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+                className={`mt-0.5 transition-transform duration-200 ${
+                  servicesOpen ? "rotate-180" : ""
+                }`}
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
             <div
               className={`absolute top-full left-1/2 z-10 -translate-x-1/2 pt-4 transition-opacity duration-150 ${
                 servicesOpen ? "visible opacity-100" : "invisible opacity-0"
               }`}
             >
               <div className="min-w-[240px] rounded-[12px] border border-hairline bg-paper p-2 shadow-[0_18px_40px_rgba(20,24,60,.1)]">
+                <a
+                  href={anchor("services")}
+                  onClick={() => setServicesOpen(false)}
+                  className="block rounded-[8px] px-4 py-2.5 text-[14.5px] font-medium text-body transition-colors hover:bg-tint hover:text-ink"
+                >
+                  Overview
+                </a>
                 {services.map((s) => (
                   <Link
                     key={s.slug}
@@ -121,6 +165,7 @@ export function Nav() {
               </div>
             </div>
           </div>
+
           <Link
             href="/about"
             className={`text-[15px] font-semibold transition-colors ${link}`}
@@ -195,6 +240,14 @@ export function Nav() {
           aria-label="Mobile"
           className="mx-auto flex max-w-[1440px] flex-col px-6 pt-3 pb-6"
         >
+          <Link
+            href="/"
+            onClick={closeMobile}
+            className="px-1 py-3 text-[16px] font-semibold text-ink"
+          >
+            Home
+          </Link>
+
           {/* Services — bold, expands into the service list */}
           <button
             type="button"
@@ -227,6 +280,13 @@ export function Nav() {
             }`}
           >
             <div className="mb-1 ml-1 flex flex-col border-l border-hairline pl-4">
+              <a
+                href={anchor("services")}
+                onClick={closeMobile}
+                className="py-2.5 text-[15px] font-medium text-body transition-colors hover:text-ink"
+              >
+                Overview
+              </a>
               {services.map((s) => (
                 <Link
                   key={s.slug}

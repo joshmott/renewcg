@@ -5,6 +5,7 @@ import heroImage from "../../public/hero.jpg";
 import { Parallax } from "@/components/Parallax";
 import { QuoteForm } from "@/components/QuoteForm";
 import { Reveal } from "@/components/Reveal";
+import { ServiceIcon } from "@/components/ServiceIcon";
 import { services, site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -68,6 +69,29 @@ export default function HomePage() {
             the source and repaired to last.
           </p>
         </div>
+        {/* scroll-down indicator */}
+        <a
+          href="#services"
+          aria-label="Scroll down to our services"
+          className="hero-rise absolute bottom-8 left-1/2 -translate-x-1/2 text-white/70 transition-colors hover:text-white"
+          style={{ "--rise-delay": "500ms" } as React.CSSProperties}
+        >
+          <svg
+            width="42"
+            height="42"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="11" />
+            <path d="M12 7v9" />
+            <path d="M8.5 12.5L12 16l3.5-3.5" />
+          </svg>
+        </a>
       </section>
 
       <div className="mx-auto max-w-[1440px] px-6 sm:px-12 lg:px-24">
@@ -94,8 +118,14 @@ export default function HomePage() {
             >
               <Hairline delay={i * 60} />
               <Reveal delay={i * 60}>
-                <div className="grid items-start gap-2 py-[26px] sm:grid-cols-[1fr_1.2fr] sm:gap-8">
-                  <h3 className="flex items-center gap-2 text-[19px] font-semibold text-ink transition-colors group-hover:text-blue">
+                <div className="grid items-start gap-3 py-[26px] sm:grid-cols-[auto_1fr_1.2fr] sm:gap-x-7 sm:gap-y-2">
+                  <div
+                    aria-hidden="true"
+                    className="flex h-11 w-11 items-center justify-center rounded-full bg-tint p-[11px] text-blue transition-colors duration-200 group-hover:bg-blue group-hover:text-white"
+                  >
+                    <ServiceIcon slug={service.slug} />
+                  </div>
+                  <h3 className="flex items-center gap-2 text-[19px] font-semibold text-ink transition-colors group-hover:text-blue sm:mt-2">
                     {service.title}
                     <span
                       aria-hidden="true"
@@ -112,7 +142,9 @@ export default function HomePage() {
                       </svg>
                     </span>
                   </h3>
-                  <p className="text-[15px] leading-[1.7]">{service.summary}</p>
+                  <p className="text-[15px] leading-[1.7] sm:mt-2">
+                    {service.summary}
+                  </p>
                 </div>
               </Reveal>
             </Link>
