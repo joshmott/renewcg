@@ -7,7 +7,7 @@ export const site = {
   name: "Renew Construction Group",
   tagline: "Remedial Construction, Sydney",
   description:
-    "Renew Construction Group diagnoses and repairs the root cause of building defects for strata, commercial and residential properties across greater Sydney — licensed, insured, and accountable from inspection to sign-off.",
+    "Sydney remedial builders — concrete cancer, waterproofing, facade and cladding repairs for strata, commercial and residential buildings. Licensed & insured.",
 
   // Production domain — matches the business email (@renewcg.com.au).
   // [CONFIRM] Update if the live site uses a different domain.
@@ -102,7 +102,7 @@ export const services: Service[] = [
   {
     slug: "facade-upgrades",
     title: "Facade Upgrades",
-    metaTitle: "Facade Upgrades & Recladding Sydney",
+    metaTitle: "Facade Upgrades Sydney",
     metaDescription:
       "Facade upgrades, over-cladding, balustrades and coatings across Sydney. Renew Construction Group transforms tired building facades — licensed, insured, NSW-wide.",
     summary:
@@ -150,7 +150,7 @@ export const services: Service[] = [
   {
     slug: "remedial-repairs",
     title: "Remedial Repairs",
-    metaTitle: "Remedial Building Repairs Sydney — Concrete Cancer & Waterproofing",
+    metaTitle: "Remedial Building Repairs Sydney",
     metaDescription:
       "Sydney remedial building specialists. Concrete cancer, waterproofing, render, balcony and structural repairs for strata, commercial and residential buildings.",
     summary:
@@ -198,7 +198,7 @@ export const services: Service[] = [
   {
     slug: "heritage-restoration",
     title: "Heritage Restoration",
-    metaTitle: "Heritage Restoration Sydney — Stone, Brick & Render",
+    metaTitle: "Heritage Restoration Sydney",
     metaDescription:
       "Sympathetic heritage restoration across Sydney — stonemasonry, brick and render repairs, steel window restoration and facade coatings, built to last.",
     summary:
@@ -247,7 +247,7 @@ export const services: Service[] = [
   {
     slug: "cladding-compliance",
     title: "Cladding & Compliance",
-    metaTitle: "Combustible Cladding Replacement & Compliance Sydney",
+    metaTitle: "Combustible Cladding Replacement Sydney",
     metaDescription:
       "Non-compliant ACP cladding replacement, passive fire upgrades and compliance across Sydney. End-to-end rectification from statutory approvals to final certification.",
     summary:
@@ -295,7 +295,7 @@ export const services: Service[] = [
   {
     slug: "service-maintenance",
     title: "Service & Maintenance",
-    metaTitle: "Building Maintenance Sydney — Strata & Commercial",
+    metaTitle: "Building Maintenance Sydney",
     metaDescription:
       "Ongoing building service and maintenance for strata, commercial and residential assets in Sydney — inspections, corrosion treatment, make-safe and reporting.",
     summary:

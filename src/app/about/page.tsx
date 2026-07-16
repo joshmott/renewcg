@@ -8,9 +8,13 @@ import aboutHero from "../../../public/about-hero.jpg";
 export const metadata: Metadata = {
   title: "About — Sydney Remedial Builder",
   description:
-    "Renew Construction Group is a NSW-licensed remedial builder founded in 2025 by Joshua Mott, with 15+ years' experience. Meet the team you deal with directly across greater Sydney.",
+    "Renew Construction Group is a NSW-licensed Sydney remedial builder founded by Joshua Mott, with 15+ years' experience. Deal directly with the builder.",
   alternates: { canonical: "/about" },
-  openGraph: { url: `${site.url}/about` },
+  openGraph: {
+    url: `${site.url}/about`,
+    siteName: site.name,
+    images: "/opengraph-image",
+  },
 };
 
 const structuredData = {

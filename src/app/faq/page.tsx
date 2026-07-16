@@ -8,9 +8,13 @@ import faqHero from "../../../public/faq-hero.jpg";
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
   description:
-    "Answers to common questions about Renew Construction Group — our remedial building services, licensing and insurance, the areas of Sydney we service, and how to get a quote.",
+    "Common questions about our Sydney remedial building services — licensing, insurance, service areas, concrete cancer and how to get a quote.",
   alternates: { canonical: "/faq" },
-  openGraph: { url: `${site.url}/faq` },
+  openGraph: {
+    url: `${site.url}/faq`,
+    siteName: site.name,
+    images: "/opengraph-image",
+  },
 };
 
 const structuredData = {
