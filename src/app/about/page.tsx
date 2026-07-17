@@ -68,13 +68,18 @@ const principles = [
   },
 ];
 
-const credentials = [
+const credentials: { label: string; value: string; href?: string }[] = [
   { label: "Founded", value: `${site.foundingYear}, Sydney` },
   { label: "Builders licence", value: "NSW 490706C" },
   { label: "Registration", value: "Building Practitioner NSW" },
   { label: "Insurance", value: site.credentials.insurance },
   { label: "ABN", value: site.credentials.abnNumber },
   { label: "Service area", value: "Greater Sydney" },
+  {
+    label: "NSW Government",
+    value: "Registered supplier on buy.nsw",
+    href: site.credentials.buyNswUrl,
+  },
 ];
 
 export default function AboutPage() {
@@ -222,9 +227,20 @@ export default function AboutPage() {
                 <Reveal delay={i * 60}>
                   <div className="flex items-baseline justify-between gap-6 py-4">
                     <span className="text-[14px] text-muted">{row.label}</span>
-                    <span className="text-right text-[14px] font-semibold text-ink">
-                      {row.value}
-                    </span>
+                    {row.href ? (
+                      <a
+                        href={row.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-right text-[14px] font-semibold text-blue transition-colors hover:text-blue-dark"
+                      >
+                        {row.value}&nbsp;&#8599;
+                      </a>
+                    ) : (
+                      <span className="text-right text-[14px] font-semibold text-ink">
+                        {row.value}
+                      </span>
+                    )}
                   </div>
                 </Reveal>
               </div>

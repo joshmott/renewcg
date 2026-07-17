@@ -99,6 +99,7 @@ const structuredData = {
         opens: "07:00",
         closes: "17:00",
       },
+      sameAs: [site.credentials.buyNswUrl],
       identifier: [
         { "@type": "PropertyValue", name: "ABN", value: site.credentials.abnNumber },
         {

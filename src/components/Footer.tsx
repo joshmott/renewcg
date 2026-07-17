@@ -82,7 +82,15 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col gap-2 border-t border-hairline pt-6 text-[12.5px] leading-relaxed text-muted sm:flex-row sm:items-center sm:justify-between">
           <p>
-            {site.credentials.licenceLong} · {site.credentials.abn}
+            {site.credentials.licenceLong} · {site.credentials.abn} ·{" "}
+            <a
+              href={site.credentials.buyNswUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-blue"
+            >
+              buy.nsw registered supplier
+            </a>
           </p>
           <p>
             © <Year /> {site.name}

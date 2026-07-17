@@ -45,6 +45,7 @@ export const site = {
     insurance: "Public Liability & Workers Comp",
     abn: "ABN 44 693 358 888",
     abnNumber: "44 693 358 888",
+    buyNswUrl: "https://buy.nsw.gov.au/supplier/profile/12462863",
   },
 } as const;
 
