@@ -71,6 +71,10 @@ hex in components.
   top scrim `from-ink/55` for nav legibility.
 - Hero photos: owner-supplied only, processed to ≤2400px wide JPEG q85
   (PIL, `exif_transpose` first) into `public/*-hero.jpg`.
+- SEO keyword landing pages are static routes beside the `[slug]` template
+  (`/services/concrete-cancer-repair`, `/services/balcony-repairs-waterproofing`,
+  `/services/strata-remedial-builders`) — each carries Service + FAQPage +
+  Breadcrumb JSON-LD. New ones must be added to `sitemap.ts` and the footer.
 
 ## Business facts (never invent others)
 

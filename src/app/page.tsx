@@ -153,6 +153,85 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Sydney remedial builders — SEO-supporting copy ───────────── */}
+      <section className="grid gap-12 border-t border-hairline py-20 lg:grid-cols-[0.55fr_1.45fr] lg:gap-[72px] lg:py-24">
+        <div className="lg:sticky lg:top-32 lg:self-start">
+          <Reveal>
+            <p className={eyebrowClasses}>Who we help</p>
+            <h2 className="mt-4 max-w-[360px] text-[26px] leading-[1.25] font-medium tracking-[-0.01em] text-ink lg:text-[32px]">
+              Remedial builders for Sydney&rsquo;s strata, commercial and
+              residential buildings.
+            </h2>
+          </Reveal>
+        </div>
+        <div className="max-w-[640px] space-y-5">
+          <Reveal>
+            <p className="text-[16px] leading-[1.75]">
+              Renew Construction Group is a remedial building company working
+              across greater Sydney — from the Eastern Suburbs and Inner West to
+              the North Shore, Northern Beaches and Sutherland Shire. We
+              diagnose and repair the defects that age buildings:{" "}
+              <Link
+                href="/services/concrete-cancer-repair"
+                className="font-semibold text-blue transition-colors hover:text-blue-dark"
+              >
+                concrete cancer
+              </Link>
+              ,{" "}
+              <Link
+                href="/services/balcony-repairs-waterproofing"
+                className="font-semibold text-blue transition-colors hover:text-blue-dark"
+              >
+                leaking balconies and failed waterproofing
+              </Link>
+              , cracked render, tired facades and{" "}
+              <Link
+                href="/services/cladding-compliance"
+                className="font-semibold text-blue transition-colors hover:text-blue-dark"
+              >
+                non-compliant cladding
+              </Link>
+              .
+            </p>
+          </Reveal>
+          <Reveal delay={80}>
+            <p className="text-[16px] leading-[1.75]">
+              Owners corporations and{" "}
+              <Link
+                href="/services/strata-remedial-builders"
+                className="font-semibold text-blue transition-colors hover:text-blue-dark"
+              >
+                strata managers
+              </Link>{" "}
+              work with one accountable, NSW-licensed builder from defect report
+              to sign-off — and commercial owners and homeowners get the same
+              diagnose-first approach to{" "}
+              <Link
+                href="/services/remedial-repairs"
+                className="font-semibold text-blue transition-colors hover:text-blue-dark"
+              >
+                remedial repairs
+              </Link>
+              ,{" "}
+              <Link
+                href="/services/facade-upgrades"
+                className="font-semibold text-blue transition-colors hover:text-blue-dark"
+              >
+                facade upgrades
+              </Link>{" "}
+              and{" "}
+              <Link
+                href="/services/service-maintenance"
+                className="font-semibold text-blue transition-colors hover:text-blue-dark"
+              >
+                ongoing maintenance
+              </Link>
+              .
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
       {/* ── About ────────────────────────────────────────────────────── */}
       <section
         id="about"

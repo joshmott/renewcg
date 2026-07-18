@@ -28,5 +28,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),
+    // Keyword landing pages (static routes beside the [slug] template).
+    ...[
+      "concrete-cancer-repair",
+      "balcony-repairs-waterproofing",
+      "strata-remedial-builders",
+    ].map((slug) => ({
+      url: `${site.url}/services/${slug}`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
   ];
 }

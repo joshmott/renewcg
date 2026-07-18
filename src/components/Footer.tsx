@@ -17,6 +17,18 @@ const menuLinks = [
   { label: "Contact", href: "/#contact" },
 ];
 
+const landingPages = [
+  { label: "Concrete Cancer Repair", href: "/services/concrete-cancer-repair" },
+  {
+    label: "Balcony Repairs & Waterproofing",
+    href: "/services/balcony-repairs-waterproofing",
+  },
+  {
+    label: "Strata Remedial Builders",
+    href: "/services/strata-remedial-builders",
+  },
+];
+
 export function Footer() {
   return (
     <footer className="border-t border-hairline">
@@ -73,6 +85,13 @@ export function Footer() {
                 <li key={s.slug}>
                   <Link href={`/services/${s.slug}`} className={linkClasses}>
                     {s.title}
+                  </Link>
+                </li>
+              ))}
+              {landingPages.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className={linkClasses}>
+                    {l.label}
                   </Link>
                 </li>
               ))}

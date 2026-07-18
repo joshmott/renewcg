@@ -72,6 +72,27 @@ export const faqs = [
       "Yes. We work extensively with owners corporations, strata managers and commercial property managers on occupied buildings, staging the works to keep disruption to residents and tenants to a minimum.",
   },
   {
+    question: "How much does concrete cancer repair cost in Sydney?",
+    answer:
+      "It depends on how far the corrosion has progressed and how accessible the affected areas are — an early-stage patch repair is a fraction of the cost of rebuilding a structural element. We inspect and diagnose first, then provide a clear itemised quote. As a rule: the earlier spalling is treated, the less it costs.",
+  },
+  {
+    question:
+      "Who pays for repairs in a strata building — the owners corporation or the lot owner?",
+    answer:
+      "As a general rule in NSW, defects in common property — the building structure, external walls, balcony slabs, waterproofing membranes and balustrades — are the owners corporation's responsibility, while finishes inside a lot belong to the owner. It varies with the strata plan and by-laws, so we help scope which is which as part of an inspection.",
+  },
+  {
+    question: "How long do remedial repairs take?",
+    answer:
+      "Minor repairs can be completed in days. Larger programs — balcony refurbishments across a building, facade repairs over multiple levels, cladding replacement — are staged over weeks or months, planned around residents and tenants. Dangerous defects can be made safe within hours.",
+  },
+  {
+    question: "Do you replace combustible cladding?",
+    answer:
+      "Yes — end to end. We manage the rectification of non-compliant ACP cladding from statutory approvals and design through removal, replacement with a certified compliant system, and final certification.",
+  },
+  {
     question: "How do I get a quote?",
     answer:
       "Tell us what you're seeing through our contact form, or call 0422 453 966. We'll come back to you within one business day with straight answers and a clear next step.",
