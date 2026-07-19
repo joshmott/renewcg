@@ -59,7 +59,7 @@ export default async function ServicePage({ params }: Props) {
       {
         "@type": "Service",
         "@id": `${url}#service`,
-        name: `${service.title} — Sydney`,
+        name: `${service.title} Sydney`,
         serviceType: service.title,
         description: service.metaDescription,
         url,
@@ -70,7 +70,7 @@ export default async function ServicePage({ params }: Props) {
         })),
         hasOfferCatalog: {
           "@type": "OfferCatalog",
-          name: `${service.title} — what's involved`,
+          name: `${service.title}: what's involved`,
           itemListElement: service.categories.map((cat) => ({
             "@type": "Offer",
             itemOffered: { "@type": "Service", name: cat.title },

@@ -64,7 +64,7 @@ export default function HomePage() {
             className="hero-rise mt-6 max-w-[520px] text-[16px] leading-[1.7] text-white/85"
             style={{ "--rise-delay": "160ms" } as React.CSSProperties}
           >
-            Renew Construction Group is a NSW-licensed builder based in Sydney —
+            Renew Construction Group is a NSW-licensed builder based in Sydney,
             bringing ageing and defective buildings back to life, diagnosed at
             the source and repaired to last.
           </p>
@@ -104,7 +104,7 @@ export default function HomePage() {
               Five ways we bring buildings back.
             </h2>
             <p className="mt-5 max-w-[300px] text-[15px] leading-[1.7]">
-              Every engagement starts with diagnosis — we repair causes, not
+              Every engagement starts with diagnosis. We repair causes, not
               symptoms.
             </p>
           </Reveal>
@@ -168,7 +168,7 @@ export default function HomePage() {
           <Reveal>
             <p className="text-[16px] leading-[1.75]">
               Renew Construction Group is a remedial building company working
-              across greater Sydney — from the Eastern Suburbs and Inner West to
+              across greater Sydney, from the Eastern Suburbs and Inner West to
               the North Shore, Northern Beaches and Sutherland Shire. We
               diagnose and repair the defects that age buildings:{" "}
               <Link
@@ -204,7 +204,7 @@ export default function HomePage() {
                 strata managers
               </Link>{" "}
               work with one accountable, NSW-licensed builder from defect report
-              to sign-off — and commercial owners and homeowners get the same
+              to sign-off, and commercial owners and homeowners get the same
               diagnose-first approach to{" "}
               <Link
                 href="/services/remedial-repairs"
@@ -257,7 +257,7 @@ export default function HomePage() {
                 Renew Construction Group is a NSW-licensed builder and
                 registered building practitioner serving greater Sydney. Strata
                 managers, commercial owners and homeowners work with one
-                accountable team — from first inspection through to final
+                accountable team, from first inspection through to final
                 sign-off.
               </p>
             </Reveal>

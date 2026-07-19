@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
     default: "Remedial Builders Sydney | Renew Construction Group",
-    template: "%s — Renew Construction Group",
+    template: "%s | Renew Construction Group",
   },
   description: site.description,
   keywords: [
@@ -101,7 +101,11 @@ const structuredData = {
         opens: "07:00",
         closes: "17:00",
       },
-      sameAs: [site.credentials.buyNswUrl, site.credentials.abrUrl],
+      sameAs: [
+        site.credentials.buyNswUrl,
+        site.credentials.abrUrl,
+        site.credentials.licenceUrl,
+      ],
       identifier: [
         { "@type": "PropertyValue", name: "ABN", value: site.credentials.abnNumber },
         {

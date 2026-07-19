@@ -8,7 +8,7 @@ import heroImage from "../../../../public/facade-hero.jpg";
 export const metadata: Metadata = {
   title: "Concrete Cancer Repair Sydney",
   description:
-    "Concrete cancer and spalling repair across Sydney — diagnosed at the cause, repaired to last. Strata, commercial and residential. NSW-licensed builders.",
+    "Concrete cancer and spalling repair across Sydney, diagnosed at the cause and repaired to last. Strata, commercial and residential. NSW-licensed builders.",
   alternates: { canonical: "/services/concrete-cancer-repair" },
   openGraph: {
     url: `${site.url}/services/concrete-cancer-repair`,
@@ -23,7 +23,7 @@ const faqs = [
   {
     question: "What is concrete cancer?",
     answer:
-      "Concrete cancer (concrete spalling) happens when the steel reinforcement inside concrete corrodes. Rusting steel expands to several times its original volume, cracking the concrete around it and letting in more moisture — which accelerates the corrosion. Left untreated, the cycle compounds.",
+      "Concrete cancer (concrete spalling) happens when the steel reinforcement inside concrete corrodes. Rusting steel expands to several times its original volume, cracking the concrete around it and letting in more moisture, which accelerates the corrosion. Left untreated, the cycle compounds.",
   },
   {
     question: "Is concrete cancer dangerous?",
@@ -33,12 +33,12 @@ const faqs = [
   {
     question: "How much does concrete cancer repair cost?",
     answer:
-      "It depends on how far the corrosion has progressed and how accessible the affected areas are — an early-stage patch repair is a fraction of the cost of rebuilding a structural element. We inspect and diagnose first, then provide a clear itemised quote.",
+      "It depends on how far the corrosion has progressed and how accessible the affected areas are. An early-stage patch repair is a fraction of the cost of rebuilding a structural element. We inspect and diagnose first, then provide a clear itemised quote.",
   },
   {
     question: "Who is responsible for concrete cancer in a strata building?",
     answer:
-      "Spalling in the building structure — slabs, columns, balcony soffits and external walls — is generally common property in NSW, making it the owners corporation's responsibility. We work with strata managers and committees on inspection reports, quotes and staged repairs.",
+      "Spalling in the building structure (slabs, columns, balcony soffits and external walls) is generally common property in NSW, making it the owners corporation's responsibility. We work with strata managers and committees on inspection reports, quotes and staged repairs.",
   },
   {
     question: "How long do concrete cancer repairs take?",
@@ -53,7 +53,7 @@ const structuredData = {
     {
       "@type": "Service",
       "@id": `${url}#service`,
-      name: "Concrete Cancer Repair — Sydney",
+      name: "Concrete Cancer Repair Sydney",
       serviceType: "Concrete cancer repair",
       description:
         "Diagnosis and lasting repair of concrete cancer and spalling for strata, commercial and residential buildings across greater Sydney.",
@@ -101,7 +101,7 @@ const signs = [
   {
     title: "Cracked or drummy concrete",
     description:
-      "Concrete that cracks along lines or sounds hollow when tapped has separated from the reinforcement behind it — a classic early sign of spalling.",
+      "Concrete that cracks along lines or sounds hollow when tapped has separated from the reinforcement behind it, a classic early sign of spalling.",
   },
   {
     title: "Rust stains",
@@ -111,7 +111,7 @@ const signs = [
   {
     title: "Exposed reinforcement",
     description:
-      "Steel visible through broken concrete has lost its protective cover and corrodes on contact with air and moisture — it needs prompt attention.",
+      "Steel visible through broken concrete has lost its protective cover and corrodes on contact with air and moisture. It needs prompt attention.",
   },
   {
     title: "Bubbling render or paint",
@@ -121,7 +121,7 @@ const signs = [
   {
     title: "Leaks after rain",
     description:
-      "Water ingress through slabs, planter boxes and balconies both causes and accelerates concrete cancer — the two almost always go together.",
+      "Water ingress through slabs, planter boxes and balconies both causes and accelerates concrete cancer; the two almost always go together.",
   },
   {
     title: "Cracking balcony edges",
@@ -134,7 +134,7 @@ const process = [
   {
     title: "Inspect & diagnose",
     description:
-      "We identify the extent of the spalling and the cause of the corrosion — carbonation, chloride attack from salt air, or a failed membrane — before pricing the repair.",
+      "We identify the extent of the spalling and the cause of the corrosion (carbonation, chloride attack from salt air, or a failed membrane) before pricing the repair.",
   },
   {
     title: "Break out & treat",
@@ -214,7 +214,7 @@ export default function ConcreteCancerPage() {
             className="hero-rise mt-5 max-w-[560px] text-[18px] leading-[1.6] text-white/80"
             style={{ "--rise-delay": "140ms" } as React.CSSProperties}
           >
-            Spalling concrete never repairs itself — early diagnosis is the
+            Spalling concrete never repairs itself. Early diagnosis is the
             difference between a patch and a structural rebuild.
           </p>
         </div>
@@ -235,8 +235,8 @@ export default function ConcreteCancerPage() {
             <div className="max-w-[640px] space-y-5">
               <Reveal>
                 <p className="text-[16px] leading-[1.75]">
-                  Concrete cancer — concrete spalling — happens when the steel
-                  reinforcement inside concrete corrodes. As the steel rusts it
+                  Concrete cancer, also called concrete spalling, happens when
+                  the steel reinforcement inside concrete corrodes. As the steel rusts it
                   expands, cracking the surrounding concrete and letting in more
                   moisture, which speeds the corrosion further. Left alone, the
                   cycle only accelerates.
@@ -246,9 +246,9 @@ export default function ConcreteCancerPage() {
                 <p className="text-[16px] leading-[1.75]">
                   We repair concrete cancer across greater Sydney for strata,
                   commercial and residential buildings. Every repair starts with
-                  diagnosis: establishing why the reinforcement is corroding —
-                  carbonation, chloride attack, cracked cover concrete or a
-                  failed membrane — so the repair treats the cause, not just the
+                  diagnosis: establishing why the reinforcement is corroding
+                  (carbonation, chloride attack, cracked cover concrete or a
+                  failed membrane) so the repair treats the cause, not just the
                   visible damage.
                 </p>
               </Reveal>

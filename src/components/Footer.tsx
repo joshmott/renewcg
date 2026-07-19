@@ -38,13 +38,13 @@ export function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <Link
               href="/"
-              aria-label={`${site.name} — home`}
+              aria-label={`${site.name} home`}
               className="inline-block"
             >
               <Image src={logo} alt="" className="h-[26px] w-auto select-none" />
             </Link>
             <p className="mt-5 max-w-[300px] text-[14.5px] leading-[1.7]">
-              Remedial construction across greater Sydney — licensed, insured
+              Remedial construction across greater Sydney. Licensed, insured
               and accountable from inspection to sign-off.
             </p>
             <p className="mt-5 text-[14.5px] leading-[1.7]">
@@ -113,7 +113,15 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col gap-2 border-t border-hairline pt-6 text-[12.5px] leading-relaxed text-muted sm:flex-row sm:items-center sm:justify-between">
           <p>
-            {site.credentials.licenceLong} ·{" "}
+            <a
+              href={site.credentials.licenceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-blue"
+            >
+              {site.credentials.licenceLong}
+            </a>{" "}
+            ·{" "}
             <a
               href={site.credentials.abrUrl}
               target="_blank"

@@ -8,7 +8,7 @@ import heroImage from "../../../../public/remedial-hero.jpg";
 export const metadata: Metadata = {
   title: "Balcony Repairs & Waterproofing Sydney",
   description:
-    "Leaking balcony? We repair balconies and failed waterproofing membranes across Sydney — strip back, re-membrane, retile and certify. Strata specialists.",
+    "Leaking balcony? We repair balconies and failed waterproofing membranes across Sydney: strip back, re-membrane, retile and certify. Strata specialists.",
   alternates: { canonical: "/services/balcony-repairs-waterproofing" },
   openGraph: {
     url: `${site.url}/services/balcony-repairs-waterproofing`,
@@ -23,17 +23,17 @@ const faqs = [
   {
     question: "Why is my balcony leaking?",
     answer:
-      "Almost always a failed or badly detailed waterproofing membrane — wrong material, inadequate turn-ups, missing flashings or falls that pool water. Tiles and grout are not waterproof; once the membrane beneath them fails, water finds its way into the slab and the rooms below.",
+      "Almost always a failed or badly detailed waterproofing membrane: wrong material, inadequate turn-ups, missing flashings or falls that pool water. Tiles and grout are not waterproof; once the membrane beneath them fails, water finds its way into the slab and the rooms below.",
   },
   {
     question: "Can you just regrout or seal the tiles instead?",
     answer:
-      "Surface sealing can slow a minor leak, but if the membrane has failed it's a temporary fix — the water is still getting in. A lasting repair means stripping back to the substrate, installing the right membrane system and retiling.",
+      "Surface sealing can slow a minor leak, but if the membrane has failed it's a temporary fix; the water is still getting in. A lasting repair means stripping back to the substrate, installing the right membrane system and retiling.",
   },
   {
     question: "Who pays for balcony repairs in a strata building?",
     answer:
-      "In NSW, balcony slabs, waterproofing membranes and balustrades are generally common property, making them the owners corporation's responsibility — while tiles and finishes can vary by strata plan. We help strata managers and committees scope exactly what's involved.",
+      "In NSW, balcony slabs, waterproofing membranes and balustrades are generally common property, making them the owners corporation's responsibility, while tiles and finishes can vary by strata plan. We help strata managers and committees scope exactly what's involved.",
   },
   {
     question: "How long does a balcony repair take?",
@@ -43,7 +43,7 @@ const faqs = [
   {
     question: "Do you replace balustrades as well?",
     answer:
-      "Yes. Deteriorating or non-compliant balustrades are a safety and legal hazard — we design and install replacement systems that comply with Australian Standards as part of the balcony refurbishment.",
+      "Yes. Deteriorating or non-compliant balustrades are a safety and legal hazard. We design and install replacement systems that comply with Australian Standards as part of the balcony refurbishment.",
   },
 ];
 
@@ -53,7 +53,7 @@ const structuredData = {
     {
       "@type": "Service",
       "@id": `${url}#service`,
-      name: "Balcony Repairs & Waterproofing — Sydney",
+      name: "Balcony Repairs & Waterproofing Sydney",
       serviceType: "Balcony repair and waterproofing",
       description:
         "Balcony leak diagnosis, waterproofing membranes, retiling and compliant balustrades for strata, commercial and residential buildings across Sydney.",
@@ -116,7 +116,7 @@ const signs = [
   {
     title: "Pooling water",
     description:
-      "Water that sits rather than drains indicates falls were never right or have moved — and standing water finds every weakness in a membrane.",
+      "Water that sits rather than drains indicates falls were never right or have moved, and standing water finds every weakness in a membrane.",
   },
   {
     title: "Rusting fixings & rot",
@@ -126,7 +126,7 @@ const signs = [
   {
     title: "Leaking planter boxes",
     description:
-      "Built-in planters are a classic hidden source of water ingress — constantly wet, rarely membraned properly, and directly against the structure.",
+      "Built-in planters are a classic hidden source of water ingress: constantly wet, rarely membraned properly, and directly against the structure.",
   },
 ];
 
@@ -134,7 +134,7 @@ const process = [
   {
     title: "Find the moisture path",
     description:
-      "We investigate where the water is actually getting in — membrane, flashings, junctions, planters or the slab itself — before any work is priced.",
+      "We investigate where the water is actually getting in (membrane, flashings, junctions, planters or the slab itself) before any work is priced.",
   },
   {
     title: "Strip back",
@@ -144,7 +144,7 @@ const process = [
   {
     title: "Waterproof properly",
     description:
-      "The right membrane system for the situation, installed with correct falls, turn-ups and flashings — the detailing is what makes it last.",
+      "The right membrane system for the situation, installed with correct falls, turn-ups and flashings. The detailing is what makes it last.",
   },
   {
     title: "Retile & finish",
@@ -214,7 +214,7 @@ export default function BalconyPage() {
             className="hero-rise mt-5 max-w-[560px] text-[18px] leading-[1.6] text-white/80"
             style={{ "--rise-delay": "140ms" } as React.CSSProperties}
           >
-            A leaking balcony rarely fixes itself — the membrane underneath
+            A leaking balcony rarely fixes itself. The membrane underneath
             decides everything.
           </p>
         </div>
@@ -236,7 +236,7 @@ export default function BalconyPage() {
               <Reveal>
                 <p className="text-[16px] leading-[1.75]">
                   Leaking balconies are one of the most common defects in Sydney
-                  buildings — and one of the most commonly mis-repaired. Damp
+                  buildings, and one of the most commonly mis-repaired. Damp
                   ceilings below, drummy tiles and white efflorescence all trace
                   back to the same place: a waterproofing membrane that has
                   failed or was never detailed correctly.
@@ -244,8 +244,8 @@ export default function BalconyPage() {
               </Reveal>
               <Reveal delay={80}>
                 <p className="text-[16px] leading-[1.75]">
-                  Band-aid fixes — regrouting, surface sealers, patch repairs —
-                  buy months, not years. We strip back to the substrate,
+                  Band-aid fixes like regrouting, surface sealers and patch
+                  repairs buy months, not years. We strip back to the substrate,
                   identify the actual moisture path, repair any spalling in the
                   slab while it&rsquo;s exposed, then install the right membrane
                   system with correct falls, turn-ups and flashings before
@@ -255,7 +255,7 @@ export default function BalconyPage() {
               <Reveal delay={160}>
                 <p className="text-[16px] leading-[1.75]">
                   We refurbish balconies for owners corporations, commercial
-                  owners and homeowners across greater Sydney — staging
+                  owners and homeowners across greater Sydney, staging
                   multi-balcony programs on occupied buildings so residents can
                   keep living normally while the work gets done.
                 </p>

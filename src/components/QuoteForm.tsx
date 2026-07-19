@@ -71,7 +71,7 @@ export function QuoteForm() {
         className="border-y border-hairline px-6 py-14 text-center"
       >
         <h3 className="text-[19px] font-semibold text-ink">
-          Thank you — request received.
+          Thank you, your request has been received.
         </h3>
         <p className="mt-3 text-[15px] leading-relaxed">
           {status === "mailto" ? (
@@ -159,7 +159,7 @@ export function QuoteForm() {
           id="message"
           name="message"
           rows={3}
-          placeholder="Tell us about the issue — what you've noticed, and where."
+          placeholder="Tell us about the issue: what you've noticed, and where."
           className={inputClasses}
         />
       </div>

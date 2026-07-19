@@ -7,7 +7,7 @@ export const site = {
   name: "Renew Construction Group",
   tagline: "Remedial Construction, Sydney",
   description:
-    "Sydney remedial builders — concrete cancer, waterproofing, facade and cladding repairs for strata, commercial and residential buildings. Licensed & insured.",
+    "Sydney remedial builders for strata, commercial and residential buildings: concrete cancer, waterproofing, facade and cladding repairs. Licensed & insured.",
 
   // Production domain — matches the business email (@renewcg.com.au).
   // [CONFIRM] Update if the live site uses a different domain.
@@ -57,6 +57,8 @@ export const site = {
     abnNumber: "44 693 358 888",
     buyNswUrl: "https://buy.nsw.gov.au/supplier/profile/12462863",
     abrUrl: "https://abr.business.gov.au/ABN/View?abn=44693358888",
+    licenceUrl:
+      "https://verify.licence.nsw.gov.au/details/Contractor%20Licence/1-4GJU88D",
   },
 } as const;
 
@@ -65,7 +67,7 @@ export const faqs = [
   {
     question: "What areas of Sydney do you service?",
     answer:
-      "We're a Sydney-based builder working right across the greater Sydney metropolitan area and New South Wales — including the Eastern Suburbs, North Shore, Northern Beaches, Inner West and Sutherland Shire.",
+      "We're a Sydney-based builder working right across the greater Sydney metropolitan area and New South Wales, including the Eastern Suburbs, North Shore, Northern Beaches, Inner West and Sutherland Shire.",
   },
   {
     question: "Are you licensed and insured?",
@@ -75,7 +77,7 @@ export const faqs = [
   {
     question: "What is concrete cancer and can you repair it?",
     answer:
-      "Concrete cancer (concrete spalling) happens when the steel reinforcement inside concrete corrodes and expands, cracking the surrounding concrete. We diagnose the underlying cause and carry out lasting repairs before it threatens the structure — it's one of our core remedial services.",
+      "Concrete cancer (concrete spalling) happens when the steel reinforcement inside concrete corrodes and expands, cracking the surrounding concrete. We diagnose the underlying cause and carry out lasting repairs before it threatens the structure. It's one of our core remedial services.",
   },
   {
     question: "Do you work on strata and apartment buildings?",
@@ -85,23 +87,23 @@ export const faqs = [
   {
     question: "How much does concrete cancer repair cost in Sydney?",
     answer:
-      "It depends on how far the corrosion has progressed and how accessible the affected areas are — an early-stage patch repair is a fraction of the cost of rebuilding a structural element. We inspect and diagnose first, then provide a clear itemised quote. As a rule: the earlier spalling is treated, the less it costs.",
+      "It depends on how far the corrosion has progressed and how accessible the affected areas are. An early-stage patch repair is a fraction of the cost of rebuilding a structural element. We inspect and diagnose first, then provide a clear itemised quote. As a rule: the earlier spalling is treated, the less it costs.",
   },
   {
     question:
-      "Who pays for repairs in a strata building — the owners corporation or the lot owner?",
+      "Who pays for repairs in a strata building, the owners corporation or the lot owner?",
     answer:
-      "As a general rule in NSW, defects in common property — the building structure, external walls, balcony slabs, waterproofing membranes and balustrades — are the owners corporation's responsibility, while finishes inside a lot belong to the owner. It varies with the strata plan and by-laws, so we help scope which is which as part of an inspection.",
+      "As a general rule in NSW, defects in common property (the building structure, external walls, balcony slabs, waterproofing membranes and balustrades) are the owners corporation's responsibility, while finishes inside a lot belong to the owner. It varies with the strata plan and by-laws, so we help scope which is which as part of an inspection.",
   },
   {
     question: "How long do remedial repairs take?",
     answer:
-      "Minor repairs can be completed in days. Larger programs — balcony refurbishments across a building, facade repairs over multiple levels, cladding replacement — are staged over weeks or months, planned around residents and tenants. Dangerous defects can be made safe within hours.",
+      "Minor repairs can be completed in days. Larger programs, such as balcony refurbishments across a building, facade repairs over multiple levels or cladding replacement, are staged over weeks or months, planned around residents and tenants. Dangerous defects can be made safe within hours.",
   },
   {
     question: "Do you replace combustible cladding?",
     answer:
-      "Yes — end to end. We manage the rectification of non-compliant ACP cladding from statutory approvals and design through removal, replacement with a certified compliant system, and final certification.",
+      "Yes, end to end. We manage the rectification of non-compliant ACP cladding from statutory approvals and design through removal, replacement with a certified compliant system, and final certification.",
   },
   {
     question: "How do I get a quote?",
@@ -137,21 +139,21 @@ export const services: Service[] = [
     title: "Facade Upgrades",
     metaTitle: "Facade Upgrades Sydney",
     metaDescription:
-      "Facade upgrades, over-cladding, balustrades and coatings across Sydney. Renew Construction Group transforms tired building facades — licensed, insured, NSW-wide.",
+      "Facade upgrades, over-cladding, balustrades and coatings across Sydney. Renew Construction Group transforms tired building facades. Licensed, insured, NSW-wide.",
     summary:
       "New facades, over-cladding and coatings that add value and street appeal.",
     tagline:
       "Structural and design solutions to breathe new life into your asset.",
     overview: "Looking to reinvigorate your property portfolio?",
     intro: [
-      "Our bespoke facade upgrade solutions help transform your asset. We look at every project to identify options that not only address the underlying problems, but also add value to the finished product — whether that's a new facade, an upgraded aesthetic, or restored facilities and structural integrity.",
+      "Our bespoke facade upgrade solutions help transform your asset. We look at every project to identify options that not only address the underlying problems, but also add value to the finished product, whether that's a new facade, an upgraded aesthetic, or restored facilities and structural integrity.",
       "A considered facade upgrade reduces your building's ongoing maintenance costs while lifting both its market value and the way it's perceived.",
     ],
     categories: [
       {
         title: "Over Cladding",
         description:
-          "Whether a concrete facade is suffering corrosion-related deterioration or simply needs modernising, we can install a new compliant over-cladding system — addressing future safety concerns while enhancing the value of the asset.",
+          "Whether a concrete facade is suffering corrosion-related deterioration or simply needs modernising, we can install a new compliant over-cladding system, addressing future safety concerns while enhancing the value of the asset.",
       },
       {
         title: "Balustrade Replacement",
@@ -166,7 +168,7 @@ export const services: Service[] = [
       {
         title: "Facade Coatings",
         description:
-          "Facade coatings are an economical way to protect your asset against our harsh, salt-rich environment — from architectural coatings to high-build acrylic membrane systems, matched to the requirements of the site.",
+          "Facade coatings are an economical way to protect your asset against our harsh, salt-rich environment, from architectural coatings to high-build acrylic membrane systems matched to the requirements of the site.",
       },
       {
         title: "Window & Door Replacement",
@@ -193,7 +195,7 @@ export const services: Service[] = [
     intro: [
       "Renew is a remedial building specialist. Our focus is identifying and solving the structural and aesthetic issues affecting your building or asset.",
       "We specialise in the repair and upgrade of commercial, residential and strata structures. Our solutions are built to last and reduce the need for ongoing maintenance costs.",
-      "We work on occupied buildings, collaborating with asset managers, owners corporations and property managers to deliver solutions that impose minimal disruption on occupants — and ensure their absolute safety.",
+      "We work on occupied buildings, collaborating with asset managers, owners corporations and property managers to deliver solutions that impose minimal disruption on occupants and ensure their absolute safety.",
     ],
     categories: [
       {
@@ -214,7 +216,7 @@ export const services: Service[] = [
       {
         title: "Waterproofing",
         description:
-          "The main cause of water penetration is poor detailing — incorrect flashings, inadequate turn-ups, wrong material selection or band-aid repairs. We diagnose the source, select the right membrane, and install it properly.",
+          "The main cause of water penetration is poor detailing: incorrect flashings, inadequate turn-ups, wrong material selection or band-aid repairs. We diagnose the source, select the right membrane, and install it properly.",
       },
       {
         title: "Balcony Refurbishment",
@@ -233,7 +235,7 @@ export const services: Service[] = [
     title: "Heritage Restoration",
     metaTitle: "Heritage Restoration Sydney",
     metaDescription:
-      "Sympathetic heritage restoration across Sydney — stonemasonry, brick and render repairs, steel window restoration and facade coatings, built to last.",
+      "Sympathetic heritage restoration across Sydney: stonemasonry, brick and render repairs, steel window restoration and facade coatings, built to last.",
     summary:
       "Sympathetic restoration of stone, brick, render and steel-framed heritage buildings.",
     tagline:
@@ -242,13 +244,13 @@ export const services: Service[] = [
       "The commitment and detail required to restore assets to their former glory.",
     intro: [
       "Heritage structures demand a different kind of care. We understand the commitment and attention to detail required to restore these assets to their former glory without compromising the character and defining elements that make them significant.",
-      "Our heritage techniques are designed to last, minimising repeat work on site. Enduring structural and facade integrity — repairs that hold for decades — is how we define success.",
+      "Our heritage techniques are designed to last, minimising repeat work on site. Enduring structural and facade integrity is how we define success: repairs that hold for decades.",
     ],
     categories: [
       {
         title: "Steel Window Repairs & Replacement",
         description:
-          "In-situ repair of steel windows is only successful if carried out before corrosion distorts the frame. Where glass has cracked and sashes have jammed, we remove and either repair or replace — choosing the method that offers a long-term solution.",
+          "In-situ repair of steel windows is only successful if carried out before corrosion distorts the frame. Where glass has cracked and sashes have jammed, we remove and either repair or replace, choosing the method that offers a long-term solution.",
       },
       {
         title: "Stone Masonry Upgrades",
@@ -268,7 +270,7 @@ export const services: Service[] = [
       {
         title: "Facade Coatings",
         description:
-          "Facade coatings are an economical way to protect a heritage asset against our harsh, salt-rich environment — from architectural coatings to high-build acrylic membrane systems suited to the site.",
+          "Facade coatings are an economical way to protect a heritage asset against our harsh, salt-rich environment, from architectural coatings to high-build acrylic membrane systems suited to the site.",
       },
       {
         title: "Lead Paint Removal",
@@ -287,10 +289,10 @@ export const services: Service[] = [
       "Combustible cladding replacement, fire upgrades and compliance, end to end.",
     tagline:
       "Specialists in the rectification of flammable, non-compliant cladding systems.",
-    overview: "Assets that aren't just compliant — they're 100% safe.",
+    overview: "Assets that aren't just compliant, they're 100% safe.",
     intro: [
       "One of the most common issues facing buildings today is the widespread use of non-compliant ACP cladding systems. We combine experience across a range of facade solutions with careful methods for working on occupied sites to deliver compliant, high-quality rectification.",
-      "We offer a comprehensive, end-to-end approach for combustible cladding replacement — from statutory approvals and full design through to delivery and final certification — so your liability issues and legal responsibilities are satisfied, giving you complete peace of mind in the safety and durability of your asset.",
+      "We offer a comprehensive, end-to-end approach for combustible cladding replacement, from statutory approvals and full design through to delivery and final certification, so your liability issues and legal responsibilities are satisfied, giving you complete peace of mind in the safety and durability of your asset.",
     ],
     categories: [
       {
@@ -301,7 +303,7 @@ export const services: Service[] = [
       {
         title: "Passive Fire Upgrades",
         description:
-          "Addressing shortfalls in fire separation usually disrupts finished surfaces. We achieve certifiable fire chambers and then return units to at least their pre-commencement condition — leaving owners with peace of mind and their home restored.",
+          "Addressing shortfalls in fire separation usually disrupts finished surfaces. We achieve certifiable fire chambers and then return units to at least their pre-commencement condition, leaving owners with peace of mind and their home restored.",
       },
       {
         title: "Asbestos Removal",
@@ -330,7 +332,7 @@ export const services: Service[] = [
     title: "Service & Maintenance",
     metaTitle: "Building Maintenance Sydney",
     metaDescription:
-      "Ongoing building service and maintenance for strata, commercial and residential assets in Sydney — inspections, corrosion treatment, make-safe and reporting.",
+      "Ongoing building service and maintenance for strata, commercial and residential assets in Sydney: inspections, corrosion treatment, make-safe and reporting.",
     summary:
       "Ongoing inspections, corrosion treatment and make-safe across your asset's life.",
     tagline: "Taking the stress and hassle out of your building maintenance.",
@@ -347,7 +349,7 @@ export const services: Service[] = [
       {
         title: "Corrosion Treatment",
         description:
-          "Preparation of corroding steel is as important as the coating itself. Without careful cleaning and decontamination, even quality coatings fail early — our team ensures every stage is completed so the full life cycle of the treatment is achieved.",
+          "Preparation of corroding steel is as important as the coating itself. Without careful cleaning and decontamination, even quality coatings fail early. Our team ensures every stage is completed so the full life cycle of the treatment is achieved.",
       },
       {
         title: "Cathodic Protection",

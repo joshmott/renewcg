@@ -36,6 +36,13 @@ hex in components.
 | `paper`        | `#FDFDFE` | Page background                        |
 | `error`        | `#B3261E` | Form validation                        |
 
+## Copy style
+
+- **Never use em dashes (—)** in any user-visible copy, titles, or meta
+  descriptions — owner preference. Use commas, colons, semicolons,
+  parentheses or separate sentences instead. Middots (·) as separators
+  and the → arrow glyph are fine.
+
 ## Typography & design style
 
 - **Instrument Sans** (Google font, weights 400/500/600) via

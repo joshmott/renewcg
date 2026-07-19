@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 import aboutHero from "../../../public/about-hero.jpg";
 
 export const metadata: Metadata = {
-  title: "About — Sydney Remedial Builder",
+  title: "About Us: Sydney Remedial Builders",
   description:
     "Renew Construction Group is a NSW-licensed Sydney remedial builder founded by Joshua Mott, with 15+ years' experience. Deal directly with the builder.",
   alternates: { canonical: "/about" },
@@ -49,12 +49,12 @@ const principles = [
   {
     title: "Diagnosis first",
     description:
-      "Every engagement starts with understanding the root cause. We investigate before we quote, so the repair methodology and materials are genuinely fit for purpose — we repair causes, not symptoms.",
+      "Every engagement starts with understanding the root cause. We investigate before we quote, so the repair methodology and materials are genuinely fit for purpose. We repair causes, not symptoms.",
   },
   {
     title: "Deal direct",
     description:
-      "You work with one accountable team from first inspection through to final sign-off — no chain of subcontractors, no account managers, no runaround.",
+      "You work with one accountable team from first inspection through to final sign-off. No chain of subcontractors, no account managers, no runaround.",
   },
   {
     title: "Built to last",
@@ -70,7 +70,11 @@ const principles = [
 
 const credentials: { label: string; value: string; href?: string }[] = [
   { label: "Founded", value: `${site.foundingYear}, Sydney` },
-  { label: "Builders licence", value: "NSW 490706C" },
+  {
+    label: "Builders licence",
+    value: "NSW 490706C",
+    href: site.credentials.licenceUrl,
+  },
   { label: "Registration", value: "Building Practitioner NSW" },
   { label: "Insurance", value: site.credentials.insurance },
   { label: "ABN", value: site.credentials.abnNumber },
@@ -156,7 +160,7 @@ export default function AboutPage() {
               <p className="text-[16px] leading-[1.75]">
                 After years working across remedial and commercial construction,
                 Joshua started Renew on a straightforward belief: building owners
-                deserve to deal with the builder directly — not a chain of
+                deserve to deal with the builder directly, not a chain of
                 subcontractors and account managers. When you work with Renew,
                 you deal with the person accountable for the work.
               </p>
@@ -164,15 +168,16 @@ export default function AboutPage() {
             <Reveal delay={160}>
               <p className="text-[16px] leading-[1.75]">
                 We&rsquo;re a remedial building specialist based in Sydney. Our
-                focus is diagnosing the real cause of a building&rsquo;s problems
-                — concrete cancer, water ingress, failing facades, non-compliant
-                cladding — and repairing them so they stay fixed.
+                focus is diagnosing the real cause of a building&rsquo;s
+                problems, from concrete cancer and water ingress to failing
+                facades and non-compliant cladding, and repairing them so they
+                stay fixed.
               </p>
             </Reveal>
             <Reveal delay={240}>
               <p className="text-[16px] leading-[1.75]">
                 We work across strata, commercial and residential buildings
-                throughout greater Sydney, often on occupied sites —
+                throughout greater Sydney, often on occupied sites,
                 collaborating with owners corporations, strata managers and
                 property managers to keep disruption to residents and tenants to
                 a minimum, from first inspection through to final sign-off.
@@ -259,7 +264,7 @@ export default function AboutPage() {
                   Areas we service
                 </p>
                 <p className="mt-3 max-w-[620px] text-[16px] leading-[1.75]">
-                  {site.contact.serviceArea} — including the Eastern Suburbs,
+                  {site.contact.serviceArea}, including the Eastern Suburbs,
                   North Shore, Northern Beaches, Inner West and Sutherland Shire,
                   and across New South Wales.
                 </p>

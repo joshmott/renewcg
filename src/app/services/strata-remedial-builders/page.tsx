@@ -8,7 +8,7 @@ import heroImage from "../../../../public/hero.jpg";
 export const metadata: Metadata = {
   title: "Strata Remedial Builders Sydney",
   description:
-    "Remedial builders for Sydney owners corporations — concrete cancer, waterproofing, cladding and common property repairs with one accountable, licensed team.",
+    "Remedial builders for Sydney owners corporations: concrete cancer, waterproofing, cladding and common property repairs with one accountable, licensed team.",
   alternates: { canonical: "/services/strata-remedial-builders" },
   openGraph: {
     url: `${site.url}/services/strata-remedial-builders`,
@@ -23,22 +23,22 @@ const faqs = [
   {
     question: "Do you work directly with strata managers?",
     answer:
-      "Yes — strata managers, owners corporations and building managers are the core of our work. We provide inspection reports and itemised quotes ready for committee review, and one point of contact from first inspection to final sign-off.",
+      "Yes. Strata managers, owners corporations and building managers are the core of our work. We provide inspection reports and itemised quotes ready for committee review, and one point of contact from first inspection to final sign-off.",
   },
   {
-    question: "Who pays for repairs — the owners corporation or the lot owner?",
+    question: "Who pays for repairs, the owners corporation or the lot owner?",
     answer:
-      "As a general rule in NSW, defects in common property — the building structure, external walls, balcony slabs, waterproofing membranes and balustrades — are the owners corporation's responsibility, while finishes inside a lot belong to the owner. It varies with the strata plan, so we help scope which is which as part of an inspection.",
+      "As a general rule in NSW, defects in common property (the building structure, external walls, balcony slabs, waterproofing membranes and balustrades) are the owners corporation's responsibility, while finishes inside a lot belong to the owner. It varies with the strata plan, so we help scope which is which as part of an inspection.",
   },
   {
     question: "Can residents stay in the building during works?",
     answer:
-      "Yes. We plan remedial programs specifically for occupied buildings — staging the works, maintaining safe access, and communicating clearly with residents so daily life keeps moving while the repairs get done.",
+      "Yes. We plan remedial programs specifically for occupied buildings: staging the works, maintaining safe access, and communicating clearly with residents so daily life keeps moving while the repairs get done.",
   },
   {
     question: "Do you provide reports our committee can review?",
     answer:
-      "Yes. Every engagement starts with an inspection and a written scope: what's failing, why, what the repair involves and an itemised price — in plain language a committee can make a decision on.",
+      "Yes. Every engagement starts with an inspection and a written scope: what's failing, why, what the repair involves and an itemised price, written in plain language a committee can make a decision on.",
   },
   {
     question: "Are you licensed and insured for strata work?",
@@ -53,10 +53,10 @@ const structuredData = {
     {
       "@type": "Service",
       "@id": `${url}#service`,
-      name: "Strata Remedial Building — Sydney",
+      name: "Strata Remedial Building Sydney",
       serviceType: "Strata remedial building",
       description:
-        "Remedial building services for owners corporations and strata managers across greater Sydney — concrete cancer, waterproofing, facades, cladding and common property repairs.",
+        "Remedial building services for owners corporations and strata managers across greater Sydney: concrete cancer, waterproofing, facades, cladding and common property repairs.",
       url,
       provider: { "@id": `${site.url}/#business` },
       areaServed: site.areasServed.map((name) => ({
@@ -101,12 +101,12 @@ const scope = [
   {
     title: "Concrete cancer & spalling",
     description:
-      "Diagnosis and lasting repair of corroding reinforcement in slabs, balconies, columns and facades — treated at the cause.",
+      "Diagnosis and lasting repair of corroding reinforcement in slabs, balconies, columns and facades, treated at the cause.",
   },
   {
     title: "Balconies & waterproofing",
     description:
-      "Failed membranes, leaking balconies, planter boxes and rooftops — stripped back, re-membraned and rebuilt to drain properly.",
+      "Failed membranes, leaking balconies, planter boxes and rooftops: stripped back, re-membraned and rebuilt to drain properly.",
   },
   {
     title: "Facade & render repairs",
@@ -121,12 +121,12 @@ const scope = [
   {
     title: "Common property repairs",
     description:
-      "Driveways, walkways, foyers, fences and shared amenities — the everyday repairs that keep a scheme safe and presentable.",
+      "Driveways, walkways, foyers, fences and shared amenities: the everyday repairs that keep a scheme safe and presentable.",
   },
   {
     title: "Make-safe & urgent works",
     description:
-      "Dangerous defects — falling render, loose concrete, failed balustrades — made safe quickly, then permanently repaired.",
+      "Dangerous defects like falling render, loose concrete and failed balustrades are made safe quickly, then permanently repaired.",
   },
 ];
 
@@ -134,12 +134,12 @@ const process = [
   {
     title: "Inspect & report",
     description:
-      "We inspect the defect, identify the cause, and put the findings in writing — what's failing, why, and what fixing it properly involves.",
+      "We inspect the defect, identify the cause, and put the findings in writing: what's failing, why, and what fixing it properly involves.",
   },
   {
     title: "Itemised quotation",
     description:
-      "Clear, itemised pricing your committee can review and compare — no vague allowances or surprise variations.",
+      "Clear, itemised pricing your committee can review and compare. No vague allowances or surprise variations.",
   },
   {
     title: "Approvals & scheduling",
@@ -214,7 +214,7 @@ export default function StrataPage() {
             className="hero-rise mt-5 max-w-[560px] text-[18px] leading-[1.6] text-white/80"
             style={{ "--rise-delay": "140ms" } as React.CSSProperties}
           >
-            One accountable team for your owners corporation — from defect
+            One accountable team for your owners corporation, from defect
             report to final sign-off.
           </p>
         </div>
@@ -235,7 +235,7 @@ export default function StrataPage() {
             <div className="max-w-[640px] space-y-5">
               <Reveal>
                 <p className="text-[16px] leading-[1.75]">
-                  Strata remedial work isn&rsquo;t just construction — it&rsquo;s
+                  Strata remedial work isn&rsquo;t just construction. It&rsquo;s
                   committees that need clear information to make decisions,
                   residents who live on site while the work happens, and strata
                   managers juggling both. We build our whole process around
@@ -254,10 +254,9 @@ export default function StrataPage() {
               </Reveal>
               <Reveal delay={160}>
                 <p className="text-[16px] leading-[1.75]">
-                  And because you deal with the builder directly — a
-                  NSW-licensed, registered building practitioner — questions get
-                  answered straight away, not relayed through layers of
-                  subcontractors.
+                  And because you deal directly with a NSW-licensed, registered
+                  building practitioner, questions get answered straight away,
+                  not relayed through layers of subcontractors.
                 </p>
               </Reveal>
             </div>

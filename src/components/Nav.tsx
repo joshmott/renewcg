@@ -86,7 +86,7 @@ export function Nav() {
       <div className="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-[22px] sm:px-12 lg:px-24 lg:py-[26px]">
         <Link
           href="/"
-          aria-label={`${site.name} — home`}
+          aria-label={`${site.name} home`}
           className="shrink-0"
           onClick={closeMobile}
         >
