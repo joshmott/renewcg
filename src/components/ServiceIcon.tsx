@@ -1,5 +1,5 @@
 /**
- * Line icons for the five services — 24×24, 1.5px stroke, currentColor,
+ * Line icons for the services — 24×24, 1.5px stroke, currentColor,
  * matching the thin editorial icon style of the reference site. Geometry is
  * drawn from open-licensed (ISC) Lucide/Feather primitives.
  */
@@ -70,12 +70,23 @@ function MaintenanceIcon() {
   );
 }
 
+function ResidentialIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-full w-full" {...strokeProps}>
+      {/* home — residential */}
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+      <polyline points="9 22 9 12 15 12 15 22" />
+    </svg>
+  );
+}
+
 const icons: Record<string, () => React.JSX.Element> = {
   "facade-upgrades": FacadeIcon,
   "remedial-repairs": RemedialIcon,
   "heritage-restoration": HeritageIcon,
   "cladding-compliance": CladdingIcon,
   "service-maintenance": MaintenanceIcon,
+  "residential-construction": ResidentialIcon,
 };
 
 export function ServiceIcon({ slug }: { slug: string }) {

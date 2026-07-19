@@ -9,6 +9,7 @@ import remedialHero from "../../../../public/remedial-hero.jpg";
 import heritageHero from "../../../../public/heritage-hero.jpg";
 import claddingHero from "../../../../public/cladding-hero.jpg";
 import maintenanceHero from "../../../../public/maintenance-hero.jpg";
+import residentialHero from "../../../../public/faq-hero.jpg";
 
 /** Optional per-service hero photo. Services without one use the navy band. */
 const serviceHeroImages: Record<string, StaticImageData> = {
@@ -17,6 +18,7 @@ const serviceHeroImages: Record<string, StaticImageData> = {
   "heritage-restoration": heritageHero,
   "cladding-compliance": claddingHero,
   "service-maintenance": maintenanceHero,
+  "residential-construction": residentialHero,
 };
 
 type Props = { params: Promise<{ slug: string }> };
