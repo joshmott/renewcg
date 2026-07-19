@@ -25,6 +25,16 @@ export const site = {
     serviceArea: "Greater Sydney",
   },
 
+  address: {
+    street: "43/7 Rodborough Rd",
+    suburb: "Allambie Heights",
+    state: "NSW",
+    postcode: "2086",
+    full: "43/7 Rodborough Rd, Allambie Heights NSW 2086",
+    mapsUrl:
+      "https://maps.google.com/?q=43%2F7+Rodborough+Rd%2C+Allambie+Heights+NSW+2086",
+  },
+
   // Regions used for local-SEO "areaServed" signals.
   areasServed: [
     "Sydney",

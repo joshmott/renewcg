@@ -77,8 +77,10 @@ const structuredData = {
       priceRange: "$$",
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Sydney",
-        addressRegion: "NSW",
+        streetAddress: site.address.street,
+        addressLocality: site.address.suburb,
+        addressRegion: site.address.state,
+        postalCode: site.address.postcode,
         addressCountry: "AU",
       },
       areaServed: site.areasServed.map((name) => ({

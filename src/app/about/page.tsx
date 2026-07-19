@@ -74,6 +74,11 @@ const credentials: { label: string; value: string; href?: string }[] = [
   { label: "Registration", value: "Building Practitioner NSW" },
   { label: "Insurance", value: site.credentials.insurance },
   { label: "ABN", value: site.credentials.abnNumber },
+  {
+    label: "Office",
+    value: site.address.full,
+    href: site.address.mapsUrl,
+  },
   { label: "Service area", value: "Greater Sydney" },
   {
     label: "NSW Government",

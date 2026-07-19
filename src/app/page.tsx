@@ -305,6 +305,14 @@ export default function HomePage() {
             >
               {site.contact.email}
             </a>
+            <a
+              href={site.address.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-1 w-fit max-w-[300px] text-[14px] leading-[1.6] text-body transition-colors hover:text-blue"
+            >
+              {site.address.full}
+            </a>
           </div>
         </Reveal>
         <Reveal delay={120}>

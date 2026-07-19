@@ -47,6 +47,18 @@ export function Footer() {
               Remedial construction across greater Sydney — licensed, insured
               and accountable from inspection to sign-off.
             </p>
+            <p className="mt-5 text-[14.5px] leading-[1.7]">
+              <a
+                href={site.address.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-blue"
+              >
+                {site.address.street},
+                <br />
+                {site.address.suburb} {site.address.state} {site.address.postcode}
+              </a>
+            </p>
             <div className="mt-5 flex flex-col gap-1.5">
               <a
                 href={site.contact.phoneHref}
