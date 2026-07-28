@@ -135,6 +135,54 @@ export type Service = {
 
 export const services: Service[] = [
   {
+    slug: "residential-construction",
+    title: "Residential Construction & Renovations",
+    metaTitle: "Home Renovations & New Builds Sydney",
+    metaDescription:
+      "Residential construction across Sydney: renovations, extensions and new builds by a NSW-licensed builder. Deal directly with the builder from plans to handover.",
+    summary:
+      "Renovations, extensions and new builds, delivered by the builder you deal with.",
+    tagline: "Renovations, extensions and new homes, built properly the first time.",
+    overview: "Your home, in the hands of the builder you actually talk to.",
+    intro: [
+      "Alongside our remedial work, Renew Construction Group takes on residential construction across greater Sydney: renovations, extensions and new builds for homeowners who want their home treated with the same care we bring to restoring buildings.",
+      "You deal with the builder directly from the first walkthrough to handover. That means straight answers on what's possible, a clear itemised quote, and one accountable point of contact while the work is underway.",
+      "As a NSW-licensed builder and registered building practitioner, we manage the details that make a build succeed: compliant structure and waterproofing, coordinated trades, and finishes that hold up to daily life.",
+    ],
+    categories: [
+      {
+        title: "Home Renovations",
+        description:
+          "From single rooms to whole-home transformations, planned around how you live and built to last.",
+      },
+      {
+        title: "Extensions & Additions",
+        description:
+          "Extra bedrooms, second storeys and extended living areas that tie seamlessly into the existing structure.",
+      },
+      {
+        title: "New Builds",
+        description:
+          "New homes delivered from plans to handover, with one accountable builder throughout.",
+      },
+      {
+        title: "Kitchens & Bathrooms",
+        description:
+          "The two rooms where waterproofing, services and finishes all have to work together. We get the details right.",
+      },
+      {
+        title: "Structural Alterations",
+        description:
+          "Removing walls, replacing beams and opening up floor plans, engineered and certified properly.",
+      },
+      {
+        title: "Defect Rectification",
+        description:
+          "Renovating a home with existing issues? We diagnose and repair defects like damp, cracking and failed waterproofing as part of the works.",
+      },
+    ],
+  },
+  {
     slug: "facade-upgrades",
     title: "Facade Upgrades",
     metaTitle: "Facade Upgrades Sydney",
@@ -370,54 +418,6 @@ export const services: Service[] = [
         title: "Structural Strengthening",
         description:
           "From corroding reinforcement to overloaded retaining walls, structures deteriorate over time. We design and install bespoke strengthening solutions to avoid the worst-case scenario.",
-      },
-    ],
-  },
-  {
-    slug: "residential-construction",
-    title: "Residential Construction & Renovations",
-    metaTitle: "Home Renovations & New Builds Sydney",
-    metaDescription:
-      "Residential construction across Sydney: renovations, extensions and new builds by a NSW-licensed builder. Deal directly with the builder from plans to handover.",
-    summary:
-      "Renovations, extensions and new builds, delivered by the builder you deal with.",
-    tagline: "Renovations, extensions and new homes, built properly the first time.",
-    overview: "Your home, in the hands of the builder you actually talk to.",
-    intro: [
-      "Alongside our remedial work, Renew Construction Group takes on residential construction across greater Sydney: renovations, extensions and new builds for homeowners who want their home treated with the same care we bring to restoring buildings.",
-      "You deal with the builder directly from the first walkthrough to handover. That means straight answers on what's possible, a clear itemised quote, and one accountable point of contact while the work is underway.",
-      "As a NSW-licensed builder and registered building practitioner, we manage the details that make a build succeed: compliant structure and waterproofing, coordinated trades, and finishes that hold up to daily life.",
-    ],
-    categories: [
-      {
-        title: "Home Renovations",
-        description:
-          "From single rooms to whole-home transformations, planned around how you live and built to last.",
-      },
-      {
-        title: "Extensions & Additions",
-        description:
-          "Extra bedrooms, second storeys and extended living areas that tie seamlessly into the existing structure.",
-      },
-      {
-        title: "New Builds",
-        description:
-          "New homes delivered from plans to handover, with one accountable builder throughout.",
-      },
-      {
-        title: "Kitchens & Bathrooms",
-        description:
-          "The two rooms where waterproofing, services and finishes all have to work together. We get the details right.",
-      },
-      {
-        title: "Structural Alterations",
-        description:
-          "Removing walls, replacing beams and opening up floor plans, engineered and certified properly.",
-      },
-      {
-        title: "Defect Rectification",
-        description:
-          "Renovating a home with existing issues? We diagnose and repair defects like damp, cracking and failed waterproofing as part of the works.",
       },
     ],
   },
