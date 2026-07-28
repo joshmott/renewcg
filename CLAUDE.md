@@ -81,7 +81,14 @@ hex in components.
 - SEO keyword landing pages are static routes beside the `[slug]` template
   (`/services/concrete-cancer-repair`, `/services/balcony-repairs-waterproofing`,
   `/services/strata-remedial-builders`) — each carries Service + FAQPage +
-  Breadcrumb JSON-LD. New ones must be added to `sitemap.ts` and the footer.
+  Breadcrumb JSON-LD. They are listed once in the `landingPages` export of
+  `src/lib/site.ts`, which drives the `/services` overview page, the footer
+  and `sitemap.ts`; new ones only need a route file plus a `landingPages`
+  entry.
+- `/services` is the overview page (all services + landing pages). Interior
+  heroes show a visible breadcrumb trail (`src/components/Breadcrumbs.tsx`)
+  in place of the old eyebrow label, matching each page's BreadcrumbList
+  JSON-LD; the "Services" crumb points to `/services`.
 
 ## Business facts (never invent others)
 

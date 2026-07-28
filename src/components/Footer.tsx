@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "../../public/logo.png";
 import { Year } from "@/components/Year";
-import { services, site } from "@/lib/site";
+import { landingPages, services, site } from "@/lib/site";
 
 const headingClasses =
   "text-xs font-semibold tracking-[0.18em] uppercase text-muted";
@@ -11,22 +11,10 @@ const linkClasses =
 
 const menuLinks = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/#services" },
+  { label: "Services", href: "/services" },
   { label: "About", href: "/about" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/#contact" },
-];
-
-const landingPages = [
-  { label: "Concrete Cancer Repair", href: "/services/concrete-cancer-repair" },
-  {
-    label: "Balcony Repairs & Waterproofing",
-    href: "/services/balcony-repairs-waterproofing",
-  },
-  {
-    label: "Strata Remedial Builders",
-    href: "/services/strata-remedial-builders",
-  },
 ];
 
 export function Footer() {
@@ -101,9 +89,9 @@ export function Footer() {
                 </li>
               ))}
               {landingPages.map((l) => (
-                <li key={l.href}>
-                  <Link href={l.href} className={linkClasses}>
-                    {l.label}
+                <li key={l.slug}>
+                  <Link href={`/services/${l.slug}`} className={linkClasses}>
+                    {l.title}
                   </Link>
                 </li>
               ))}

@@ -145,13 +145,13 @@ export function Nav() {
               }`}
             >
               <div className="min-w-[240px] rounded-[12px] border border-hairline bg-paper p-2 shadow-[0_18px_40px_rgba(20,24,60,.1)]">
-                <a
-                  href={anchor("services")}
+                <Link
+                  href="/services"
                   onClick={() => setServicesOpen(false)}
                   className="block rounded-[8px] px-4 py-2.5 text-[14.5px] font-medium text-body transition-colors hover:bg-tint hover:text-ink"
                 >
                   Overview
-                </a>
+                </Link>
                 {services.map((s) => (
                   <Link
                     key={s.slug}
@@ -280,13 +280,13 @@ export function Nav() {
             }`}
           >
             <div className="mb-1 ml-1 flex flex-col border-l border-hairline pl-4">
-              <a
-                href={anchor("services")}
+              <Link
+                href="/services"
                 onClick={closeMobile}
                 className="py-2.5 text-[15px] font-medium text-body transition-colors hover:text-ink"
               >
                 Overview
-              </a>
+              </Link>
               {services.map((s) => (
                 <Link
                   key={s.slug}

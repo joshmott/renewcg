@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { services, site } from "@/lib/site";
+import { landingPages, services, site } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
@@ -22,19 +22,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.6,
     },
+    {
+      url: `${site.url}/services`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
     ...services.map((s) => ({
       url: `${site.url}/services/${s.slug}`,
       lastModified,
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),
-    // Keyword landing pages (static routes beside the [slug] template).
-    ...[
-      "concrete-cancer-repair",
-      "balcony-repairs-waterproofing",
-      "strata-remedial-builders",
-    ].map((slug) => ({
-      url: `${site.url}/services/${slug}`,
+    ...landingPages.map((p) => ({
+      url: `${site.url}/services/${p.slug}`,
       lastModified,
       changeFrequency: "monthly" as const,
       priority: 0.8,

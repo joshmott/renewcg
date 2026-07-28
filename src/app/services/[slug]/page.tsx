@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Reveal } from "@/components/Reveal";
 import { getService, services, site } from "@/lib/site";
 import facadeHero from "../../../../public/facade-hero.jpg";
@@ -87,7 +88,7 @@ export default async function ServicePage({ params }: Props) {
             "@type": "ListItem",
             position: 2,
             name: "Services",
-            item: `${site.url}/#services`,
+            item: `${site.url}/services`,
           },
           { "@type": "ListItem", position: 3, name: service.title, item: url },
         ],
@@ -145,9 +146,14 @@ export default async function ServicePage({ params }: Props) {
           </>
         )}
         <div className="relative mx-auto w-full max-w-[1440px] px-6 pt-40 pb-16 sm:px-12 lg:px-24 lg:pb-20">
-          <p className="hero-rise text-xs font-semibold tracking-[0.18em] text-white/70 uppercase">
-            Services
-          </p>
+          <Breadcrumbs
+            className="hero-rise"
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Services", href: "/services" },
+              { label: service.title },
+            ]}
+          />
           <h1 className="hero-rise mt-4 max-w-[900px] text-[40px] leading-[1.06] font-medium tracking-[-0.02em] text-white sm:text-[54px] lg:text-[66px]">
             {service.title}
           </h1>

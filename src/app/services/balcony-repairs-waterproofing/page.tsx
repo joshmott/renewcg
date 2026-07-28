@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Reveal } from "@/components/Reveal";
 import { site } from "@/lib/site";
 import heroImage from "../../../../public/remedial-hero.jpg";
@@ -81,7 +82,7 @@ const structuredData = {
           "@type": "ListItem",
           position: 2,
           name: "Services",
-          item: `${site.url}/#services`,
+          item: `${site.url}/services`,
         },
         {
           "@type": "ListItem",
@@ -204,9 +205,14 @@ export default function BalconyPage() {
           className="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-ink/55 to-transparent"
         />
         <div className="relative mx-auto w-full max-w-[1440px] px-6 pt-40 pb-16 sm:px-12 lg:px-24 lg:pb-20">
-          <p className="hero-rise text-xs font-semibold tracking-[0.18em] text-white/70 uppercase">
-            Services
-          </p>
+          <Breadcrumbs
+            className="hero-rise"
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Services", href: "/services" },
+              { label: "Balcony Repairs & Waterproofing" },
+            ]}
+          />
           <h1 className="hero-rise mt-4 max-w-[900px] text-[38px] leading-[1.08] font-medium tracking-[-0.02em] text-white sm:text-[50px] lg:text-[60px]">
             Balcony Repairs &amp; Waterproofing Sydney
           </h1>

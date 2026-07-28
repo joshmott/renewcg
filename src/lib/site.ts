@@ -423,6 +423,28 @@ export const services: Service[] = [
   },
 ];
 
+/**
+ * SEO keyword landing pages: static routes that live beside the service
+ * pages. Single source for the /services overview, footer and sitemap.
+ */
+export const landingPages = [
+  {
+    slug: "concrete-cancer-repair",
+    title: "Concrete Cancer Repair",
+    summary: "Spalling diagnosis and lasting structural repairs, treated at the cause.",
+  },
+  {
+    slug: "balcony-repairs-waterproofing",
+    title: "Balcony Repairs & Waterproofing",
+    summary: "Leak diagnosis, membranes, retiling and compliant balustrades.",
+  },
+  {
+    slug: "strata-remedial-builders",
+    title: "Strata Remedial Builders",
+    summary: "One accountable team for owners corporations and strata managers.",
+  },
+] as const;
+
 export function getService(slug: string): Service | undefined {
   return services.find((s) => s.slug === slug);
 }
