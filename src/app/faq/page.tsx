@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Reveal } from "@/components/Reveal";
 import { faqs, site } from "@/lib/site";
-import faqHero from "../../../public/faq-hero.jpg";
 
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
@@ -56,23 +54,22 @@ export default function FaqPage() {
 
       {/* ── Header ────────────────────────────────────────────────────── */}
       <section className="relative isolate flex min-h-[52vh] items-end overflow-hidden bg-ink">
-        <Image
-          src={faqHero}
-          alt="Timber batten screen and louvre window on a Renew Construction Group project in Sydney"
-          placeholder="blur"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-        {/* bottom scrim carries the title; top scrim keeps the nav legible */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/45 to-ink/30"
+          className="absolute inset-0 opacity-[0.9]"
+          style={{
+            backgroundImage:
+              "radial-gradient(120% 130% at 85% 0%, #1b2159 0%, #14183c 55%, #0d1030 100%)",
+          }}
         />
         <div
           aria-hidden="true"
-          className="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-ink/55 to-transparent"
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,.05) 1px, transparent 1px)",
+            backgroundSize: "56px 56px",
+          }}
         />
         <div className="relative mx-auto w-full max-w-[1440px] px-6 pt-40 pb-16 sm:px-12 lg:px-24 lg:pb-20">
           <Breadcrumbs
