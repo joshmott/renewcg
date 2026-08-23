@@ -77,7 +77,11 @@ hex in components.
   `items-end`) with bottom scrim `from-ink/90 via-ink/45 to-ink/30` plus a
   top scrim `from-ink/55` for nav legibility.
 - Hero photos: owner-supplied only, processed to ≤2400px wide JPEG q85
-  (PIL, `exif_transpose` first) into `public/*-hero.jpg`.
+  (PIL, `exif_transpose` first) into `public/*-hero.jpg`. Per owner request,
+  the /services overview and the facade-upgrades, remedial-repairs,
+  cladding-compliance and service-maintenance pages currently use the navy
+  placeholder band (no photo) until replacement photos are supplied; stock
+  photo sites are unreachable from this environment (network policy).
 - SEO keyword landing pages are static routes beside the `[slug]` template
   (`/services/concrete-cancer-repair`, `/services/balcony-repairs-waterproofing`,
   `/services/strata-remedial-builders`) — each carries Service + FAQPage +

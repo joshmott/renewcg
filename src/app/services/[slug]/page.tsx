@@ -5,21 +5,25 @@ import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Reveal } from "@/components/Reveal";
 import { getService, services, site } from "@/lib/site";
-import facadeHero from "../../../../public/facade-hero.jpg";
-import remedialHero from "../../../../public/remedial-hero.jpg";
 import heritageHero from "../../../../public/heritage-hero.jpg";
-import claddingHero from "../../../../public/cladding-hero.jpg";
-import maintenanceHero from "../../../../public/maintenance-hero.jpg";
 import residentialHero from "../../../../public/faq-hero.jpg";
 
-/** Optional per-service hero photo. Services without one use the navy band. */
-const serviceHeroImages: Record<string, StaticImageData> = {
-  "facade-upgrades": facadeHero,
-  "remedial-repairs": remedialHero,
-  "heritage-restoration": heritageHero,
-  "cladding-compliance": claddingHero,
-  "service-maintenance": maintenanceHero,
-  "residential-construction": residentialHero,
+/**
+ * Optional per-service hero photo + description. Services without one use
+ * the navy placeholder band until a real project photo is supplied.
+ */
+const serviceHeroImages: Record<
+  string,
+  { src: StaticImageData; alt: string }
+> = {
+  "heritage-restoration": {
+    src: heritageHero,
+    alt: "Heritage shopfront restoration project by Renew Construction Group in Sydney",
+  },
+  "residential-construction": {
+    src: residentialHero,
+    alt: "Timber batten screen and louvre window on a contemporary Sydney home",
+  },
 };
 
 type Props = { params: Promise<{ slug: string }> };
@@ -107,8 +111,8 @@ export default async function ServicePage({ params }: Props) {
         {heroImage ? (
           <>
             <Image
-              src={heroImage}
-              alt={`${service.title} project by Renew Construction Group in Sydney`}
+              src={heroImage.src}
+              alt={heroImage.alt}
               fill
               priority
               sizes="100vw"
