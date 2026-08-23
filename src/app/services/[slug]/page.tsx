@@ -6,7 +6,6 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Reveal } from "@/components/Reveal";
 import { getService, services, site } from "@/lib/site";
 import heritageHero from "../../../../public/heritage-hero.jpg";
-import residentialHero from "../../../../public/faq-hero.jpg";
 
 /**
  * Optional per-service hero photo + description. Services without one use
@@ -19,10 +18,6 @@ const serviceHeroImages: Record<
   "heritage-restoration": {
     src: heritageHero,
     alt: "Heritage shopfront restoration project by Renew Construction Group in Sydney",
-  },
-  "residential-construction": {
-    src: residentialHero,
-    alt: "Timber batten screen and louvre window on a contemporary Sydney home",
   },
 };
 
