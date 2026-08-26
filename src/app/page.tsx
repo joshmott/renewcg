@@ -101,7 +101,7 @@ export default function HomePage() {
           <Reveal>
             <p className={eyebrowClasses}>Services</p>
             <h2 className="mt-4 max-w-[300px] text-[26px] leading-[1.25] font-medium tracking-[-0.01em] text-ink lg:text-[32px]">
-              Six ways we bring buildings back.
+              Five ways we bring buildings back.
             </h2>
             <p className="mt-5 max-w-[300px] text-[15px] leading-[1.7]">
               Every engagement starts with diagnosis. We repair causes, not
@@ -110,7 +110,7 @@ export default function HomePage() {
           </Reveal>
         </div>
         <div>
-          {services.map((service, i) => (
+          {services.filter((s) => !s.hidden).map((service, i) => (
             <Link
               key={service.slug}
               href={`/services/${service.slug}`}

@@ -51,7 +51,7 @@ export default async function ServicePage({ params }: Props) {
   const service = getService(slug);
   if (!service) notFound();
 
-  const others = services.filter((s) => s.slug !== service.slug);
+  const others = services.filter((s) => s.slug !== service.slug && !s.hidden);
   const heroImage = serviceHeroImages[service.slug];
   const url = `${site.url}/services/${service.slug}`;
 

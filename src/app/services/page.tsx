@@ -118,7 +118,7 @@ export default function ServicesPage() {
             </Reveal>
           </div>
           <div>
-            {services.map((service, i) => (
+            {services.filter((s) => !s.hidden).map((service, i) => (
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}

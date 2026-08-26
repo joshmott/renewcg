@@ -171,9 +171,9 @@ const related = [
     summary: "Leak diagnosis, membranes, retiling and compliant balustrades.",
   },
   {
-    title: "Cladding & Compliance",
-    href: "/services/cladding-compliance",
-    summary: "Combustible cladding replacement, fire upgrades and compliance, end to end.",
+    title: "Service & Maintenance",
+    href: "/services/service-maintenance",
+    summary: "Ongoing inspections, corrosion treatment and make-safe across your asset's life.",
   },
 ];
 

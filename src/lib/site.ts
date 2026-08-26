@@ -131,8 +131,11 @@ export type Service = {
   intro: string[];
   /** "What's involved" sub-service cards. */
   categories: ServiceCategory[];
-  /** Hide from the nav Services dropdown (still linked in the footer). */
-  hideFromNav?: boolean;
+  /**
+   * Hide from the nav dropdown and service listings; the page stays live,
+   * in the sitemap, and linked from the footer.
+   */
+  hidden?: boolean;
 };
 
 export const services: Service[] = [
@@ -332,7 +335,7 @@ export const services: Service[] = [
   {
     slug: "cladding-compliance",
     title: "Cladding & Compliance",
-    hideFromNav: true,
+    hidden: true,
     metaTitle: "Combustible Cladding Replacement Sydney",
     metaDescription:
       "Non-compliant ACP cladding replacement, passive fire upgrades and compliance across Sydney. End-to-end rectification from statutory approvals to final certification.",
