@@ -66,6 +66,7 @@ export function Nav() {
 
   // On interior pages the home sections don't exist, so send the browser home.
   const anchor = (id: string) => (onHome ? `#${id}` : `/#${id}`);
+  const navServices = services.filter((s) => !s.hideFromNav);
   const closeMobile = () => setMobileOpen(false);
 
   // Solid bar when the visitor has scrolled OR the mobile menu is open.
@@ -152,7 +153,7 @@ export function Nav() {
                 >
                   Overview
                 </Link>
-                {services.map((s) => (
+                {navServices.map((s) => (
                   <Link
                     key={s.slug}
                     href={`/services/${s.slug}`}
@@ -287,7 +288,7 @@ export function Nav() {
               >
                 Overview
               </Link>
-              {services.map((s) => (
+              {navServices.map((s) => (
                 <Link
                   key={s.slug}
                   href={`/services/${s.slug}`}
