@@ -99,7 +99,7 @@ export const faqs = [
   {
     question: "How do I get a quote?",
     answer:
-      "Tell us what you're seeing through our contact form, or call 0422 453 966. We'll come back to you within one business day with straight answers and a clear next step.",
+      "Tell us about your project through our contact form, or call 0422 453 966. We'll come back to you within one business day with straight answers and a clear next step.",
   },
 ] as const;
 

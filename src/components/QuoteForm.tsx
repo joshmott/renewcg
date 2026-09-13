@@ -159,7 +159,7 @@ export function QuoteForm() {
           id="message"
           name="message"
           rows={3}
-          placeholder="Tell us about the issue: what you've noticed, and where."
+          placeholder="Tell us about your project or the issue you've found."
           className={inputClasses}
         />
       </div>

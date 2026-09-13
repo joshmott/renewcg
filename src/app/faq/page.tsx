@@ -121,9 +121,8 @@ export default function FaqPage() {
               Still have a question? Just ask.
             </h2>
             <p className="mt-4 max-w-[520px] text-[16px] leading-[1.7]">
-              Tell us what you&rsquo;re seeing and we&rsquo;ll come back to you
-              within one business day with straight answers and a clear next
-              step.
+              Tell us about your project and we&rsquo;ll come back to you within
+              one business day with straight answers and a clear next step.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-6">
               <Link

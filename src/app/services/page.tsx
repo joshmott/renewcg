@@ -215,9 +215,8 @@ export default function ServicesPage() {
               Not sure which service you need?
             </h2>
             <p className="mt-4 max-w-[520px] text-[16px] leading-[1.7]">
-              Tell us what you&rsquo;re seeing and we&rsquo;ll diagnose the
-              cause and point you to the right fix, with straight answers and a
-              clear next step.
+              Tell us about your project and we&rsquo;ll come back to you with
+              straight answers and a clear next step.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-6">
               <Link

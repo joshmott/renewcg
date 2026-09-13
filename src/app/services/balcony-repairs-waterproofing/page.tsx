@@ -428,8 +428,8 @@ export default function BalconyPage() {
               Got a damp ceiling or a leaking balcony?
             </h2>
             <p className="mt-4 max-w-[520px] text-[16px] leading-[1.7]">
-              Send us a photo of what you&rsquo;re seeing and we&rsquo;ll come
-              back with straight answers and a clear next step.
+              Send us a photo of the problem and we&rsquo;ll come back with
+              straight answers and a clear next step.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-6">
               <Link

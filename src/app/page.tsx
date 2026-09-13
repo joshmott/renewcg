@@ -360,7 +360,7 @@ export default function HomePage() {
         <Reveal>
           <p className={eyebrowClasses}>Request a quote</p>
           <h2 className="mt-4 max-w-[320px] text-[26px] leading-[1.25] font-medium tracking-[-0.01em] text-ink lg:text-[32px]">
-            Tell us what you&rsquo;re seeing.
+            Tell us about your project.
           </h2>
           <div className="mt-8 flex flex-col gap-2">
             <a
