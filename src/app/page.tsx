@@ -64,8 +64,9 @@ export default function HomePage() {
             className="hero-rise mt-6 max-w-[520px] text-[16px] leading-[1.7] text-white/85"
             style={{ "--rise-delay": "160ms" } as React.CSSProperties}
           >
-            Renew Construction Group is a licensed builder based in Sydney,
-            bringing ageing and defective buildings back to life.
+            Renew Construction Group is a licensed Sydney builder working
+            across architectural homes and renovations, specialist remedial
+            works and commercial projects.
           </p>
         </div>
         {/* scroll-down indicator */}
@@ -94,6 +95,65 @@ export default function HomePage() {
       </section>
 
       <div className="mx-auto max-w-[1440px] px-6 sm:px-12 lg:px-24">
+        {/* ── Three pillars ──────────────────────────────────────────── */}
+        <section className="grid gap-10 py-16 sm:grid-cols-3 sm:gap-8 lg:py-20">
+          {[
+            {
+              eyebrow: "Residential",
+              title: "Architectural homes & renovations",
+              body: "Architectural new builds, whole-home renovations and extensions, managed by the builder from plans to handover.",
+              href: "/services/residential-construction",
+              label: "Residential construction",
+            },
+            {
+              eyebrow: "Remedial",
+              title: "Class 2 & remedial works",
+              body: "A registered building practitioner for apartment and strata remediation: concrete cancer, waterproofing, facades and heritage.",
+              href: "/services/remedial-repairs",
+              label: "Remedial services",
+            },
+            {
+              eyebrow: "Commercial",
+              title: "Commercial projects",
+              body: "Fit-outs, upgrades and building works for commercial owners and tenants, planned around your operations.",
+              href: "/#contact",
+              label: "Start a conversation",
+            },
+          ].map((pillar, i) => (
+            <div key={pillar.eyebrow}>
+              <Reveal variant="line" delay={i * 80}>
+                <div className="h-px w-full bg-hairline" />
+              </Reveal>
+              <Reveal delay={i * 80}>
+                <div className="pt-6">
+                  <p className={eyebrowClasses}>{pillar.eyebrow}</p>
+                  <h2 className="mt-3 text-[21px] leading-[1.3] font-semibold text-ink">
+                    {pillar.title}
+                  </h2>
+                  <p className="mt-3 text-[14.5px] leading-[1.7]">
+                    {pillar.body}
+                  </p>
+                  <Link
+                    href={pillar.href}
+                    className="mt-4 inline-flex items-center gap-1.5 text-[14px] font-semibold text-blue transition-colors hover:text-blue-dark"
+                  >
+                    {pillar.label}
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M5 12h14M13 6l6 6-6 6"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </Link>
+                </div>
+              </Reveal>
+            </div>
+          ))}
+        </section>
+
         {/* ── Services ─────────────────────────────────────────────────── */}
       <section id="services" className="grid gap-12 py-20 lg:grid-cols-[0.55fr_1.45fr] lg:gap-[72px] lg:py-24">
         <div className="lg:sticky lg:top-32 lg:self-start">
@@ -103,8 +163,8 @@ export default function HomePage() {
               Five ways we bring buildings back.
             </h2>
             <p className="mt-5 max-w-[300px] text-[15px] leading-[1.7]">
-              Every engagement starts with diagnosis. We repair causes, not
-              symptoms.
+              One licensed team across residential, remedial and commercial
+              work.
             </p>
           </Reveal>
         </div>
@@ -158,18 +218,29 @@ export default function HomePage() {
           <Reveal>
             <p className={eyebrowClasses}>Who we help</p>
             <h2 className="mt-4 max-w-[360px] text-[26px] leading-[1.25] font-medium tracking-[-0.01em] text-ink lg:text-[32px]">
-              Remedial builders for Sydney&rsquo;s strata, commercial and
-              residential buildings.
+              One builder across residential, remedial and commercial.
             </h2>
           </Reveal>
         </div>
         <div className="max-w-[640px] space-y-5">
           <Reveal>
             <p className="text-[16px] leading-[1.75]">
-              Renew Construction Group is a remedial building company working
-              across greater Sydney, from the Eastern Suburbs and Inner West to
-              the North Shore, Northern Beaches and Sutherland Shire. We
-              diagnose and repair the defects that age buildings:{" "}
+              Homeowners engage Renew for architectural{" "}
+              <Link
+                href="/services/residential-construction"
+                className="font-semibold text-blue transition-colors hover:text-blue-dark"
+              >
+                new builds, renovations and extensions
+              </Link>
+              . Owners corporations and{" "}
+              <Link
+                href="/services/strata-remedial-builders"
+                className="font-semibold text-blue transition-colors hover:text-blue-dark"
+              >
+                strata managers
+              </Link>{" "}
+              work with a registered building practitioner on class 2 remedial
+              works:{" "}
               <Link
                 href="/services/concrete-cancer-repair"
                 className="font-semibold text-blue transition-colors hover:text-blue-dark"
@@ -181,30 +252,22 @@ export default function HomePage() {
                 href="/services/balcony-repairs-waterproofing"
                 className="font-semibold text-blue transition-colors hover:text-blue-dark"
               >
-                leaking balconies and failed waterproofing
+                balconies and waterproofing
               </Link>
-              , cracked render, tired facades and{" "}
+              , render, facades and{" "}
               <Link
                 href="/services/cladding-compliance"
                 className="font-semibold text-blue transition-colors hover:text-blue-dark"
               >
-                non-compliant cladding
+                cladding
               </Link>
               .
             </p>
           </Reveal>
           <Reveal delay={80}>
             <p className="text-[16px] leading-[1.75]">
-              Owners corporations and{" "}
-              <Link
-                href="/services/strata-remedial-builders"
-                className="font-semibold text-blue transition-colors hover:text-blue-dark"
-              >
-                strata managers
-              </Link>{" "}
-              work with one accountable, NSW-licensed builder from defect report
-              to sign-off, and commercial owners and homeowners get the same
-              diagnose-first approach to{" "}
+              Commercial owners and tenants get the same diagnose-first
+              approach to{" "}
               <Link
                 href="/services/remedial-repairs"
                 className="font-semibold text-blue transition-colors hover:text-blue-dark"
@@ -225,7 +288,9 @@ export default function HomePage() {
               >
                 ongoing maintenance
               </Link>
-              .
+              . Whatever the project, you deal directly with the builder,
+              across Sydney&rsquo;s Eastern Suburbs, North Shore and Northern
+              Beaches.
             </p>
           </Reveal>
         </div>
@@ -254,7 +319,8 @@ export default function HomePage() {
             <Reveal delay={100}>
               <p className="text-[16px] leading-[1.75]">
                 Renew Construction Group is a NSW-licensed builder and
-                registered building practitioner serving greater Sydney. Strata
+                registered building practitioner serving Sydney, from the
+                Eastern Suburbs to the North Shore and Northern Beaches. Strata
                 managers, commercial owners and homeowners work with one
                 accountable team, from first inspection through to final
                 sign-off.

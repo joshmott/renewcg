@@ -18,7 +18,8 @@ const instrument = Instrument_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Remedial Builders Sydney | Renew Construction Group",
+    default:
+      "Sydney's Trusted Residential, Remedial & Commercial Builders | Renew Construction Group",
     template: "%s | Renew Construction Group",
   },
   description: site.description,

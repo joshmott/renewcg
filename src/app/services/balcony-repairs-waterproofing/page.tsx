@@ -259,7 +259,7 @@ export default function BalconyPage() {
               <Reveal delay={160}>
                 <p className="text-[16px] leading-[1.75]">
                   We refurbish balconies for owners corporations, commercial
-                  owners and homeowners across greater Sydney, staging
+                  owners and homeowners across Sydney, staging
                   multi-balcony programs on occupied buildings so residents can
                   keep living normally while the work gets done.
                 </p>

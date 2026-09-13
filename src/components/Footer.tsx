@@ -32,8 +32,9 @@ export function Footer() {
               <Image src={logo} alt="" className="h-[26px] w-auto select-none" />
             </Link>
             <p className="mt-5 max-w-[300px] text-[14.5px] leading-[1.7]">
-              Remedial construction across greater Sydney. Licensed, insured
-              and accountable from inspection to sign-off.
+              Residential, remedial and commercial building across
+              Sydney&rsquo;s east and north. Licensed, insured and accountable
+              from inspection to sign-off.
             </p>
             <p className="mt-5 text-[14.5px] leading-[1.7]">
               <a

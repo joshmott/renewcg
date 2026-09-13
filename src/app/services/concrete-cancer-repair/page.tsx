@@ -55,7 +55,7 @@ const structuredData = {
       name: "Concrete Cancer Repair Sydney",
       serviceType: "Concrete cancer repair",
       description:
-        "Diagnosis and lasting repair of concrete cancer and spalling for strata, commercial and residential buildings across greater Sydney.",
+        "Diagnosis and lasting repair of concrete cancer and spalling for strata, commercial and residential buildings across Sydney.",
       url,
       provider: { "@id": `${site.url}/#business` },
       areaServed: site.areasServed.map((name) => ({
@@ -248,7 +248,7 @@ export default function ConcreteCancerPage() {
               </Reveal>
               <Reveal delay={80}>
                 <p className="text-[16px] leading-[1.75]">
-                  We repair concrete cancer across greater Sydney for strata,
+                  We repair concrete cancer across Sydney for strata,
                   commercial and residential buildings. Every repair starts with
                   diagnosis: establishing why the reinforcement is corroding
                   (carbonation, chloride attack, cracked cover concrete or a

@@ -7,7 +7,7 @@ export const site = {
   name: "Renew Construction Group",
   tagline: "Remedial Construction, Sydney",
   description:
-    "Sydney remedial builders for strata, commercial and residential buildings: concrete cancer, waterproofing, facade and cladding repairs. Licensed & insured.",
+    "Sydney builders across high-end homes, class 2 remedial works and commercial projects: renovations, concrete cancer, waterproofing and facades. Licensed & insured.",
 
   // Production domain — matches the business email (@renewcg.com.au).
   // [CONFIRM] Update if the live site uses a different domain.
@@ -22,7 +22,7 @@ export const site = {
     phoneHref: "tel:+61422453966",
     phoneE164: "+61422453966",
     email: "Joshua@renewcg.com.au",
-    serviceArea: "Greater Sydney",
+    serviceArea: "Sydney",
   },
 
   address: {
@@ -36,16 +36,7 @@ export const site = {
   },
 
   // Regions used for local-SEO "areaServed" signals.
-  areasServed: [
-    "Sydney",
-    "Greater Sydney",
-    "Eastern Suburbs",
-    "North Shore",
-    "Northern Beaches",
-    "Inner West",
-    "Sutherland Shire",
-    "New South Wales",
-  ],
+  areasServed: ["Sydney", "Eastern Suburbs", "North Shore", "Northern Beaches"],
 
   credentials: {
     licence: "NSW Licence 490706C",
@@ -67,7 +58,7 @@ export const faqs = [
   {
     question: "What areas of Sydney do you service?",
     answer:
-      "We're a Sydney-based builder working right across the greater Sydney metropolitan area and New South Wales, including the Eastern Suburbs, North Shore, Northern Beaches, Inner West and Sutherland Shire.",
+      "We're a Sydney-based builder focused on the Eastern Suburbs, North Shore and Northern Beaches, along with surrounding Sydney suburbs.",
   },
   {
     question: "Are you licensed and insured?",
@@ -145,14 +136,13 @@ export const services: Service[] = [
     metaTitle: "Home Renovations & New Builds Sydney",
     metaDescription:
       "Residential construction across Sydney: renovations, extensions and new builds by a NSW-licensed builder. Deal directly with the builder from plans to handover.",
-    summary:
-      "Renovations, extensions and new builds, delivered by the builder you deal with.",
-    tagline: "Renovations, extensions and new homes, built properly the first time.",
+    summary: "Architectural new builds, renovations and extensions.",
+    tagline: "Architectural new builds, renovations and extensions across Sydney.",
     overview: "Your home, in the hands of the builder you actually talk to.",
     intro: [
-      "Alongside our remedial work, Renew Construction Group takes on residential construction across greater Sydney: renovations, extensions and new builds for homeowners who want their home treated with the same care we bring to restoring buildings.",
+      "Renew Construction Group builds and transforms homes across Sydney's Eastern Suburbs, North Shore and Northern Beaches: architectural new builds, whole-home renovations and extensions.",
       "You deal with the builder directly from the first walkthrough to handover. That means straight answers on what's possible, a clear itemised quote, and one accountable point of contact while the work is underway.",
-      "As a NSW-licensed builder and registered building practitioner, we manage the details that make a build succeed: compliant structure and waterproofing, coordinated trades, and finishes that hold up to daily life.",
+      "Our remedial background means structure, waterproofing and detailing are treated as critical stages of every build, not afterthoughts.",
     ],
     categories: [
       {
@@ -192,7 +182,7 @@ export const services: Service[] = [
     title: "Facade Upgrades",
     metaTitle: "Facade Upgrades Sydney",
     metaDescription:
-      "Facade upgrades, over-cladding, balustrades and coatings across Sydney. Renew Construction Group transforms tired building facades. Licensed, insured, NSW-wide.",
+      "Facade upgrades, over-cladding, balustrades and coatings across Sydney. Renew Construction Group transforms tired building facades. Licensed and insured.",
     summary:
       "New facades, over-cladding and coatings that add value and street appeal.",
     tagline:

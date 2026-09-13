@@ -57,7 +57,7 @@ const structuredData = {
       name: "Strata Remedial Building Sydney",
       serviceType: "Strata remedial building",
       description:
-        "Remedial building services for owners corporations and strata managers across greater Sydney: concrete cancer, waterproofing, facades, cladding and common property repairs.",
+        "Remedial building services for owners corporations and strata managers across Sydney: concrete cancer, waterproofing, facades, cladding and common property repairs.",
       url,
       provider: { "@id": `${site.url}/#business` },
       areaServed: site.areasServed.map((name) => ({
@@ -250,7 +250,8 @@ export default function StrataPage() {
               </Reveal>
               <Reveal delay={80}>
                 <p className="text-[16px] leading-[1.75]">
-                  Owners corporations across greater Sydney work with Renew on
+                  Owners corporations across Sydney&rsquo;s east and north work
+                  with Renew on
                   the defects that age apartment buildings: concrete cancer,
                   leaking balconies and failed waterproofing, cracked render,
                   tired facades and non-compliant cladding. Every job starts

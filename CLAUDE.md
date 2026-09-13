@@ -1,8 +1,12 @@
 # Renew Construction Group — renewcg.com.au
 
-Single-page-first marketing site for a NSW-licensed remedial builder in
-Sydney. Next.js 15 (App Router) + React 19 + Tailwind CSS v4, deployed on
-Vercel. The look comes from an approved design handoff
+Marketing site for a NSW-licensed builder positioned across THREE EQUAL
+PILLARS: residential construction & renovations (architectural/high-end
+tone, never the word "luxury"), class 2 remedial works (as a registered
+building practitioner), and commercial projects. Never mention insurance
+sub-limits, project size caps, or reasons the company can or cannot take
+on any type of project. Next.js 15 (App Router) + React 19 + Tailwind CSS
+v4, deployed on Vercel. The look comes from an approved design handoff
 (`design_handoff_renew_landing`) and follows the scroll feel of
 rmwatson.com.au.
 
@@ -42,6 +46,16 @@ hex in components.
   descriptions — owner preference. Use commas, colons, semicolons,
   parentheses or separate sentences instead. Middots (·) as separators
   and the → arrow glyph are fine.
+- **No cute taglines** — owner preference. Lines like "done properly,
+  once" or "for owners who care how things are finished" were explicitly
+  rejected as tacky. Copy states facts plainly; long-standing lines such
+  as "do the work properly the first time" in the About story are
+  owner-approved and stay.
+- **Service area** is Sydney, specifically the Eastern Suburbs, North
+  Shore and Northern Beaches. Never say "greater Sydney", "NSW-wide",
+  Inner West or Sutherland Shire.
+- Home title tag starts with "Sydney's Trusted Residential, Remedial &
+  Commercial Builders" (owner-specified).
 
 ## Typography & design style
 

@@ -82,7 +82,10 @@ const credentials: { label: string; value: string; href?: string }[] = [
     value: site.address.full,
     href: site.address.mapsUrl,
   },
-  { label: "Service area", value: "Greater Sydney" },
+  {
+    label: "Service area",
+    value: "Eastern Suburbs · North Shore · Northern Beaches",
+  },
   {
     label: "NSW Government",
     value: "Registered supplier on buy.nsw",
@@ -176,7 +179,7 @@ export default function AboutPage() {
             <Reveal delay={240}>
               <p className="text-[16px] leading-[1.75]">
                 We work across strata, commercial and residential buildings
-                throughout greater Sydney, often on occupied sites,
+                across Sydney, often on occupied sites,
                 collaborating with owners corporations, strata managers and
                 property managers to keep disruption to residents and tenants to
                 a minimum, from first inspection through to final sign-off.
@@ -263,9 +266,8 @@ export default function AboutPage() {
                   Areas we service
                 </p>
                 <p className="mt-3 max-w-[620px] text-[16px] leading-[1.75]">
-                  {site.contact.serviceArea}, including the Eastern Suburbs,
-                  North Shore, Northern Beaches, Inner West and Sutherland Shire,
-                  and across New South Wales.
+                  {site.contact.serviceArea}, with a focus on the Eastern
+                  Suburbs, North Shore and Northern Beaches.
                 </p>
               </div>
             </Reveal>
