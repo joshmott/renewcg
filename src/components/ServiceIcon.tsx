@@ -80,6 +80,17 @@ function ResidentialIcon() {
   );
 }
 
+function CommercialIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-full w-full" {...strokeProps}>
+      {/* office building — commercial */}
+      <rect x="5" y="2.5" width="14" height="19" rx="1.5" />
+      <path d="M9.5 7h1M13.5 7h1M9.5 11h1M13.5 11h1M9.5 15h1M13.5 15h1" />
+      <path d="M10 21.5v-3.5h4v3.5" />
+    </svg>
+  );
+}
+
 const icons: Record<string, () => React.JSX.Element> = {
   "facade-upgrades": FacadeIcon,
   "remedial-repairs": RemedialIcon,
@@ -87,6 +98,7 @@ const icons: Record<string, () => React.JSX.Element> = {
   "cladding-compliance": CladdingIcon,
   "service-maintenance": MaintenanceIcon,
   "residential-construction": ResidentialIcon,
+  "commercial-construction": CommercialIcon,
 };
 
 export function ServiceIcon({ slug }: { slug: string }) {

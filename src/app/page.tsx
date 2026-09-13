@@ -116,8 +116,8 @@ export default function HomePage() {
               eyebrow: "Commercial",
               title: "Commercial projects",
               body: "Fit-outs, upgrades and building works for commercial owners and tenants, planned around your operations.",
-              href: "/#contact",
-              label: "Start a conversation",
+              href: "/services/commercial-construction",
+              label: "Commercial construction",
             },
           ].map((pillar, i) => (
             <div key={pillar.eyebrow}>
@@ -160,7 +160,7 @@ export default function HomePage() {
           <Reveal>
             <p className={eyebrowClasses}>Services</p>
             <h2 className="mt-4 max-w-[300px] text-[26px] leading-[1.25] font-medium tracking-[-0.01em] text-ink lg:text-[32px]">
-              Five ways we bring buildings back.
+              Six ways we bring buildings back.
             </h2>
             <p className="mt-5 max-w-[300px] text-[15px] leading-[1.7]">
               One licensed team across residential, remedial and commercial
@@ -266,8 +266,13 @@ export default function HomePage() {
           </Reveal>
           <Reveal delay={80}>
             <p className="text-[16px] leading-[1.75]">
-              Commercial owners and tenants get the same diagnose-first
-              approach to{" "}
+              <Link
+                href="/services/commercial-construction"
+                className="font-semibold text-blue transition-colors hover:text-blue-dark"
+              >
+                Commercial owners and tenants
+              </Link>{" "}
+              get the same diagnose-first approach to{" "}
               <Link
                 href="/services/remedial-repairs"
                 className="font-semibold text-blue transition-colors hover:text-blue-dark"

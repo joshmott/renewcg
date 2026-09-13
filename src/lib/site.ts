@@ -178,6 +178,54 @@ export const services: Service[] = [
     ],
   },
   {
+    slug: "commercial-construction",
+    title: "Commercial Construction & Fit-Outs",
+    metaTitle: "Commercial Builders & Fit-Outs Sydney",
+    metaDescription:
+      "Commercial fit-outs, upgrades, make-good and building repairs across Sydney, planned around your operations. Licensed, insured, deal directly with the builder.",
+    summary: "Fit-outs, upgrades and building works for owners and tenants.",
+    tagline:
+      "Fit-outs, upgrades and building works, planned around your operations.",
+    overview: "Commercial projects delivered around live operations.",
+    intro: [
+      "Renew Construction Group delivers commercial building work across Sydney: fit-outs, upgrades, refurbishments and repairs for owners, tenants and property managers.",
+      "Commercial projects run on deadlines and around live operations. We plan the works with you, stage them to suit trading hours and access, and keep communication direct: you deal with the builder, not a chain of contractors.",
+      "As a NSW-licensed builder and registered building practitioner, we also carry the compliance side of commercial work: the right approvals, certification and safe delivery on occupied sites.",
+    ],
+    categories: [
+      {
+        title: "Office & Retail Fit-Outs",
+        description:
+          "Fit-outs and refurbishments for offices, retail and hospitality spaces, staged around trading where needed.",
+      },
+      {
+        title: "Make-Good & End of Lease",
+        description:
+          "Returning tenancies to base-building condition on time, so handover stays simple for tenant and landlord.",
+      },
+      {
+        title: "Building Upgrades",
+        description:
+          "Upgrades to facades, common areas and services that lift the value and presentation of commercial assets.",
+      },
+      {
+        title: "Commercial Repairs",
+        description:
+          "Structural and general building repairs, diagnosed at the cause and scheduled around your operations.",
+      },
+      {
+        title: "Compliance Works",
+        description:
+          "Works to meet fire, access and safety requirements, delivered with the right approvals and certification.",
+      },
+      {
+        title: "Ongoing Maintenance",
+        description:
+          "Scheduled inspections and maintenance that keep premises safe, compliant and presentable.",
+      },
+    ],
+  },
+  {
     slug: "facade-upgrades",
     title: "Facade Upgrades",
     metaTitle: "Facade Upgrades Sydney",
