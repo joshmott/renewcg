@@ -7,7 +7,7 @@ import { faqs, site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
   description:
-    "Common questions about our Sydney remedial building services: licensing, insurance, service areas, concrete cancer and how to get a quote.",
+    "Common questions about our Sydney building and remedial services: licensing, insurance, service areas, concrete cancer and how to get a quote.",
   alternates: { canonical: "/faq" },
   openGraph: {
     url: `${site.url}/faq`,

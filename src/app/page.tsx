@@ -38,7 +38,7 @@ export default function HomePage() {
         <Parallax className="absolute inset-0" strength={30}>
           <Image
             src={heroImage}
-            alt="Remedial construction and facade project by Renew Construction Group in Sydney"
+            alt="Contemporary residential terraces in Sydney"
             placeholder="blur"
             priority
             sizes="100vw"
@@ -160,7 +160,7 @@ export default function HomePage() {
           <Reveal>
             <p className={eyebrowClasses}>Services</p>
             <h2 className="mt-4 max-w-[300px] text-[26px] leading-[1.25] font-medium tracking-[-0.01em] text-ink lg:text-[32px]">
-              Six ways we bring buildings back.
+              What we do.
             </h2>
             <p className="mt-5 max-w-[300px] text-[15px] leading-[1.7]">
               One licensed team across residential, remedial and commercial
@@ -212,7 +212,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Sydney remedial builders — SEO-supporting copy ───────────── */}
+      {/* ── Who we help — SEO-supporting copy ─────────────────────────── */}
       <section className="grid gap-12 border-t border-hairline py-20 lg:grid-cols-[0.55fr_1.45fr] lg:gap-[72px] lg:py-24">
         <div className="lg:sticky lg:top-32 lg:self-start">
           <Reveal>
@@ -272,7 +272,7 @@ export default function HomePage() {
               >
                 Commercial owners and tenants
               </Link>{" "}
-              get the same diagnose-first approach to{" "}
+              get the same direct, accountable approach to{" "}
               <Link
                 href="/services/remedial-repairs"
                 className="font-semibold text-blue transition-colors hover:text-blue-dark"
@@ -316,8 +316,7 @@ export default function HomePage() {
               Renew Construction Group was founded in 2025 by Joshua Mott, who
               brings over fifteen years of experience in the construction
               industry. It&rsquo;s built on a simple idea: deal with the builder
-              directly, diagnose the real problem, and do the work properly the
-              first time.
+              directly and do the work properly the first time.
             </p>
           </Reveal>
           <div>
@@ -327,8 +326,7 @@ export default function HomePage() {
                 registered building practitioner serving Sydney, from the
                 Eastern Suburbs to the North Shore and Northern Beaches. Strata
                 managers, commercial owners and homeowners work with one
-                accountable team, from first inspection through to final
-                sign-off.
+                accountable team, from first walkthrough to final sign-off.
               </p>
             </Reveal>
             <div className="mt-9">

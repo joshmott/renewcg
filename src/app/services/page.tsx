@@ -96,8 +96,8 @@ export default function ServicesPage() {
             className="hero-rise mt-5 max-w-[600px] text-[18px] leading-[1.6] text-white/80"
             style={{ "--rise-delay": "140ms" } as React.CSSProperties}
           >
-            Diagnosis-first building services for strata, commercial and
-            residential properties across Sydney.
+            Residential, remedial and commercial building services across
+            Sydney.
           </p>
         </div>
       </section>
@@ -109,11 +109,11 @@ export default function ServicesPage() {
             <Reveal>
               <p className={eyebrowClasses}>What we do</p>
               <h2 className="mt-4 max-w-[300px] text-[26px] leading-[1.25] font-medium tracking-[-0.01em] text-ink lg:text-[32px]">
-                Every way we bring buildings back.
+                Residential, remedial and commercial.
               </h2>
               <p className="mt-5 max-w-[300px] text-[15px] leading-[1.7]">
-                Every engagement starts with diagnosis. We repair causes, not
-                symptoms.
+                One licensed team, one point of contact, across every project
+                type.
               </p>
             </Reveal>
           </div>

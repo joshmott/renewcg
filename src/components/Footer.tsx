@@ -34,7 +34,7 @@ export function Footer() {
             <p className="mt-5 max-w-[300px] text-[14.5px] leading-[1.7]">
               Residential, remedial and commercial building across
               Sydney&rsquo;s east and north. Licensed, insured and accountable
-              from inspection to sign-off.
+              from quote to handover.
             </p>
             <p className="mt-5 text-[14.5px] leading-[1.7]">
               <a

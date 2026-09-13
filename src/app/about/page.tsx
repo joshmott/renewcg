@@ -5,9 +5,9 @@ import { Reveal } from "@/components/Reveal";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About Us: Sydney Remedial Builders",
+  title: "About Us: Sydney Builders",
   description:
-    "Renew Construction Group is a NSW-licensed Sydney remedial builder founded by Joshua Mott, with 15+ years' experience. Deal directly with the builder.",
+    "Renew Construction Group is a NSW-licensed Sydney builder across residential, remedial and commercial work, founded by Joshua Mott. Deal directly with the builder.",
   alternates: { canonical: "/about" },
   openGraph: {
     url: `${site.url}/about`,
@@ -46,14 +46,14 @@ const eyebrowClasses =
 
 const principles = [
   {
-    title: "Diagnosis first",
+    title: "Plan before we price",
     description:
-      "Every engagement starts with understanding the root cause. We investigate before we quote, so the repair methodology and materials are genuinely fit for purpose. We repair causes, not symptoms.",
+      "Whether it's a new build or a repair, we scope the job properly before we quote, so the price and the program hold.",
   },
   {
     title: "Deal direct",
     description:
-      "You work with one accountable team from first inspection through to final sign-off. No chain of subcontractors, no account managers, no runaround.",
+      "You work with one accountable team from first walkthrough to final sign-off. No chain of subcontractors, no account managers, no runaround.",
   },
   {
     title: "Built to last",
@@ -132,9 +132,9 @@ export default function AboutPage() {
             className="hero-rise mt-5 max-w-[600px] text-[18px] leading-[1.6] text-white/80"
             style={{ "--rise-delay": "140ms" } as React.CSSProperties}
           >
-            Renew Construction Group is a Sydney remedial builder, founded on a
-            simple idea: diagnose the real problem and do the work properly the
-            first time.
+            Renew Construction Group is a Sydney builder, founded on a simple
+            idea: deal directly with the builder and get the work done properly
+            the first time.
           </p>
         </div>
       </section>
@@ -169,8 +169,8 @@ export default function AboutPage() {
             </Reveal>
             <Reveal delay={160}>
               <p className="text-[16px] leading-[1.75]">
-                We&rsquo;re a remedial building specialist based in Sydney. Our
-                focus is diagnosing the real cause of a building&rsquo;s
+                On the remedial side, our focus is diagnosing the real cause of
+                a building&rsquo;s
                 problems, from concrete cancer and water ingress to failing
                 facades and non-compliant cladding, and repairing them so they
                 stay fixed.
@@ -182,7 +182,7 @@ export default function AboutPage() {
                 across Sydney, often on occupied sites,
                 collaborating with owners corporations, strata managers and
                 property managers to keep disruption to residents and tenants to
-                a minimum, from first inspection through to final sign-off.
+                a minimum, from first walkthrough to final sign-off.
               </p>
             </Reveal>
           </div>
