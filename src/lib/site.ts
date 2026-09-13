@@ -183,9 +183,8 @@ export const services: Service[] = [
     metaTitle: "Commercial Builders & Fit-Outs Sydney",
     metaDescription:
       "Commercial fit-outs, upgrades, make-good and building repairs across Sydney, planned around your operations. Licensed, insured, deal directly with the builder.",
-    summary: "Fit-outs, upgrades and building works for owners and tenants.",
-    tagline:
-      "Fit-outs, upgrades and building works, planned around your operations.",
+    summary: "Fit-outs, make-good, upgrades and repairs.",
+    tagline: "Fit-outs, upgrades and building works across Sydney.",
     overview: "Commercial projects delivered around live operations.",
     intro: [
       "Renew Construction Group delivers commercial building work across Sydney: fit-outs, upgrades, refurbishments and repairs for owners, tenants and property managers.",
@@ -231,8 +230,7 @@ export const services: Service[] = [
     metaTitle: "Facade Upgrades Sydney",
     metaDescription:
       "Facade upgrades, over-cladding, balustrades and coatings across Sydney. Renew Construction Group transforms tired building facades. Licensed and insured.",
-    summary:
-      "New facades, over-cladding and coatings that add value and street appeal.",
+    summary: "New facades, over-cladding, balustrades and coatings.",
     tagline:
       "Structural and design solutions to breathe new life into your asset.",
     overview: "Looking to reinvigorate your property portfolio?",
@@ -279,8 +277,7 @@ export const services: Service[] = [
     metaTitle: "Remedial Building Repairs Sydney",
     metaDescription:
       "Sydney remedial building specialists. Concrete cancer, waterproofing, render, balcony and structural repairs for strata, commercial and residential buildings.",
-    summary:
-      "Diagnosing and repairing structural and aesthetic defects, built to last.",
+    summary: "Concrete cancer, waterproofing, render and structural repairs.",
     tagline: "Responding to the most complicated of repair needs.",
     overview: "Remedial solutions that deliver long-term results.",
     intro: [
@@ -327,8 +324,7 @@ export const services: Service[] = [
     metaTitle: "Heritage Restoration Sydney",
     metaDescription:
       "Sympathetic heritage restoration across Sydney: stonemasonry, brick and render repairs, steel window restoration and facade coatings, built to last.",
-    summary:
-      "Sympathetic restoration of stone, brick, render and steel-framed heritage buildings.",
+    summary: "Restoration of stone, brick, render and steel-framed buildings.",
     tagline:
       "Successful heritage restoration is defined by what the eye does not see.",
     overview:
@@ -425,8 +421,7 @@ export const services: Service[] = [
     metaTitle: "Building Maintenance Sydney",
     metaDescription:
       "Ongoing building service and maintenance for strata, commercial and residential assets in Sydney: inspections, corrosion treatment, make-safe and reporting.",
-    summary:
-      "Ongoing inspections, corrosion treatment and make-safe across your asset's life.",
+    summary: "Inspections, corrosion treatment, make-safe and maintenance.",
     tagline: "Taking the stress and hassle out of your building maintenance.",
     overview: "Commercial, residential and strata asset maintenance.",
     intro: [

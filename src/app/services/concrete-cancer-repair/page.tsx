@@ -161,7 +161,7 @@ const related = [
   {
     title: "Remedial Repairs",
     href: "/services/remedial-repairs",
-    summary: "Diagnosing and repairing structural and aesthetic defects, built to last.",
+    summary: "Concrete cancer, waterproofing, render and structural repairs.",
   },
   {
     title: "Balcony Repairs & Waterproofing",
